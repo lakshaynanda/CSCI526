@@ -28,22 +28,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = Input.GetAxis("Horizontal");
+        float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
-
-        // if (Input.GetButtonDown("Horizontal"))
-        // {
-        //     rb.velocity = new Vector3(speed, 0, 0);
-        // }
-
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     rb.velocity = new Vector3(-speed, 0, 0);
-        // }
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
