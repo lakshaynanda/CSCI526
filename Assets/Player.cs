@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer otherSprite;
 
     public Rigidbody2D rb;
+    private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
 
@@ -75,6 +77,7 @@ public class Player : MonoBehaviour
         {
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
+            Die();
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
@@ -82,6 +85,7 @@ public class Player : MonoBehaviour
             {
                 gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
+                Die();
             }
         }
         //else if (collidedObject.gameObject.CompareTag("Finish"))
@@ -90,5 +94,14 @@ public class Player : MonoBehaviour
         //    Destroy(collidedObject.gameObject);
         //    Application.Quit();
         //}
+    }
+    private void Die() 
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("death");
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
