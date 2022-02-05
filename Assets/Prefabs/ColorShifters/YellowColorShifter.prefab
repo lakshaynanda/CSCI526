@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 564027769662097189}
   - component: {fileID: 564027769662097191}
   m_Layer: 0
-  m_Name: RedColorShifter
+  m_Name: YellowColorShifter
   m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.6415094, g: 0.13556422, b: 0.14078349, a: 1}
+  m_Color: {r: 0.9811321, g: 0.6745098, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
