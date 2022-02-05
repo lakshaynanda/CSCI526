@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
     [SerializeField] private LayerMask jumpableGround;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,8 @@ public class Player : MonoBehaviour
         {
             mySprite.color = otherSprite.color;
             Destroy(collidedObject.gameObject);
-        } else if(collidedObject.gameObject.CompareTag("Finish"))
+        }
+        else if (collidedObject.gameObject.CompareTag("Finish"))
         {
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour
         //    Application.Quit();
         //}
     }
-    private void Die() 
+    private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
