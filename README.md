@@ -1,3 +1,1 @@
-# CSCI526
-
-This will be used to push the changes within the team.
+A 2D Platformer based strategy game in which the player is required to match its color with the color of the current platform it is on.
