@@ -12,15 +12,19 @@ public class Player : MonoBehaviour
     private SpriteRenderer otherSprite;
 
     public Rigidbody2D rb;
+    private BoxCollider2D coll;
     private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
+    [SerializeField] private LayerMask jumpableGround;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
+        coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
     }
@@ -30,7 +34,7 @@ public class Player : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
@@ -95,5 +99,9 @@ public class Player : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
