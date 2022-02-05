@@ -623,7 +623,6 @@ GameObject:
   - component: {fileID: 1187279249}
   - component: {fileID: 1187279248}
   - component: {fileID: 1187279247}
-  - component: {fileID: 1187279251}
   - component: {fileID: 1187279252}
   m_Layer: 0
   m_Name: Player
@@ -745,35 +744,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1187279251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187279246}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f64893fe58e3644ab5d068aa2af02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 10
-  rb: {fileID: 1187279247}
-  sr: {fileID: 1187279249}
-  yellowPlatform: YellowPlatform
-  redPlatform: RedPlatform
-  greenPlatform: GreenPlatform
-  bluePlatform: BluePlatform
-  blueSwitch: BlueSwitch
-  yellowSwitch: YellowSwitch
-  greenSwitch: GreenSwitch
-  redSwitch: RedSwitch
-  currentPlatform: 
-  colorRed: {r: 0, g: 0, b: 0, a: 0}
-  colorYellow: {r: 0.98039216, g: 0.6745098, b: 0, a: 0}
-  colorGreen: {r: 0, g: 0, b: 0, a: 0}
-  colorBlue: {r: 0, g: 0, b: 0, a: 0}
-  obj: {fileID: 0}
 --- !u!114 &1187279252
 MonoBehaviour:
   m_ObjectHideFlags: 0

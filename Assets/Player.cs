@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 5f;
     public float jumpForce = 10f;
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
 
     public Rigidbody2D rb;
+    private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
 
@@ -26,19 +28,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        float dirX = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector3(0, jumpForce, 0);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.velocity = new Vector3(speed, 0, 0);
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector3(-speed, 0, 0);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
@@ -75,6 +69,7 @@ public class Player : MonoBehaviour
         {
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
+            Die();
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
@@ -82,6 +77,7 @@ public class Player : MonoBehaviour
             {
                 gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
+                Die();
             }
         }
         //else if (collidedObject.gameObject.CompareTag("Finish"))
@@ -90,5 +86,14 @@ public class Player : MonoBehaviour
         //    Destroy(collidedObject.gameObject);
         //    Application.Quit();
         //}
+    }
+    private void Die() 
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("death");
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
