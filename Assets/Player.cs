@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpForce = 10f;
+    public float speed = 7f;
+    public float jumpForce = 14f;
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
         if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
     }
 
