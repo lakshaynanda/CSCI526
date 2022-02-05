@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 5f;
     public float jumpForce = 10f;
     public Color StartColor;
     private SpriteRenderer mySprite;
@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
         if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 14f);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
