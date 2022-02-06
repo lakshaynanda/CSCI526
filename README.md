@@ -1,1 +1,2 @@
-A 2D Platformer based strategy game in which the player is required to match its color with the color of the current platform it is on.
+WebGL Release for Prototype Presentation: 
+https://play.unity.com/mg/other/blendin-2
