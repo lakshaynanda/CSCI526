@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -60,6 +61,17 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
+        checkTrapCollision(collidedObject);
+    }
+
+    private void checkTrapCollision(Collision2D collidedObject)
+    {
+        if (collidedObject.gameObject.CompareTag("Trap"))
+        {
+            gameOverCanvas.SetActive(true);
+            Debug.Log("Game Over");
+            Die();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collidedObject)
