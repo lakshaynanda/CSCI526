@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\UIButtonLevelLoad.cs" />
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\ItemCollectable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
