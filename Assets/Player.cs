@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
             Destroy(collidedObject.gameObject);
-            Application.Quit();
+            Die();
         }
     }
 
