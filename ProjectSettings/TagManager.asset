@@ -15,6 +15,7 @@ TagManager:
   - Border
   - Switch
   - Platform
+  - Trap
   layers:
   - Default
   - TransparentFX
