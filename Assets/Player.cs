@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
+        ItemCollectable.balls = 0;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
