@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
-
+    public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
     private Animator anim;
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        countballs = ItemCollectable.balls;
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
@@ -107,7 +108,7 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        ItemCollectable.balls = 0;
+        ItemCollectable.balls = countballs;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
