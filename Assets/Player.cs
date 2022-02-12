@@ -53,8 +53,9 @@ public class Player : MonoBehaviour
         {
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
-            Destroy(collidedObject.gameObject);
-            Die();
+
+            
+            Die2();
         }
     }
 
@@ -109,12 +110,16 @@ public class Player : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
-    private void RestartLevel()
+    private void CompletedLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+    private void Die2()
+    {
+        Invoke("CompletedLevel", .2f);
     }
 }
