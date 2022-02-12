@@ -53,9 +53,15 @@ public class Player : MonoBehaviour
         {
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
+<<<<<<< HEAD
             Invoke("CompletedLevel", .2f);
             //Destroy(collidedObject.gameObject);
             //Die();
+=======
+
+            
+            Die2();
+>>>>>>> 3f8aa04fdf9aef61a9b32ec3be8317a3f502e90b
         }
     }
 
@@ -117,5 +123,9 @@ public class Player : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+    private void Die2()
+    {
+        Invoke("CompletedLevel", .2f);
     }
 }
