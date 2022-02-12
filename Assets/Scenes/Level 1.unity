@@ -575,11 +575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-<<<<<<< HEAD:Assets/Scenes/Level 1.unity
-  m_AnchoredPosition: {x: 0, y: -240}
-=======
   m_AnchoredPosition: {x: 469, y: -23}
->>>>>>> 3f8aa04fdf9aef61a9b32ec3be8317a3f502e90b:Assets/Scenes/Level1.unity
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315407165
@@ -1648,11 +1644,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e2eeb5c3539be5f43949d74f16d7c09c, type: 3}
-<<<<<<< HEAD:Assets/Scenes/Level 1.unity
-    m_FontSize: 20
-=======
     m_FontSize: 18
->>>>>>> 3f8aa04fdf9aef61a9b32ec3be8317a3f502e90b:Assets/Scenes/Level1.unity
     m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0

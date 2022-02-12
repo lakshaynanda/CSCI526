@@ -53,15 +53,9 @@ public class Player : MonoBehaviour
         {
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
-<<<<<<< HEAD
-            Invoke("CompletedLevel", .2f);
-            //Destroy(collidedObject.gameObject);
-            //Die();
-=======
 
             
             Die2();
->>>>>>> 3f8aa04fdf9aef61a9b32ec3be8317a3f502e90b
         }
     }
 
