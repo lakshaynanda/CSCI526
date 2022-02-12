@@ -53,8 +53,9 @@ public class Player : MonoBehaviour
         {
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
-            Destroy(collidedObject.gameObject);
-            Die();
+            Invoke("CompletedLevel", .2f);
+            //Destroy(collidedObject.gameObject);
+            //Die();
         }
     }
 
@@ -109,9 +110,9 @@ public class Player : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
-    private void RestartLevel()
+    private void CompletedLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private bool isGrounded()
     {
