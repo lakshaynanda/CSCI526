@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Analytics;
 using System;
 
 public class Player : MonoBehaviour
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
 
-            
+
             Die2();
         }
     }
@@ -70,6 +71,8 @@ public class Player : MonoBehaviour
     {
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            Debug.Log("analytics" + analyticsResult);
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -86,6 +89,8 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Border"))
         {
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            Debug.Log("analytics" + analyticsResult);
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -94,6 +99,8 @@ public class Player : MonoBehaviour
         {
             if (mySprite.color != otherSprite.color)
             {
+                AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+                Debug.Log("analytics" + analyticsResult);
                 gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
