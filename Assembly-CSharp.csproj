@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,11 @@
     <Compile Include="Assets/Player.cs" />
     <Compile Include="Assets/Scripts/Waypoint.cs" />
     <Compile Include="Assets/Scripts/MovePlayerWithPlatform.cs" />
+=======
+    <Compile Include="Assets\UIButtonLevelLoad.cs" />
+    <Compile Include="Assets\ItemCollectable.cs" />
+    <Compile Include="Assets\Player.cs" />
+>>>>>>> 32f98ee19fc51016fe8dab1c21f89a3879797250
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

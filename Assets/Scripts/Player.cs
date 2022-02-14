@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+<<<<<<< HEAD:Assets/Player.cs
+=======
+using UnityEngine.Analytics;
+>>>>>>> 32f98ee19fc51016fe8dab1c21f89a3879797250:Assets/Scripts/Player.cs
 using System;
 
 public class Player : MonoBehaviour
@@ -55,7 +59,11 @@ public class Player : MonoBehaviour
             levelCompletedCanvas.SetActive(true);
             Debug.Log("Level Completed");
 
+<<<<<<< HEAD:Assets/Player.cs
             
+=======
+
+>>>>>>> 32f98ee19fc51016fe8dab1c21f89a3879797250:Assets/Scripts/Player.cs
             Die2();
         }
     }
@@ -70,6 +78,11 @@ public class Player : MonoBehaviour
     {
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
+<<<<<<< HEAD:Assets/Player.cs
+=======
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            Debug.Log("analytics" + analyticsResult);
+>>>>>>> 32f98ee19fc51016fe8dab1c21f89a3879797250:Assets/Scripts/Player.cs
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -86,6 +99,8 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Border"))
         {
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            Debug.Log("analytics" + analyticsResult);
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -94,6 +109,8 @@ public class Player : MonoBehaviour
         {
             if (mySprite.color != otherSprite.color)
             {
+                AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+                Debug.Log("analytics" + analyticsResult);
                 gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
