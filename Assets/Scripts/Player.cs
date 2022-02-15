@@ -54,9 +54,10 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
             levelCompletedCanvas.SetActive(true);
-            Debug.Log("Level Completed");
-
-
+            Scene scene = collidedObject.gameObject.scene;
+            Debug.Log("Level Completed: " + scene.name);
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
+            Debug.Log("analytics" + analyticsResult);
             Die2();
         }
     }
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour
     {
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
@@ -89,7 +90,7 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Border"))
         {
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
             gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
@@ -99,7 +100,7 @@ public class Player : MonoBehaviour
         {
             if (mySprite.color != otherSprite.color)
             {
-                AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death" + collidedObject.gameObject.name);
+                AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
                 Debug.Log("analytics" + analyticsResult);
                 gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
