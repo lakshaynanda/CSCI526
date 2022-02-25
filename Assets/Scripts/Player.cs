@@ -12,12 +12,15 @@ public class Player : MonoBehaviour
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
+    public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
     private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
+    public int startTime = 10;
+    public int endTime;
     [SerializeField] private LayerMask jumpableGround;
 
 
@@ -64,9 +67,9 @@ public class Player : MonoBehaviour
         } else if (collidedObject.gameObject.CompareTag("MultiColor")) {
             mySprite.color = otherSprite.color;
             Destroy(collidedObject.gameObject);
+            Invoke(nameof(ResetEffect), 10);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
@@ -113,6 +116,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Game Over");
                 Die();
             }
+            
         }
         //else if (collidedObject.gameObject.CompareTag("Finish"))
         //{
@@ -120,6 +124,10 @@ public class Player : MonoBehaviour
         //    Destroy(collidedObject.gameObject);
         //    Application.Quit();
         //}
+    }
+    public void ResetEffect()
+    {
+        mySprite.color = otherSprite.color;
     }
     private void Die()
     {
