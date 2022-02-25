@@ -9,7 +9,7 @@ public class ItemCollectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Switch")){
+        if (collision.gameObject.CompareTag("Switch") || collision.gameObject.CompareTag("MultiColor")){
             balls++;
             scoreText.text = "Score: " + balls;
         }

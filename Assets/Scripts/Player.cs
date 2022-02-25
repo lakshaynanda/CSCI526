@@ -48,7 +48,9 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
-            mySprite.color = otherSprite.color;
+            if (mySprite.color != Color.black) {
+                mySprite.color = otherSprite.color;
+            }
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
@@ -59,6 +61,9 @@ public class Player : MonoBehaviour
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
             Debug.Log("analytics" + analyticsResult);
             Die2();
+        } else if (collidedObject.gameObject.CompareTag("MultiColor")) {
+            mySprite.color = otherSprite.color;
+            Destroy(collidedObject.gameObject);
         }
     }
 
@@ -98,8 +103,10 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
-            if (mySprite.color != otherSprite.color)
-            {
+            // Debug.Log("Hello" + mySprite.color);
+            if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
+            {   
+                Debug.Log("Correct" + mySprite.color);
                 AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
                 Debug.Log("analytics" + analyticsResult);
                 gameOverCanvas.SetActive(true);
