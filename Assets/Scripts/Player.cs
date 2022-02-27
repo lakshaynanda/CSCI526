@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 7f;
     public float jumpForce = 14f;
+    public float transitionTime = 1f;
     public static int health = 3;
     [SerializeField] private Text healthText;
     public Color StartColor;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     public GameObject levelCompletedCanvas;
     public int startTime = 10;
     public int endTime;
+    public Animator transition;
     [SerializeField] private LayerMask jumpableGround;
 
 
@@ -148,11 +150,16 @@ public class Player : MonoBehaviour
     }
     private void CompletedLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+    IEnumerator LoadLevel(int levelIndex) {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
     }
     private void Die2()
     {
