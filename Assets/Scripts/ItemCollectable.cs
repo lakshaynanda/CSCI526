@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class ItemCollectable : MonoBehaviour
 {
     public static int balls;
+    
     [SerializeField] private Text scoreText;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

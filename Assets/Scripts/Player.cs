@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Analytics;
 using System;
 
@@ -9,6 +10,8 @@ public class Player : MonoBehaviour
 {
     public float speed = 7f;
     public float jumpForce = 14f;
+    public static int health = 3;
+    [SerializeField] private Text healthText;
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
+        healthText.text = "Health: " + health;
     }
 
     // Update is called once per frame
@@ -82,7 +86,7 @@ public class Player : MonoBehaviour
         {
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
-            gameOverCanvas.SetActive(true);
+            // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
         }
@@ -100,7 +104,7 @@ public class Player : MonoBehaviour
         {
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
-            gameOverCanvas.SetActive(true);
+            // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
         }
@@ -112,7 +116,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Correct" + mySprite.color);
                 AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
                 Debug.Log("analytics" + analyticsResult);
-                gameOverCanvas.SetActive(true);
+                // gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
             }
@@ -132,8 +136,15 @@ public class Player : MonoBehaviour
     private void Die()
     {
         ItemCollectable.balls = countballs;
+        health--;
         rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");
+        if (health > 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        } else {
+            SceneManager.LoadScene("End Screen");
+        }
+        
+        // anim.SetTrigger("death");
     }
     private void CompletedLevel()
     {
