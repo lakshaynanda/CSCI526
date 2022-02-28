@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Analytics;
 using System;
 
@@ -9,15 +10,22 @@ public class Player : MonoBehaviour
 {
     public float speed = 7f;
     public float jumpForce = 14f;
+    public float transitionTime = 1f;
+    public static int health = 3;
+    [SerializeField] private Text healthText;
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
+    public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
     private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
+    public int startTime = 10;
+    public int endTime;
+    public Animator transition;
     [SerializeField] private LayerMask jumpableGround;
 
 
@@ -30,6 +38,7 @@ public class Player : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
+        healthText.text = "Health: " + health;
     }
 
     // Update is called once per frame
@@ -48,7 +57,10 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
-            mySprite.color = otherSprite.color;
+            if (mySprite.color != Color.black)
+            {
+                mySprite.color = otherSprite.color;
+            }
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
@@ -60,8 +72,13 @@ public class Player : MonoBehaviour
             Debug.Log("analytics" + analyticsResult);
             Die2();
         }
+        else if (collidedObject.gameObject.CompareTag("MultiColor"))
+        {
+            mySprite.color = otherSprite.color;
+            Destroy(collidedObject.gameObject);
+            Invoke(nameof(ResetEffect), 10);
+        }
     }
-
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
@@ -74,7 +91,7 @@ public class Player : MonoBehaviour
         {
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
-            gameOverCanvas.SetActive(true);
+            // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
         }
@@ -92,20 +109,23 @@ public class Player : MonoBehaviour
         {
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
             Debug.Log("analytics" + analyticsResult);
-            gameOverCanvas.SetActive(true);
+            // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
-            if (mySprite.color != otherSprite.color)
+            // Debug.Log("Hello" + mySprite.color);
+            if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
             {
+                Debug.Log("Correct" + mySprite.color);
                 AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
                 Debug.Log("analytics" + analyticsResult);
-                gameOverCanvas.SetActive(true);
+                // gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
             }
+
         }
         //else if (collidedObject.gameObject.CompareTag("Finish"))
         //{
@@ -114,19 +134,39 @@ public class Player : MonoBehaviour
         //    Application.Quit();
         //}
     }
+    public void ResetEffect()
+    {
+        mySprite.color = otherSprite.color;
+    }
     private void Die()
     {
         ItemCollectable.balls = countballs;
+        health--;
         rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");
+        if (health > 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
+        else
+        {
+            SceneManager.LoadScene("End Screen");
+        }
+
+        // anim.SetTrigger("death");
     }
     private void CompletedLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
     }
     private void Die2()
     {
