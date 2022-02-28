@@ -8115,7 +8115,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 901292737}
   - {fileID: 1977425165}
-  speed: 2
+  speed: 4
 --- !u!61 &2108633903
 BoxCollider2D:
   m_ObjectHideFlags: 0

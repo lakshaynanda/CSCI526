@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
-            if (mySprite.color != Color.black) {
+            if (mySprite.color != Color.black)
+            {
                 mySprite.color = otherSprite.color;
             }
             Destroy(collidedObject.gameObject);
@@ -70,7 +71,9 @@ public class Player : MonoBehaviour
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
             Debug.Log("analytics" + analyticsResult);
             Die2();
-        } else if (collidedObject.gameObject.CompareTag("MultiColor")) {
+        }
+        else if (collidedObject.gameObject.CompareTag("MultiColor"))
+        {
             mySprite.color = otherSprite.color;
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
@@ -114,7 +117,7 @@ public class Player : MonoBehaviour
         {
             // Debug.Log("Hello" + mySprite.color);
             if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
-            {   
+            {
                 Debug.Log("Correct" + mySprite.color);
                 AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
                 Debug.Log("analytics" + analyticsResult);
@@ -122,7 +125,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Game Over");
                 Die();
             }
-            
+
         }
         //else if (collidedObject.gameObject.CompareTag("Finish"))
         //{
@@ -140,12 +143,15 @@ public class Player : MonoBehaviour
         ItemCollectable.balls = countballs;
         health--;
         rb.bodyType = RigidbodyType2D.Static;
-        if (health > 0) {
+        if (health > 0)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        } else {
+        }
+        else
+        {
             SceneManager.LoadScene("End Screen");
         }
-        
+
         // anim.SetTrigger("death");
     }
     private void CompletedLevel()
@@ -156,7 +162,8 @@ public class Player : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-    IEnumerator LoadLevel(int levelIndex) {
+    IEnumerator LoadLevel(int levelIndex)
+    {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
