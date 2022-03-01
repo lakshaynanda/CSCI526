@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 14f;
     public float transitionTime = 1f;
     public static int health = 3;
+    [SerializeField] private Text scoreText;
 
     [SerializeField] private Text healthText;
     public Color StartColor;
@@ -76,6 +77,8 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
+            ItemCollectable.balls -= 5;
+            scoreText.text = "Score: " + ItemCollectable.balls;
             mySprite.color = otherSprite.color;
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
