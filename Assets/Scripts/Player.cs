@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 14f;
     public float transitionTime = 1f;
     public static int health = 3;
+
     [SerializeField] private Text healthText;
     public Color StartColor;
     private SpriteRenderer mySprite;
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
+        healthText.text = "Health: " + health;
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
@@ -172,4 +174,11 @@ public class Player : MonoBehaviour
     {
         Invoke("CompletedLevel", .2f);
     }
+
+    // public void incrHealth() {
+    //     if (health < 3 && ItemCollectable.balls > 5) {
+    //         health++;
+    //         ItemCollectable.balls -= 5;
+    //     }
+    // }
 }
