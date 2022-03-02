@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
             Debug.Log("Level Completed: " + scene.name);
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
             Debug.Log("analytics" + analyticsResult);
-            Die2();
+            //Die2();
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
@@ -159,29 +159,31 @@ public class Player : MonoBehaviour
 
         // anim.SetTrigger("death");
     }
-    private void CompletedLevel()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    }
+    //private void CompletedLevel()
+    //{
+    //    StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    //}
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);
-    }
-    private void Die2()
-    {
-        Invoke("CompletedLevel", .2f);
-    }
+    //IEnumerator LoadLevel(int levelIndex)
+    //{
+    //    transition.SetTrigger("Start");
+    //    yield return new WaitForSeconds(transitionTime);
+    //    SceneManager.LoadScene(levelIndex);
+    //}
+    //private void Die2()
+    //{
+    //    Invoke("CompletedLevel", .2f);
+    //}
 
-    // public void incrHealth() {
-    //     if (health < 3 && ItemCollectable.balls > 5) {
-    //         health++;
-    //         ItemCollectable.balls -= 5;
-    //     }
-    // }
+    public void incrHealth()
+    {
+        if (health < 3 && ItemCollectable.balls > 5)
+        {
+            health++;
+            ItemCollectable.balls -= 5;
+        }
+    }
 }
