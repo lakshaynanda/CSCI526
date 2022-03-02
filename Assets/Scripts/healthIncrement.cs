@@ -4,25 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 public class healthIncrement : MonoBehaviour
 {
-    public bool hasTaken = false;
+    public bool hasTaken;
     public GameObject button1;
     [SerializeField] private Text scoreText;
+
     void Start() {
-        incrHealth();
+        hasTaken = false;
         button1 = GameObject.Find("HealthPlus");
-        button1.SetActive(true);
+        button1.SetActive(false);
     }
-    void enableButton() {
-        button1.SetActive(true);   
+
+    void Update() {
+        // hasTaken is being set to false after each death and level restart -> need to prevent this
+        if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
+            enableButton();
+        }
     }
-    void removeButton() {
-        button1.SetActive(false);   
-    }  
+
     public void incrHealth() {
-        // if (ItemCollectable.balls > 5) {
-        //     button1.SetActive(true);
-        // }
-        if (Player.health < 3 && ItemCollectable.balls > 5 && hasTaken == false) {
+        if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
             Player.health++;
             ItemCollectable.balls -= 5;
             scoreText.text = "Score: " + ItemCollectable.balls;
@@ -30,4 +30,12 @@ public class healthIncrement : MonoBehaviour
             removeButton();
         }
     }
+
+    void enableButton() {
+        button1.SetActive(true);   
+    }
+    void removeButton() {
+        button1.SetActive(false);   
+    }  
+
 }
