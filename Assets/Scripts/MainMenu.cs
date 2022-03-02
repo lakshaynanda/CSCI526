@@ -15,14 +15,4 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exit");
         Application.Quit(); 
     }
-
-    public void PlayLevel1()
-    {
-        SceneManager.LoadScene("Level 1");
-    }
-
-    public void PlayLevel2()
-    {
-        SceneManager.LoadScene("Level 2");
-    }
 }
