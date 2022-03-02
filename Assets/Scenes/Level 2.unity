@@ -2231,7 +2231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5791626287013375155, guid: ffcc6a06c929f2c458b237584047b2a8, type: 3}
       propertyPath: m_Name
-      value: WhiteColorShifter (2)
+      value: L1WhiteColorShifter (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5791626287013375820, guid: ffcc6a06c929f2c458b237584047b2a8, type: 3}
       propertyPath: m_RootOrder
