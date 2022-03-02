@@ -3468,7 +3468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788386249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.61, y: -12.15, z: 0}
+  m_LocalPosition: {x: 29.59, y: -12.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 612996862}
@@ -4657,7 +4657,6 @@ MonoBehaviour:
   transitionTime: 1
   scoreText: {fileID: 1311354690}
   healthText: {fileID: 1440000479}
-  hasTakenLife: 0
   StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
   rb: {fileID: 1187279247}
@@ -4697,7 +4696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e78084476c2e4ff98e6127cc21bdedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasTaken: 0
   button1: {fileID: 262460370}
   scoreText: {fileID: 1311354690}
 --- !u!1001 &1209472895
