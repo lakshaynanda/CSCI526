@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class healthIncrement : MonoBehaviour
 {
-    public bool hasTaken;
+    public static bool hasTaken;
     public GameObject button1;
     [SerializeField] private Text scoreText;
 
