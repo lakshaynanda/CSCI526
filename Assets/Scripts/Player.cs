@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public int endTime;
     public Animator transition;
     [SerializeField] private LayerMask jumpableGround;
+    public bool powerUpCollected = false;
 
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
         healthText.text = "Health: " + health;
+        sendLevelStartedAnalytics();
     }
 
     // Update is called once per frame
@@ -70,9 +72,6 @@ public class Player : MonoBehaviour
         {
             levelCompletedCanvas.SetActive(true);
             Scene scene = collidedObject.gameObject.scene;
-            Debug.Log("Level Completed: " + scene.name);
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
-            Debug.Log("analytics" + analyticsResult);
             Die2();
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
@@ -82,6 +81,7 @@ public class Player : MonoBehaviour
             mySprite.color = otherSprite.color;
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
+            powerUpCollected = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collidedObject)
@@ -92,10 +92,10 @@ public class Player : MonoBehaviour
 
     private void checkTrapCollision(Collision2D collidedObject)
     {
+        Scene scene = collidedObject.gameObject.scene;
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
-            Debug.Log("analytics" + analyticsResult);
+            triggerPlayerDeathEvent(collidedObject.gameObject.name);
             // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -112,8 +112,7 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Border"))
         {
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
-            Debug.Log("analytics" + analyticsResult);
+            triggerPlayerDeathEvent(collidedObject.gameObject.name);
             // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
@@ -124,8 +123,7 @@ public class Player : MonoBehaviour
             if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
             {
                 Debug.Log("Correct" + mySprite.color);
-                AnalyticsResult analyticsResult = Analytics.CustomEvent("Player Death: " + collidedObject.gameObject.name);
-                Debug.Log("analytics" + analyticsResult);
+                triggerPlayerDeathEvent(collidedObject.gameObject.name);
                 // gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
@@ -139,6 +137,14 @@ public class Player : MonoBehaviour
         //    Application.Quit();
         //}
     }
+    private void triggerPlayerDeathEvent(String spriteName)
+    {
+        AnalyticsEvent.Custom("playerDeathEvent", new Dictionary<string,object>
+        {
+            {"location", spriteName},
+            {"level", SceneManager.GetActiveScene().name}
+        });
+    }
     public void ResetEffect()
     {
         mySprite.color = otherSprite.color;
@@ -150,6 +156,7 @@ public class Player : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)
         {
+            TimerCountdown.secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
@@ -161,6 +168,7 @@ public class Player : MonoBehaviour
     }
     private void CompletedLevel()
     {
+        sendLevelCompletedAnalytics();
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     private bool isGrounded()
@@ -176,6 +184,46 @@ public class Player : MonoBehaviour
     private void Die2()
     {
         Invoke("CompletedLevel", .2f);
+    }
+    public void sendLevelCompletedAnalytics()
+    {
+        AnalyticsEvent.Custom("scoreEvent", new Dictionary<string, object>
+        {
+            { "score", ItemCollectable.balls },
+            { "level", SceneManager.GetActiveScene().name}
+        });
+        AnalyticsEvent.Custom("powerUp", new Dictionary<string, object>
+        {
+            { "powerUpCollected", powerUpCollected },
+            { "level", SceneManager.GetActiveScene().name}
+        });
+        AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
+        {
+           { "timeLeft", TimerCountdown.secondsLeft},
+            { "level", SceneManager.GetActiveScene().name}
+        });
+
+        if(SceneManager.GetActiveScene().name=="Level 2")
+        {
+             AnalyticsEvent.Custom("gameEnded");
+        };
+        AnalyticsEvent.Custom("livesRemaining", new Dictionary<string, object>
+        {
+            { "health", health},
+            { "level", SceneManager.GetActiveScene().name}
+        });
+    }
+     public void sendLevelStartedAnalytics()
+    {
+        if(SceneManager.GetActiveScene().name=="Level 1")
+        {
+             AnalyticsEvent.Custom("gameStarted");
+        };
+         AnalyticsEvent.Custom("livesRemaining", new Dictionary<string, object>
+        {
+            { "health", health},
+            { "level", SceneManager.GetActiveScene().name}
+        });
     }
 
     // public void incrHealth() {
