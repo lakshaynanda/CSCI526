@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
 using System;
+using TMPro;
+
 
 public class Player : MonoBehaviour
 {
@@ -19,7 +21,8 @@ public class Player : MonoBehaviour
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
-    public SpriteRenderer platformSprite;
+    private TextMeshProUGUI multiColourText;
+    [SerializeField] public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -29,6 +32,21 @@ public class Player : MonoBehaviour
     public int startTime = 10;
     public int endTime;
     public Animator transition;
+    private GameObject[] MultiColourTexts;
+    [SerializeField] public int numberOfMultiColours;
+    private int keepCountMulti = 0;
+
+    private float stickyTimer = 10;
+    private Boolean stickyLimiter = false;
+    private Boolean startStickyTimer = false;
+    private Boolean startMulticolourTimer = false;
+    private GameObject[] stickyTexts;
+    private TextMeshProUGUI stickyPlatformText;
+    private float seconds;
+    [SerializeField] public int numberOfStickyPlatforms;
+    private int keepCount = 0;
+    
+
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
 
@@ -43,6 +61,10 @@ public class Player : MonoBehaviour
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
         healthText.text = "Health: " + health;
+        stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
+        stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
+        MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
+        multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
         sendLevelStartedAnalytics();
     }
 
@@ -50,11 +72,28 @@ public class Player : MonoBehaviour
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (stickyLimiter)
+        {
+            rb.velocity = new Vector2(dirX * 1f, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
+        }
+        if (Input.GetButtonDown("Jump") && isGrounded() && !stickyLimiter)
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
+        if ((startMulticolourTimer || startStickyTimer) && stickyTimer >= 0f)
+        {
+            stickyTimer -= Time.deltaTime;
+            seconds = Mathf.FloorToInt(stickyTimer % 60);
+            if (startStickyTimer)
+                stickyPlatformText.SetText("Low speed and no jump for " + seconds + " secs");
+            else if (startMulticolourTimer)
+                multiColourText.SetText("Walk over any color for " + seconds + " secs");
+        }
+
         healthText.text = "Health: " + health;
     }
 
@@ -87,11 +126,34 @@ public class Player : MonoBehaviour
             ItemCollectable.balls -= 5;
             scoreText.text = "Score: " + ItemCollectable.balls;
             mySprite.color = otherSprite.color;
+            startMulticolourTimer = true;
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
             powerUpCollected = true;
+        } else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
+        {
+            Destroy(collidedObject.gameObject);
+            stickyLimiter = true;
+            startStickyTimer = true;
+            //Debug.Log("Text Name : " + stickyPlatformText.transform.name);
+            Invoke(nameof(stopStickyEffect), 10);
+        } 
+    }
+
+    private void stopStickyEffect()
+    {
+        stickyLimiter = false;
+        startStickyTimer = false;
+        stickyTimer = 10f;
+        stickyPlatformText.SetText("");
+        keepCount++;
+        if (keepCount < numberOfStickyPlatforms)
+        {
+            stickyPlatformText = stickyTexts[keepCount].GetComponent<TextMeshProUGUI>();
         }
     }
+
+
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
@@ -150,6 +212,14 @@ public class Player : MonoBehaviour
     public void ResetEffect()
     {
         mySprite.color = otherSprite.color;
+        startMulticolourTimer = false;
+        stickyTimer = 10f;
+        multiColourText.SetText("");
+        keepCountMulti++;
+        if (keepCountMulti < numberOfMultiColours)
+        {
+            multiColourText = MultiColourTexts[keepCountMulti].GetComponent<TextMeshProUGUI>();
+        }
     }
     private void Die()
     {
