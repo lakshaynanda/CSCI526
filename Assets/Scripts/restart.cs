@@ -12,6 +12,6 @@ public class restart : MonoBehaviour
         Player.health = 3;
         scoreTextFinal.text = "Score: " + ItemCollectable.balls;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-        ItemCollectable.balls = 0;
+        //ItemCollectable.balls = 0;
     }
 }

@@ -21,28 +21,35 @@ public class TimerCountdown : MonoBehaviour
 
     void Update()
     {
-        if (takingAway == false && secondsLeft > 0)
+        if (Player.isLevelComplete)
         {
-            StartCoroutine(TimerTake());
+            StopCoroutine(TimerTake());
+        }
+        else
+        {
+            if (takingAway == false && secondsLeft > 0)
+            {
+                StartCoroutine(TimerTake());
+            }
         }
     }
 
-    IEnumerator TimerTake()
+    public IEnumerator TimerTake()
     {
         takingAway = true;
         yield return new WaitForSeconds(1);
         secondsLeft -= 1;
-        if (secondsLeft <= 0) {
+        if (secondsLeft <= 0)
+        {
             ItemCollectable.balls = 0;
             // rb.bodyType = RigidbodyType2D.Static;
             // anim.SetTrigger("death");
+            StopCoroutine(TimerTake());
+            secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         textDisplay.GetComponent<Text>().text = "Timer: " + secondsLeft;
         takingAway = false;
 
     }
-
-
-
 }

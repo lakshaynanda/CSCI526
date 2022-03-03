@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 14f;
     public float transitionTime = 1f;
     public static int health = 3;
+    public static bool isLevelComplete = false;
     [SerializeField] private Text scoreText;
 
     [SerializeField] private Text healthText;
@@ -70,12 +71,15 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
+            isLevelComplete = true;
             levelCompletedCanvas.SetActive(true);
             Scene scene = collidedObject.gameObject.scene;
             Debug.Log("Level Completed: " + scene.name);
             AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
             Debug.Log("analytics" + analyticsResult);
             sendLevelCompletedAnalytics();
+            rb.bodyType = RigidbodyType2D.Static;
+            //StopCoroutine(new TimerCountdown().TimerTake());
             //Die2();
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
