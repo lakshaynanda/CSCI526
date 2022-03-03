@@ -110,13 +110,9 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
+            sendLevelCompletedAnalytics();
             isLevelComplete = true;
             levelCompletedCanvas.SetActive(true);
-            Scene scene = collidedObject.gameObject.scene;
-            Debug.Log("Level Completed: " + scene.name);
-            AnalyticsResult analyticsResult = Analytics.CustomEvent("Level Completed: " + scene.name);
-            Debug.Log("analytics" + analyticsResult);
-            sendLevelCompletedAnalytics();
             rb.bodyType = RigidbodyType2D.Static;
             //StopCoroutine(new TimerCountdown().TimerTake());
             //Die2();
@@ -162,7 +158,6 @@ public class Player : MonoBehaviour
 
     private void checkTrapCollision(Collision2D collidedObject)
     {
-        Scene scene = collidedObject.gameObject.scene;
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
@@ -275,7 +270,7 @@ public class Player : MonoBehaviour
             { "score", ItemCollectable.balls },
             { "level", SceneManager.GetActiveScene().name}
         });
-        AnalyticsEvent.Custom("powerUp", new Dictionary<string, object>
+        AnalyticsEvent.Custom("powerUpEvent", new Dictionary<string, object>
         {
             { "powerUpCollected", powerUpCollected },
             { "level", SceneManager.GetActiveScene().name}
@@ -288,12 +283,13 @@ public class Player : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            AnalyticsEvent.Custom("gameEnded");
+            AnalyticsEvent.Custom("gameEndedEvent");
         };
-        AnalyticsEvent.Custom("livesRemaining", new Dictionary<string, object>
+        AnalyticsEvent.Custom("livesRemainingEvent", new Dictionary<string, object>
         {
             { "health", health},
-            { "level", SceneManager.GetActiveScene().name}
+            { "level", SceneManager.GetActiveScene().name},
+            { "location", "end"}
         });
     }
 
@@ -301,12 +297,13 @@ public class Player : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            AnalyticsEvent.Custom("gameStarted");
+            AnalyticsEvent.Custom("gameStartedEvent");
         };
-        AnalyticsEvent.Custom("livesRemaining", new Dictionary<string, object>
+        AnalyticsEvent.Custom("livesRemainingEvent", new Dictionary<string, object>
         {
             { "health", health},
-            { "level", SceneManager.GetActiveScene().name}
+            { "level", SceneManager.GetActiveScene().name},
+            { "location", "start"}
         });
     }
 
