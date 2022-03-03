@@ -7,6 +7,7 @@ using UnityEngine.Analytics;
 using System;
 using TMPro;
 
+
 public class Player : MonoBehaviour
 {
     public float speed = 7f;
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer otherSprite;
     private TextMeshProUGUI multiColourText;
     [SerializeField] public SpriteRenderer platformSprite;
+    public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -31,7 +33,6 @@ public class Player : MonoBehaviour
     public int endTime;
     public Animator transition;
 
-    //Sticky limiter variables
     private float stickyTimer = 10;
     private Boolean stickyLimiter = false;
     private Boolean startStickyTimer = false;
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
         healthText.text = "Health: " + health;
         stickyPlatformText = GameObject.Find("Sticky Text").GetComponent<TextMeshProUGUI>();
         multiColourText = GameObject.Find("Multicolor Text").GetComponent<TextMeshProUGUI>();
+
         sendLevelStartedAnalytics();
     }
 
@@ -83,6 +85,12 @@ public class Player : MonoBehaviour
             else if(startMulticolourTimer)
                 multiColourText.SetText("Walk over any color for " + seconds + " secs");
         }
+        rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
+        if (Input.GetButtonDown("Jump") && isGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 14f);
+        }
+
         healthText.text = "Health: " + health;
     }
 
@@ -115,6 +123,7 @@ public class Player : MonoBehaviour
             startMulticolourTimer = true;
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
+            powerUpCollected = true;
         } else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
         {
             Destroy(collidedObject.gameObject);
@@ -132,6 +141,7 @@ public class Player : MonoBehaviour
         stickyTimer = 10f;
         stickyPlatformText.SetText("");
     }
+
 
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
@@ -194,7 +204,6 @@ public class Player : MonoBehaviour
         startMulticolourTimer = false;
         stickyTimer = 10f;
         multiColourText.SetText("");
-
     }
     private void Die()
     {
