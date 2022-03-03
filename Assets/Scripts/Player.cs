@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     private SpriteRenderer otherSprite;
     private TextMeshProUGUI multiColourText;
     [SerializeField] public SpriteRenderer platformSprite;
-    public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -32,13 +31,20 @@ public class Player : MonoBehaviour
     public int startTime = 10;
     public int endTime;
     public Animator transition;
+    private GameObject[] MultiColourTexts;
+    [SerializeField] public int numberOfMultiColours;
+    private int keepCountMulti = 0;
 
     private float stickyTimer = 10;
     private Boolean stickyLimiter = false;
     private Boolean startStickyTimer = false;
     private Boolean startMulticolourTimer = false;
+    private GameObject[] stickyTexts;
     private TextMeshProUGUI stickyPlatformText;
     private float seconds;
+    [SerializeField] public int numberOfStickyPlatforms;
+    private int keepCount = 0;
+    
 
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
@@ -54,9 +60,10 @@ public class Player : MonoBehaviour
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
         healthText.text = "Health: " + health;
-        stickyPlatformText = GameObject.Find("Sticky Text").GetComponent<TextMeshProUGUI>();
-        multiColourText = GameObject.Find("Multicolor Text").GetComponent<TextMeshProUGUI>();
-
+        stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
+        stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
+        MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
+        multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
         sendLevelStartedAnalytics();
     }
 
@@ -76,19 +83,14 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
-        if((startMulticolourTimer || startStickyTimer) && stickyTimer >= 0f)
+        if ((startMulticolourTimer || startStickyTimer) && stickyTimer >= 0f)
         {
             stickyTimer -= Time.deltaTime;
             seconds = Mathf.FloorToInt(stickyTimer % 60);
-            if(startStickyTimer)
-                stickyPlatformText.SetText("Low speed and no jump for " +  seconds + " secs");
-            else if(startMulticolourTimer)
+            if (startStickyTimer)
+                stickyPlatformText.SetText("Low speed and no jump for " + seconds + " secs");
+            else if (startMulticolourTimer)
                 multiColourText.SetText("Walk over any color for " + seconds + " secs");
-        }
-        rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
-        if (Input.GetButtonDown("Jump") && isGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
 
         healthText.text = "Health: " + health;
@@ -129,7 +131,7 @@ public class Player : MonoBehaviour
             Destroy(collidedObject.gameObject);
             stickyLimiter = true;
             startStickyTimer = true;
-            Debug.Log("sticyTimer : " + startStickyTimer);
+            //Debug.Log("Text Name : " + stickyPlatformText.transform.name);
             Invoke(nameof(stopStickyEffect), 10);
         } 
     }
@@ -140,6 +142,11 @@ public class Player : MonoBehaviour
         startStickyTimer = false;
         stickyTimer = 10f;
         stickyPlatformText.SetText("");
+        keepCount++;
+        if (keepCount < numberOfStickyPlatforms)
+        {
+            stickyPlatformText = stickyTexts[keepCount].GetComponent<TextMeshProUGUI>();
+        }
     }
 
 
@@ -204,6 +211,11 @@ public class Player : MonoBehaviour
         startMulticolourTimer = false;
         stickyTimer = 10f;
         multiColourText.SetText("");
+        keepCountMulti++;
+        if (keepCountMulti < numberOfMultiColours)
+        {
+            multiColourText = MultiColourTexts[keepCountMulti].GetComponent<TextMeshProUGUI>();
+        }
     }
     private void Die()
     {
