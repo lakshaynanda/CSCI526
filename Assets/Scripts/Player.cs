@@ -61,10 +61,16 @@ public class Player : MonoBehaviour
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
         healthText.text = "Health: " + health;
-        stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
-        stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
-        MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
-        multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
+        if (stickyTexts.Length > 0)
+        {
+            stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
+            stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
+        }
+        if (MultiColourTexts.Length > 0)
+        {
+            MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
+            multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
+        }
         sendLevelStartedAnalytics();
     }
 
