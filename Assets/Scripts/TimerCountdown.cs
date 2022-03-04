@@ -42,8 +42,6 @@ public class TimerCountdown : MonoBehaviour
         if (secondsLeft <= 0)
         {
             ItemCollectable.balls = 0;
-            // rb.bodyType = RigidbodyType2D.Static;
-            // anim.SetTrigger("death");
             StopCoroutine(TimerTake());
             secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);

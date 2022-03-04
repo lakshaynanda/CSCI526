@@ -4844,6 +4844,7 @@ MonoBehaviour:
   textDisplay: {fileID: 1801576261}
   takingAway: 0
   rb: {fileID: 1187279247}
+  countballs: 0
 --- !u!114 &1187279254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,7 +5549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health: 0'
+  m_Text: 'Lives: 0'
 --- !u!222 &1440000480
 CanvasRenderer:
   m_ObjectHideFlags: 0

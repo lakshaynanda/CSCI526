@@ -9,6 +9,7 @@ public class GameRestart : MonoBehaviour
     public void StartGame() 
     {
         Player.health = 3;
+        PlayerLives.hasTaken = false;
         scoreTextFinal.text = "Score: " + ItemCollectable.balls;
        if (SceneManager.GetActiveScene().name == "End Screen Tutorial")
         {

@@ -9,7 +9,6 @@ public class LadderMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    // Update is called once per frame
     void Update()
     {
         if (isLadder && Input.GetButtonDown("Jump"))

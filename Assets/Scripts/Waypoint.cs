@@ -8,7 +8,6 @@ public class Waypoint : MonoBehaviour
     private int currentWaypoint = 0;
     [SerializeField] private float speed = 2f;
 
-    // Update is called once per frame
     void Update()
     {
         if(Vector2.Distance(waypoints[currentWaypoint].transform.position,transform.position) < .1f)

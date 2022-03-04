@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        Player.health = 3;
         SceneManager.LoadScene("Level 1");
     }
 

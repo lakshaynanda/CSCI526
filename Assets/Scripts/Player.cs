@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     private GameObject[] stickyTexts;
     private TextMeshProUGUI stickyPlatformText;
     private float seconds;
+    private bool freeze;
     [SerializeField] public int numberOfStickyPlatforms;
     private int keepCount = 0;
 
@@ -50,18 +51,16 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-
         countballs = ItemCollectable.balls;
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
-        healthText.text = "Health: " + health;
+        healthText.text = "Lives: " + health;
+        freeze = true;
         if (stickyTexts.Length > 0)
         {
             stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
@@ -75,7 +74,6 @@ public class Player : MonoBehaviour
         sendLevelStartedAnalytics();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
@@ -85,7 +83,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(dirX * 5f, rb.velocity.y);
+            rb.velocity = (freeze == true ? new Vector2(0f, rb.velocity.y) : new Vector2(dirX * 5f, rb.velocity.y));
         }
         if (Input.GetButtonDown("Jump") && isGrounded() && !stickyLimiter)
         {
@@ -101,7 +99,7 @@ public class Player : MonoBehaviour
                 multiColourText.SetText("Walk over any color for " + seconds + " secs");
         }
 
-        healthText.text = "Health: " + health;
+        healthText.text = "Lives: " + health;
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
@@ -121,7 +119,6 @@ public class Player : MonoBehaviour
             isLevelComplete = true;
             levelCompletedCanvas.SetActive(true);
             rb.bodyType = RigidbodyType2D.Static;
-            //Die2();
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
@@ -138,7 +135,6 @@ public class Player : MonoBehaviour
             Destroy(collidedObject.gameObject);
             stickyLimiter = true;
             startStickyTimer = true;
-            //Debug.Log("Text Name : " + stickyPlatformText.transform.name);
             Invoke(nameof(stopStickyEffect), 10);
         }
     }
@@ -168,8 +164,6 @@ public class Player : MonoBehaviour
         if (collidedObject.gameObject.CompareTag("Trap"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
-            // gameOverCanvas.SetActive(true);
-            Debug.Log("Game Over");
             Die();
         }
     }
@@ -185,22 +179,23 @@ public class Player : MonoBehaviour
         if (collidedObject.gameObject.CompareTag("Border"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
-            // gameOverCanvas.SetActive(true);
             Debug.Log("Game Over");
             Die();
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
-            // Debug.Log("Hello" + mySprite.color);
             if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
             {
                 Debug.Log("Correct" + mySprite.color);
                 triggerPlayerDeathEvent(collidedObject.gameObject.name);
-                // gameOverCanvas.SetActive(true);
                 Debug.Log("Game Over");
                 Die();
             }
-
+            if (freeze == true)
+            {
+                mySprite.color = otherSprite.color;
+                freeze = false;
+            }
         }
     }
     private void triggerPlayerDeathEvent(String spriteName)
@@ -225,8 +220,6 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log(ItemCollectable.balls);
-        Debug.Log(countballs);
         PlayerPrefs.SetInt("Score", ItemCollectable.balls);
         ItemCollectable.balls = countballs;
         health--;
@@ -247,29 +240,12 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("End Screen");
             }
         }
-        // anim.SetTrigger("death");
     }
-
-    //private void CompletedLevel()
-    //{
-    //    StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    //}
 
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-
-    //IEnumerator LoadLevel(int levelIndex)
-    //{
-    //    transition.SetTrigger("Start");
-    //    yield return new WaitForSeconds(transitionTime);
-    //    SceneManager.LoadScene(levelIndex);
-    //}
-    //private void Die2()
-    //{
-    //    Invoke("CompletedLevel", .2f);
-    //}
 
     public void incrHealth()
     {
@@ -322,11 +298,4 @@ public class Player : MonoBehaviour
             { "location", "start"}
         });
     }
-
-    // public void incrHealth() {
-    //     if (health < 3 && ItemCollectable.balls > 5) {
-    //         health++;
-    //         ItemCollectable.balls -= 5;
-    //     }
-    // }
 }

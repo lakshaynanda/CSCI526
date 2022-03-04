@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Finish : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -18,8 +17,6 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel() 
     {
-        Debug.Log("In finish");
-        Debug.Log(ItemCollectable.balls);
         PlayerPrefs.SetInt("Score", ItemCollectable.balls);
         if(SceneManager.GetActiveScene().name == "Tutorial"){
         
