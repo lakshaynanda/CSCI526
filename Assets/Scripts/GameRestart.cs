@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class restart : MonoBehaviour
+public class GameRestart : MonoBehaviour
 {
     [SerializeField] private Text scoreTextFinal;
     public void StartGame() 

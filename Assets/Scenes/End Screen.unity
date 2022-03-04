@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 443984761}
   - component: {fileID: 443984760}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RestartGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 1758666678}
   - component: {fileID: 1758666677}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RestartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
