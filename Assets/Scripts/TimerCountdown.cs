@@ -11,7 +11,7 @@ public class TimerCountdown : MonoBehaviour
     public bool takingAway = false;
     public Rigidbody2D rb;
     private Animator anim;
-    public static int countballs;
+    public int countballs;
 
     void Start()
     {

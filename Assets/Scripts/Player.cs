@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         countballs = ItemCollectable.balls;
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
@@ -118,7 +119,6 @@ public class Player : MonoBehaviour
             Debug.Log("analytics" + analyticsResult);
             sendLevelCompletedAnalytics();
             rb.bodyType = RigidbodyType2D.Static;
-            //StopCoroutine(new TimerCountdown().TimerTake());
             //Die2();
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
@@ -223,6 +223,9 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
+        Debug.Log(ItemCollectable.balls);
+        Debug.Log(countballs); 
+        PlayerPrefs.SetInt("Score", ItemCollectable.balls);
         ItemCollectable.balls = countballs;
         health--;
         rb.bodyType = RigidbodyType2D.Static;
