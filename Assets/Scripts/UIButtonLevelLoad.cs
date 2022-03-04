@@ -3,16 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonLevelLoad : MonoBehaviour
 {
-    //public string LevelToLoad;
-
     public void restartLevel()
     {
         //Load the level from LevelToLoad
         resetValues();
         ItemCollectable.balls = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            SceneManager.LoadScene("Home");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
+    public void goHome()
+    {
+        SceneManager.LoadScene("Home");
+
+    }
     public void nextLevel()
     {
         //Load the level from LevelToLoad

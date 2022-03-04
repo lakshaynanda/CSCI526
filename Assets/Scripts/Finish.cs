@@ -21,7 +21,11 @@ public class Finish : MonoBehaviour
         Debug.Log("In finish");
         Debug.Log(ItemCollectable.balls);
         PlayerPrefs.SetInt("Score", ItemCollectable.balls);
+        if(SceneManager.GetActiveScene().name == "Tutorial"){
+        
+        }else{
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         TimerCountdown.secondsLeft = 120;
     }
 }

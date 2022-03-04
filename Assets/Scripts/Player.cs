@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     private float seconds;
     [SerializeField] public int numberOfStickyPlatforms;
     private int keepCount = 0;
-    
+
 
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         countballs = ItemCollectable.balls;
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
@@ -132,14 +132,15 @@ public class Player : MonoBehaviour
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
             powerUpCollected = true;
-        } else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
+        }
+        else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
         {
             Destroy(collidedObject.gameObject);
             stickyLimiter = true;
             startStickyTimer = true;
             //Debug.Log("Text Name : " + stickyPlatformText.transform.name);
             Invoke(nameof(stopStickyEffect), 10);
-        } 
+        }
     }
 
     private void stopStickyEffect()
@@ -225,7 +226,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Debug.Log(ItemCollectable.balls);
-        Debug.Log(countballs); 
+        Debug.Log(countballs);
         PlayerPrefs.SetInt("Score", ItemCollectable.balls);
         ItemCollectable.balls = countballs;
         health--;
@@ -237,9 +238,15 @@ public class Player : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("End Screen");
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                SceneManager.LoadScene("End Screen Tutorial");
+            }
+            else
+            {
+                SceneManager.LoadScene("End Screen");
+            }
         }
-
         // anim.SetTrigger("death");
     }
 
