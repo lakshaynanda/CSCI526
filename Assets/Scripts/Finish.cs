@@ -18,6 +18,9 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel() 
     {
+        Debug.Log("In finish");
+        Debug.Log(ItemCollectable.balls);
+        PlayerPrefs.SetInt("Score", ItemCollectable.balls);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         TimerCountdown.secondsLeft = 120;
     }
