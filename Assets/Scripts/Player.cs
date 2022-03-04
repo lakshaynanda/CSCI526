@@ -61,12 +61,12 @@ public class Player : MonoBehaviour
         levelCompletedCanvas.SetActive(false);
         healthText.text = "Lives: " + health;
         freeze = true;
-        if (stickyTexts.Length > 0)
+        if (numberOfStickyPlatforms > 0)
         {
             stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
             stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
         }
-        if (MultiColourTexts.Length > 0)
+        if (numberOfMultiColours > 0)
         {
             MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
             multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
@@ -83,7 +83,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb.velocity = (freeze == true ? new Vector2(0f, rb.velocity.y) : new Vector2(dirX * 5f, rb.velocity.y));
+            if(!isLevelComplete)
+                rb.velocity = (freeze == true ? new Vector2(0f, rb.velocity.y) : new Vector2(dirX * 5f, rb.velocity.y));
         }
         if (Input.GetButtonDown("Jump") && isGrounded() && !stickyLimiter)
         {
