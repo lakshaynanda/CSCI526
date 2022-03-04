@@ -6,17 +6,30 @@ using UnityEngine.UI;
 
 public class GameCompleted : MonoBehaviour
 {
-    [SerializeField] private Text scoreTextFinal;
+    [SerializeField] private Text gameOverScoreTextFinal;
+    [SerializeField] private Text gameCompleteScoreTextFinal;
+    [SerializeField] private GameObject GameOverCanvas;
+    [SerializeField] private GameObject GameCompletedCanvas;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("I am here");
+        if (Player.health == 0)
+        {
+            GameCompletedCanvas.SetActive(false);
+            GameOverCanvas.SetActive(true);
+        }
+        else
+        {
+            GameOverCanvas.SetActive(false);
+            GameCompletedCanvas.SetActive(true);
+        }
         int score = 0;
         if (PlayerPrefs.HasKey("Score"))
         {
             Debug.Log("Inside if");
             score = PlayerPrefs.GetInt("Score");
         }
-        scoreTextFinal.text = "Score: " + score;
+        gameOverScoreTextFinal.text = "Score: " + score;
+        gameCompleteScoreTextFinal.text = "Score: " + score;
     }
 }
