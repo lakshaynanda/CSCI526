@@ -273,6 +273,11 @@ public class Player : MonoBehaviour
            { "timeLeft", TimerCountdown.secondsLeft},
             { "level", SceneManager.GetActiveScene().name}
         });
+         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
+        {
+           { "timeTaken", 120-(TimerCountdown.secondsLeft)},
+            { "level", SceneManager.GetActiveScene().name}
+        });
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
