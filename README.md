@@ -1,3 +1,3 @@
 WebGL Release for Prototype Presentation: 
 
-https://play.unity.com/mg/other/blendin-u
+https://play.unity.com/mg/other/webgl-builds-150145
