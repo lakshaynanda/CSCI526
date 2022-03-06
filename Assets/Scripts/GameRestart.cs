@@ -15,7 +15,7 @@ public class GameRestart : MonoBehaviour
         {
          SceneManager.LoadScene("Tutorial");
         }else{
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("Home");
     }
    ItemCollectable.balls = 0;
 }
