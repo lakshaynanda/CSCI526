@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
-            if (mySprite.color != Color.black)
+            if (mySprite.color != Color.white)
             {
                 mySprite.color = otherSprite.color;
             }
@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
         {
-            if (mySprite.color != otherSprite.color && mySprite.color != Color.black)
+            if (mySprite.color != otherSprite.color && mySprite.color != Color.white)
             {
                 Debug.Log("Correct" + mySprite.color);
                 triggerPlayerDeathEvent(collidedObject.gameObject.name);
