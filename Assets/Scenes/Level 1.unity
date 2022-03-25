@@ -455,7 +455,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0000009536743, y: 0.01605773}
@@ -527,6 +527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (10)
@@ -589,6 +593,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (3)
@@ -1299,13 +1307,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2585,6 +2597,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.0077224607
       objectReference: {fileID: 0}
+    - target: {fileID: 3247082047260579482, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3247082047260579483, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalScale.x
       value: 25.625362
@@ -2603,7 +2619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247082047376793628, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3247082047376793628, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2653,6 +2669,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.41
       objectReference: {fileID: 0}
+    - target: {fileID: 3247082048126175119, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3247082049101379017, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -2663,7 +2683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247082049101379019, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.8569932
+      value: 1.4404931
       objectReference: {fileID: 0}
     - target: {fileID: 3247082049101379021, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalScale.y
@@ -2673,7 +2693,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.27
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3247082049101379023, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3247082049101379020, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
 --- !u!4 &459923465 stripped
 Transform:
@@ -3524,6 +3549,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (4)
@@ -3648,6 +3677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes2
@@ -3894,7 +3927,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.064216614, y: 0.013032436}
@@ -4670,6 +4703,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (9)
@@ -5359,6 +5396,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (7)
@@ -6068,6 +6109,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (8)
@@ -6858,6 +6903,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (6)
@@ -7314,6 +7363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes3
@@ -8259,6 +8312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (1)
@@ -9401,6 +9458,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (2)
@@ -9619,6 +9680,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.009756132
       objectReference: {fileID: 0}
+    - target: {fileID: 3247082047260579482, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3247082047260579483, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalScale.x
       value: 25.224964
@@ -9637,7 +9702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247082047376793628, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3247082047376793628, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9683,11 +9748,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pendulum
       objectReference: {fileID: 0}
+    - target: {fileID: 3247082048126175119, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247082049101379019, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 55.079998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247082049101379019, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.4736717
+      objectReference: {fileID: 0}
     - target: {fileID: 3247082049101379021, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.31
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3247082049101379023, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3247082049101379020, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
 --- !u!4 &3247082047994311680 stripped
 Transform:
@@ -9896,6 +9978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes

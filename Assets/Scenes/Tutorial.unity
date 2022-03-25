@@ -1240,6 +1240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes
@@ -2077,6 +2081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes2
@@ -2564,6 +2572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (2)
@@ -2845,6 +2857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1311354690}
+  coinsText: {fileID: 0}
+  diamondText: {fileID: 0}
 --- !u!114 &1187279252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,6 +2875,8 @@ MonoBehaviour:
   jumpForce: 7
   transitionTime: 1
   scoreText: {fileID: 1311354690}
+  coinsText: {fileID: 0}
+  diamondText: {fileID: 0}
   healthText: {fileID: 437748267}
   StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
@@ -3847,6 +3863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 37549836}
     m_Modifications:
+    - target: {fileID: 4001453421101381548, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
       value: Spikes (1)

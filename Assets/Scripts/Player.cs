@@ -154,6 +154,10 @@ public class Player : MonoBehaviour
             stickyLimiter = true;
             startStickyTimer = true;
             Invoke(nameof(stopStickyEffect), 10);
+        } else if (collidedObject.gameObject.CompareTag("Trap"))
+        {
+            triggerPlayerDeathEvent(collidedObject.gameObject.name);
+            Die();
         }
     }
 
@@ -174,17 +178,17 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
-        checkTrapCollision(collidedObject);
+        //checkTrapCollision(collidedObject);
     }
 
-    private void checkTrapCollision(Collision2D collidedObject)
-    {
-        if (collidedObject.gameObject.CompareTag("Trap"))
-        {
-            triggerPlayerDeathEvent(collidedObject.gameObject.name);
-            Die();
-        }
-    }
+    //private void checkTrapCollision(Collision2D collidedObject)
+    //{
+    //    if (collidedObject.gameObject.CompareTag("Trap"))
+    //    {
+    //        triggerPlayerDeathEvent(collidedObject.gameObject.name);
+    //        Die();
+    //    }
+    //}
 
     private void OnCollisionStay2D(Collision2D collidedObject)
     {
