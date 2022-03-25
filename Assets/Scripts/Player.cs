@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public static bool isLevelComplete = false;
     [SerializeField] private Text scoreText;
 
+    [SerializeField] private Text coinsText;
+
+    [SerializeField] private Text diamondText;
     [SerializeField] private Text healthText;
     public Color StartColor;
     private SpriteRenderer mySprite;
@@ -83,7 +86,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if(!isLevelComplete)
+            if (!isLevelComplete)
                 rb.velocity = (freeze == true ? new Vector2(0f, rb.velocity.y) : new Vector2(dirX * 5f, rb.velocity.y));
         }
         if (Input.GetButtonDown("Jump") && isGrounded() && !stickyLimiter)
@@ -130,6 +133,20 @@ public class Player : MonoBehaviour
             Destroy(collidedObject.gameObject);
             Invoke(nameof(ResetEffect), 10);
             powerUpCollected = true;
+        }
+        else if (collidedObject.gameObject.CompareTag("Coin"))
+        {
+            ItemCollectable.balls += 5;
+            scoreText.text = "Score: " + ItemCollectable.balls;
+            coinsText.text = "Coins: " + ItemCollectable.coins;
+            Destroy(collidedObject.gameObject);
+        }
+        else if (collidedObject.gameObject.CompareTag("Diamond"))
+        {
+            ItemCollectable.balls += 10;
+            scoreText.text = "Score: " + ItemCollectable.balls;
+            diamondText.text = "Diamonds: " + ItemCollectable.diamonds;
+            Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
         {
@@ -273,7 +290,7 @@ public class Player : MonoBehaviour
            { "timeLeft", TimerCountdown.secondsLeft},
             { "level", SceneManager.GetActiveScene().name}
         });
-         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
+        AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
            { "timeTaken", 120-(TimerCountdown.secondsLeft)},
             { "level", SceneManager.GetActiveScene().name}
