@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public float transitionTime = 1f;
     public static int health = 3;
     public static bool isLevelComplete = false;
+    public static int highScore = 0;
+    string highScoreKey = "HighScore";
     [SerializeField] private Text scoreText;
 
     [SerializeField] private Text coinsText;
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         countballs = ItemCollectable.balls;
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
@@ -243,11 +246,14 @@ public class Player : MonoBehaviour
     private void Die()
     {
         PlayerPrefs.SetInt("Score", ItemCollectable.balls);
+        int probableHighScore = ItemCollectable.balls;
         ItemCollectable.balls = countballs;
         health--;
         rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)
         {
+            getHighScore(probableHighScore);
+            Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
             TimerCountdown.secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
@@ -259,8 +265,19 @@ public class Player : MonoBehaviour
             }
             else
             {
+                getHighScore(probableHighScore);
+                Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
                 SceneManager.LoadScene("End Screen");
             }
+        }
+    }
+
+    private void getHighScore(int probableHighScore)
+    {
+        if (probableHighScore > highScore)
+        {
+            PlayerPrefs.SetInt(highScoreKey, probableHighScore);
+            PlayerPrefs.Save();
         }
     }
 
