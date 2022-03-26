@@ -14,10 +14,12 @@ public class PlayerLives : MonoBehaviour
     }
 
     void Update() {
-
         if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
             enableButton();
+            if(Input.GetKey("h"))
+                incrHealth();
         }
+
     }
 
     public void incrHealth() {

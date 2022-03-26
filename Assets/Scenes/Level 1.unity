@@ -4950,12 +4950,20 @@ PrefabInstance:
       value: 0.0016684532
       objectReference: {fileID: 0}
     - target: {fileID: 3800289516876325492, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800289516876325492, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.5
       objectReference: {fileID: 0}
     - target: {fileID: 3800289516876325492, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668590328083703014, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4668590328083703014, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -9785,7 +9793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3686417217742676907, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_Text
-      value: Buy Life
+      value: Press "h" to buy life
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217742676907, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -9833,7 +9841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642967, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 190
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642967, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9869,7 +9877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642967, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 109.8993
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642967, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9893,7 +9901,7 @@ PrefabInstance:
       objectReference: {fileID: 1440000479}
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9910,7 +9918,7 @@ PrefabInstance:
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: 6a1e96924f6aa8f4d8f08f3936b3db17, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9933,7 +9941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: healthIncrement, Assembly-CSharp
+      value: PlayerLives, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3686417217906642969, guid: b8249ce6d23ce4526a6a749e6f5adc0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
