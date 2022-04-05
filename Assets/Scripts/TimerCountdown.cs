@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;
-    public static int secondsLeft = 120;
+    public static int secondsLeft = 80;
     public bool takingAway = false;
     public Rigidbody2D rb;
     private Animator anim;
