@@ -836,7 +836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: GreenPlatform (1)
+      value: Green_Platform_2_T
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -972,7 +972,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: YellowPlatform (3)
+      value: Orange_Platform_4_T
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -1502,7 +1502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: YellowPlatform
+      value: Orange_Platform_1_T
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -1997,7 +1997,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2062658443
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5177388603050735206, guid: 71ebafeef3c03457483266a33ab2b270, type: 3}
   m_Color: {r: 0.0320878, g: 0.022961903, b: 0.11320752, a: 1}
@@ -2669,7 +2669,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: GreenPlatform (2)
+      value: Green_Platform_3_T
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -3121,7 +3121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: WhitePlatform (1)
+      value: Yellow_Platform_2_T
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -3758,7 +3758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: GreenPlatform
+      value: Green_Platform_1_T
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -4053,7 +4053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: YellowPlatform (1)
+      value: Orange_Platform_2_T
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -4210,7 +4210,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: YellowPlatform (2)
+      value: Orange_Platform_3_T
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -5032,7 +5032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: WhitePlatform
+      value: Yellow_Platform_1_T
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
