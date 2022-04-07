@@ -4,9 +4,8 @@ using UnityEngine;
 using TMPro;
 public class ItemCollectable : MonoBehaviour
 {
-    public static int balls;
-    public static int coins;
-    public static int diamonds;
+    public static int totalScore;
+    public static int currentLevelScore;
 
     [SerializeField] private TextMeshProUGUI scoreText;
 
@@ -14,8 +13,9 @@ public class ItemCollectable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Switch") || collision.gameObject.CompareTag("MultiColor"))
         {
-            balls++;
-            scoreText.text = "<sprite=0> " + balls;
+            totalScore++;
+            currentLevelScore++;
+            scoreText.text = "<sprite=0> " + totalScore;
         }
     }
 }

@@ -8,7 +8,8 @@ public class UIButtonLevelLoad : MonoBehaviour
         //Load the level from LevelToLoad
         resetValues();
         Player.health = 3;
-        ItemCollectable.balls = 0;
+        ItemCollectable.totalScore = 0;
+        ItemCollectable.currentLevelScore = 0;
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             SceneManager.LoadScene("Home");

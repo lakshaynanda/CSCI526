@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel() 
     {
-        PlayerPrefs.SetInt("Score", ItemCollectable.balls);
+        PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
         if(SceneManager.GetActiveScene().name == "Tutorial"){
         
         }else{

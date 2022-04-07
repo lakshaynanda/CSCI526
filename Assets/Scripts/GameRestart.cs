@@ -10,7 +10,7 @@ public class GameRestart : MonoBehaviour
     {
         Player.health = 3;
         PlayerLives.hasTaken = false;
-        scoreTextFinal.text = "Score: " + ItemCollectable.balls;
+        scoreTextFinal.text = "Score: " + ItemCollectable.totalScore;
         if (SceneManager.GetActiveScene().name == "End Screen Tutorial")
         {
             SceneManager.LoadScene("Tutorial");
@@ -19,6 +19,7 @@ public class GameRestart : MonoBehaviour
         {
             SceneManager.LoadScene("Home");
         }
-        ItemCollectable.balls = 0;
+        ItemCollectable.totalScore = 0;
+        ItemCollectable.currentLevelScore = 0;
     }
 }

@@ -15,7 +15,7 @@ public class TimerCountdown : MonoBehaviour
 
     void Start()
     {
-        countballs = ItemCollectable.balls;
+        countballs = ItemCollectable.totalScore;
         timerElement.text = "<sprite=0> " + secondsLeft;
     }
 
@@ -41,7 +41,8 @@ public class TimerCountdown : MonoBehaviour
         secondsLeft -= 1;
         if (secondsLeft <= 0)
         {
-            ItemCollectable.balls = 0;
+            ItemCollectable.totalScore = 0;
+            ItemCollectable.currentLevelScore = 0;
             StopCoroutine(TimerTake());
             secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);

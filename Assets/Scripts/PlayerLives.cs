@@ -13,7 +13,7 @@ public class PlayerLives : MonoBehaviour
     }
 
     void Update() {
-        if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
+        if (Player.health < 3 && ItemCollectable.totalScore >= 5 && hasTaken == false) {
             enableButton();
             if(Input.GetKey("h"))
                 incrHealth();
@@ -22,10 +22,11 @@ public class PlayerLives : MonoBehaviour
     }
 
     public void incrHealth() {
-        if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
+        if (Player.health < 3 && ItemCollectable.totalScore >= 5 && hasTaken == false) {
             Player.health++;
-            ItemCollectable.balls -= 5;
-            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
+            ItemCollectable.totalScore -= 5;
+            ItemCollectable.currentLevelScore -= 5;
+            scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             hasTaken = true;
             removeButton();
         }

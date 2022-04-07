@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        countballs = ItemCollectable.balls;
+        countballs = ItemCollectable.totalScore;
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
@@ -127,8 +127,9 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
-            ItemCollectable.balls -= 5;
-            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
+            ItemCollectable.totalScore -= 5;
+            ItemCollectable.currentLevelScore -= 5;
+            scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             mySprite.color = otherSprite.color;
             startMulticolourTimer = true;
             Destroy(collidedObject.gameObject);
@@ -137,14 +138,16 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
         {
-            ItemCollectable.balls += 5;
-            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
+            ItemCollectable.totalScore += 5;
+            ItemCollectable.currentLevelScore += 5;
+            scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Diamond"))
         {
-            ItemCollectable.balls += 10;
-            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
+            ItemCollectable.totalScore += 10;
+            ItemCollectable.currentLevelScore += 10;
+            scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
@@ -241,9 +244,10 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        PlayerPrefs.SetInt("Score", ItemCollectable.balls);
-        int probableHighScore = ItemCollectable.balls;
-        ItemCollectable.balls = countballs;
+        PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
+        int probableHighScore = ItemCollectable.totalScore;
+        ItemCollectable.totalScore = countballs;
+        ItemCollectable.currentLevelScore = countballs;
         health--;
         rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)
@@ -284,17 +288,18 @@ public class Player : MonoBehaviour
 
     public void incrHealth()
     {
-        if (health < 3 && ItemCollectable.balls > 5)
+        if (health < 3 && ItemCollectable.totalScore > 5)
         {
             health++;
-            ItemCollectable.balls -= 5;
+            ItemCollectable.totalScore -= 5;
+            ItemCollectable.currentLevelScore -= 5;
         }
     }
     public void sendLevelCompletedAnalytics()
     {
         AnalyticsEvent.Custom("scoreEvent", new Dictionary<string, object>
         {
-            { "score", ItemCollectable.balls },
+            { "score", ItemCollectable.totalScore },
             { "level", SceneManager.GetActiveScene().name}
         });
         AnalyticsEvent.Custom("powerUpEvent", new Dictionary<string, object>
