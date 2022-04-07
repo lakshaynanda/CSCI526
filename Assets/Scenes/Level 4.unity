@@ -5507,6 +5507,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4243736130545181960, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f35800cbf33c0414bb0ee0d4a80ae7ff, type: 2}
     - target: {fileID: 4243736131371010049, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8931,9 +8935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a6cb0e2f7d65459acf69e85877583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 7
-  transitionTime: 1
   scoreText: {fileID: 1141509003}
   healthText: {fileID: 1141509005}
   StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
@@ -8943,7 +8944,6 @@ MonoBehaviour:
   levelCompletedCanvas: {fileID: 1944676587}
   startTime: 10
   endTime: 0
-  transition: {fileID: 0}
   numberOfMultiColours: 2
   numberOfStickyPlatforms: 0
   jumpableGround:
