@@ -32,6 +32,10 @@ public class MainMenu : MonoBehaviour
     {
         // SceneManager.LoadScene("Level 6");
     }
+
+    public void Play(){
+        SceneManager.LoadScene("Tutorial");
+    }
     public void ExitGame()
     {
         Debug.Log("Exit");

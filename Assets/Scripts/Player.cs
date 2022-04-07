@@ -259,16 +259,16 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (SceneManager.GetActiveScene().name == "Tutorial")
-            {
-                SceneManager.LoadScene("End Screen Tutorial");
-            }
-            else
-            {
+            // if (SceneManager.GetActiveScene().name == "Tutorial")
+            // {
+            //     SceneManager.LoadScene("End Screen Tutorial");
+            // }
+            // else
+            // {
                 getHighScore(probableHighScore);
                 Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
                 SceneManager.LoadScene("End Screen");
-            }
+            // }
         }
     }
 

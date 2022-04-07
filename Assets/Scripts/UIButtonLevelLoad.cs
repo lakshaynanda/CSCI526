@@ -10,14 +10,14 @@ public class UIButtonLevelLoad : MonoBehaviour
         Player.health = 3;
         ItemCollectable.totalScore = 0;
         ItemCollectable.currentLevelScore = 0;
-        if (SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            SceneManager.LoadScene("Home");
-        }
-        else
-        {
+        // if (SceneManager.GetActiveScene().name == "Tutorial")
+        // {
+        //     SceneManager.LoadScene("Home");
+        // }
+        // else
+        // {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        // }
     }
 
     public void goHome()
