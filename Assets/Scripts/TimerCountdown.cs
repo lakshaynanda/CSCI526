@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class TimerCountdown : MonoBehaviour
 {
-    public GameObject textDisplay;
+    [SerializeField] TextMeshProUGUI timerElement;
     public static int secondsLeft = 120;
-    public bool takingAway = false;
+    [SerializeField] bool takingAway = false;
     public Rigidbody2D rb;
     private Animator anim;
     public int countballs;
@@ -16,7 +16,7 @@ public class TimerCountdown : MonoBehaviour
     void Start()
     {
         countballs = ItemCollectable.balls;
-        textDisplay.GetComponent<Text>().text = "Time: " + secondsLeft;
+        timerElement.text = "<sprite=0> " + secondsLeft;
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class TimerCountdown : MonoBehaviour
             secondsLeft = 120;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
-        textDisplay.GetComponent<Text>().text = "Timer: " + secondsLeft;
+        timerElement.text = "<sprite=0> " + secondsLeft;
         takingAway = false;
 
     }

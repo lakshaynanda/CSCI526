@@ -17,12 +17,10 @@ public class Player : MonoBehaviour
     public static bool isLevelComplete = false;
     public static int highScore = 0;
     string highScoreKey = "HighScore";
-    [SerializeField] private Text scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
-    [SerializeField] private Text coinsText;
-
-    [SerializeField] private Text diamondText;
-    [SerializeField] private Text healthText;
+    //[SerializeField] private Text healthText;
+    [SerializeField] private TextMeshProUGUI healthText;
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
@@ -65,7 +63,7 @@ public class Player : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
         levelCompletedCanvas.SetActive(false);
-        healthText.text = "Lives: " + health;
+        healthText.text = "<sprite=0> " + health;
         freeze = true;
         if (numberOfStickyPlatforms > 0)
         {
@@ -106,7 +104,7 @@ public class Player : MonoBehaviour
                 multiColourText.SetText("Walk over any color for " + seconds + " secs");
         }
 
-        healthText.text = "Lives: " + health;
+        healthText.text = "<sprite=0> " + health;
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
@@ -130,7 +128,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
             ItemCollectable.balls -= 5;
-            scoreText.text = "Score: " + ItemCollectable.balls;
+            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
             mySprite.color = otherSprite.color;
             startMulticolourTimer = true;
             Destroy(collidedObject.gameObject);
@@ -140,15 +138,13 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("Coin"))
         {
             ItemCollectable.balls += 5;
-            scoreText.text = "Score: " + ItemCollectable.balls;
-            coinsText.text = "Coins: " + ItemCollectable.coins;
+            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Diamond"))
         {
             ItemCollectable.balls += 10;
-            scoreText.text = "Score: " + ItemCollectable.balls;
-            diamondText.text = "Diamonds: " + ItemCollectable.diamonds;
+            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))

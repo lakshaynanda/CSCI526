@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+
 public class PlayerLives : MonoBehaviour
 {
     public static bool hasTaken;
-    public GameObject button1;
-    [SerializeField] private Text scoreText;
+    [SerializeField] GameObject buyHealthElement;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     void Start() {
-        button1 = GameObject.Find("HealthPlus");
-        button1.SetActive(false);
+        buyHealthElement = GameObject.Find("IncrHealth");
+        buyHealthElement.SetActive(false);
     }
 
     void Update() {
@@ -26,17 +25,17 @@ public class PlayerLives : MonoBehaviour
         if (Player.health < 3 && ItemCollectable.balls >= 5 && hasTaken == false) {
             Player.health++;
             ItemCollectable.balls -= 5;
-            scoreText.text = "Score: " + ItemCollectable.balls;
+            scoreText.text = "<sprite=0> " + ItemCollectable.balls;
             hasTaken = true;
             removeButton();
         }
     }
 
     void enableButton() {
-        button1.SetActive(true);   
+        buyHealthElement.SetActive(true);
     }
     void removeButton() {
-        button1.SetActive(false);   
+        buyHealthElement.SetActive(false);
     }  
 
 }
