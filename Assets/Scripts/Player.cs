@@ -10,9 +10,8 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 7f;
-    public float jumpForce = 14f;
-    public float transitionTime = 1f;
+    private float speed = 7f;
+    private float jumpForce = 14f;
     public static int health = 3;
     public static bool isLevelComplete = false;
     public static int highScore = 0;
@@ -29,12 +28,10 @@ public class Player : MonoBehaviour
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
-    private Animator anim;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
     public int startTime = 10;
     public int endTime;
-    public Animator transition;
     private GameObject[] MultiColourTexts;
     [SerializeField] public int numberOfMultiColours;
     private int keepCountMulti = 0;
