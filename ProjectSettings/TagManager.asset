@@ -25,6 +25,8 @@ TagManager:
   - Diamond
   - StickyLimiter
   - Sticky Messages
+  - PauseMenu
+  - Respawn Checkpoint
   layers:
   - Default
   - TransparentFX

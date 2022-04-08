@@ -73,6 +73,13 @@ public class Player : MonoBehaviour
             multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
         }
         sendLevelStartedAnalytics();
+        Vector2 temp = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
+        if(RespawnCheckpoint.isRespawn)
+           { 
+            GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint; 
+            RespawnCheckpoint.isRespawn = false;
+           }
+        RespawnCheckpoint.Checkpoint = temp;
     }
 
     void Update()
@@ -243,19 +250,21 @@ public class Player : MonoBehaviour
     {
         PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
         int probableHighScore = ItemCollectable.totalScore;
-        ItemCollectable.totalScore = countballs;
-        ItemCollectable.currentLevelScore = countballs;
+        // ItemCollectable.totalScore = countballs;
+        // ItemCollectable.currentLevelScore = countballs;
         health--;
-        rb.bodyType = RigidbodyType2D.Static;
+        // rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)
         {
             getHighScore(probableHighScore);
             Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
-            TimerCountdown.secondsLeft = 120;
+            TimerCountdown.secondsLeft = 60;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
         {
+            RespawnCheckpoint.isRespawn = false;
+            TimerCountdown.secondsLeft = 120;
             // if (SceneManager.GetActiveScene().name == "Tutorial")
             // {
             //     SceneManager.LoadScene("End Screen Tutorial");
