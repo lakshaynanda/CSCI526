@@ -27,6 +27,8 @@ TagManager:
   - Sticky Messages
   - PauseMenu
   - Respawn Checkpoint
+  - Portal Left
+  - Portal Right
   layers:
   - Default
   - TransparentFX

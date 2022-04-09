@@ -32,22 +32,17 @@ public class Player : MonoBehaviour
     public GameObject levelCompletedCanvas;
     public int startTime = 10;
     public int endTime;
-    private GameObject[] MultiColourTexts;
-    [SerializeField] public int numberOfMultiColours;
-    private int keepCountMulti = 0;
 
     private float stickyTimer = 10;
     private Boolean stickyLimiter = false;
     private Boolean startStickyTimer = false;
     private Boolean startMulticolourTimer = false;
-    private GameObject[] stickyTexts;
-    private TextMeshProUGUI stickyPlatformText;
+
     private float seconds;
     private bool freeze;
-    [SerializeField] public int numberOfStickyPlatforms;
-    private int keepCount = 0;
 
-
+    [SerializeField] public Image timerForeground;
+    [SerializeField] public float UpdateTimerBarSpeed;
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
 
@@ -62,24 +57,19 @@ public class Player : MonoBehaviour
         levelCompletedCanvas.SetActive(false);
         healthText.text = "<sprite=0> " + health;
         freeze = true;
-        if (numberOfStickyPlatforms > 0)
-        {
-            stickyTexts = GameObject.FindGameObjectsWithTag("Sticky Messages");
-            stickyPlatformText = stickyTexts[0].GetComponent<TextMeshProUGUI>();
-        }
-        if (numberOfMultiColours > 0)
-        {
-            MultiColourTexts = GameObject.FindGameObjectsWithTag("Multicolour Messages");
-            multiColourText = MultiColourTexts[0].GetComponent<TextMeshProUGUI>();
-        }
         sendLevelStartedAnalytics();
         Vector2 temp = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
-        if(RespawnCheckpoint.isRespawn)
-           { 
-            GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint; 
+        if (RespawnCheckpoint.isRespawn)
+        {
+            GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint;
             RespawnCheckpoint.isRespawn = false;
-           }
+        }
         RespawnCheckpoint.Checkpoint = temp;
+        if (Portal.portalHit)
+        {
+            GameObject.FindGameObjectsWithTag("Player")[0].transform.position = GameObject.FindGameObjectsWithTag("Portal Right")[0].transform.position;
+            Portal.portalHit = false;
+        }
     }
 
     void Update()
@@ -102,13 +92,25 @@ public class Player : MonoBehaviour
         {
             stickyTimer -= Time.deltaTime;
             seconds = Mathf.FloorToInt(stickyTimer % 60);
-            if (startStickyTimer)
-                stickyPlatformText.SetText("Low speed and no jump for " + seconds + " secs");
-            else if (startMulticolourTimer)
-                multiColourText.SetText("Walk over any color for " + seconds + " secs");
+            StartCoroutine(ChangeTimerBar(((seconds) * 10) / 100));
         }
 
         healthText.text = "<sprite=0> " + health;
+    }
+
+    private IEnumerator ChangeTimerBar(float time)
+    {
+        float newTime = timerForeground.fillAmount;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < UpdateTimerBarSpeed)
+        {
+            elapsedTime += Time.deltaTime;
+            timerForeground.fillAmount = Mathf.Lerp(newTime, time, elapsedTime / UpdateTimerBarSpeed);
+            yield return null;
+        }
+
+        timerForeground.fillAmount = time;
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
@@ -131,13 +133,14 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
+            GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
             ItemCollectable.totalScore -= 5;
             ItemCollectable.currentLevelScore -= 5;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             mySprite.color = otherSprite.color;
             startMulticolourTimer = true;
-            Destroy(collidedObject.gameObject);
-            Invoke(nameof(ResetEffect), 10);
+            Destroy(parent);
+            Invoke(nameof(ResetEffect), 9);
             powerUpCollected = true;
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
@@ -156,11 +159,17 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
         {
-            Destroy(collidedObject.gameObject);
+            GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
+            Destroy(parent);
             stickyLimiter = true;
             startStickyTimer = true;
-            Invoke(nameof(stopStickyEffect), 10);
-        } else if (collidedObject.gameObject.CompareTag("Trap"))
+            Invoke(nameof(stopStickyEffect), 9);
+        }
+        else if (collidedObject.gameObject.CompareTag("Portal Left"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
+        else if (collidedObject.gameObject.CompareTag("Trap"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Die();
@@ -172,12 +181,6 @@ public class Player : MonoBehaviour
         stickyLimiter = false;
         startStickyTimer = false;
         stickyTimer = 10f;
-        stickyPlatformText.SetText("");
-        keepCount++;
-        if (keepCount < numberOfStickyPlatforms)
-        {
-            stickyPlatformText = stickyTexts[keepCount].GetComponent<TextMeshProUGUI>();
-        }
     }
 
 
@@ -239,12 +242,6 @@ public class Player : MonoBehaviour
         mySprite.color = otherSprite.color;
         startMulticolourTimer = false;
         stickyTimer = 10f;
-        multiColourText.SetText("");
-        keepCountMulti++;
-        if (keepCountMulti < numberOfMultiColours)
-        {
-            multiColourText = MultiColourTexts[keepCountMulti].GetComponent<TextMeshProUGUI>();
-        }
     }
     private void Die()
     {
@@ -271,9 +268,9 @@ public class Player : MonoBehaviour
             // }
             // else
             // {
-                getHighScore(probableHighScore);
-                Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
-                SceneManager.LoadScene("End Screen");
+            getHighScore(probableHighScore);
+            Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
+            SceneManager.LoadScene("End Screen");
             // }
         }
     }

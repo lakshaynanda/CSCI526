@@ -43,6 +43,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Multicolour Messages
       objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774031, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_text
+      value: 'Collect this ball to obtain colour immunity for 10 secs
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1605406941064197347, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
