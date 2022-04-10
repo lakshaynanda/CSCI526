@@ -182,6 +182,11 @@ public class Player : MonoBehaviour
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Die();
         }
+        else if (collidedObject.gameObject.CompareTag("Foreground"))
+        {
+            triggerPlayerDeathEvent(collidedObject.gameObject.name);
+            Die();
+        }
     }
 
     private void stopStickyEffect()
