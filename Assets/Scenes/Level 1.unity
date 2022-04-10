@@ -2198,6 +2198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7661853781602412213, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2246,6 +2250,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7661853782652268723, guid: f930f529277e924479345fdbab394f4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7661853783423662018, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2289,7 +2297,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &735696533 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7661853782652268723, guid: f930f529277e924479345fdbab394f4d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
   m_PrefabInstance: {fileID: 735696529}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &754773256

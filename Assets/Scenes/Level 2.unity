@@ -4532,6 +4532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7661853781602412213, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4659,7 +4663,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1436172754 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7661853782652268723, guid: f930f529277e924479345fdbab394f4d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
   m_PrefabInstance: {fileID: 1436172750}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443809768

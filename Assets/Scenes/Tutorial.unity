@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6078ed3fc355d9443acbb1cef46737a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 821309217}
+  pauseMenu: {fileID: 525281870}
   lowVolumeElement: {fileID: 525281869}
   highVolumeElement: {fileID: 525281868}
   muteElement: {fileID: 525281867}
@@ -1597,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7661853781602412213, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1671,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7661853782652268723, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7661853783423662018, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1724,6 +1728,11 @@ GameObject:
 --- !u!1 &525281869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7661853782555305286, guid: f930f529277e924479345fdbab394f4d, type: 3}
+  m_PrefabInstance: {fileID: 525281866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &525281870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
   m_PrefabInstance: {fileID: 525281866}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &537075083
@@ -1873,8 +1882,8 @@ SpriteRenderer:
   m_SortingLayerID: 2062658443
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: 71ebafeef3c03457483266a33ab2b270, type: 3}
-  m_Color: {r: 0.0320878, g: 0.022961903, b: 0.11320752, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fdfb3796a96b09f45b7ed20555d95926, type: 3}
+  m_Color: {r: 0.8129857, g: 0.8396226, b: 0.46337664, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -2206,11 +2215,6 @@ Transform:
   m_Father: {fileID: 949889930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &821309217 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7661853782652268723, guid: f930f529277e924479345fdbab394f4d, type: 3}
-  m_PrefabInstance: {fileID: 525281866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &932465071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3826,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.547504
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4720,6 +4724,10 @@ PrefabInstance:
     - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Name
       value: LevelCompleteCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6010621377027691455, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Pivot.x
