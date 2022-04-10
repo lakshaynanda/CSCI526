@@ -3207,11 +3207,9 @@ MonoBehaviour:
   platformSprite: {fileID: 0}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 201778393}
-  levelCompletedCanvas: {fileID: 0}
+  levelCompletedCanvas: {fileID: 1608977361}
   startTime: 10
   endTime: 0
-  numberOfMultiColours: 1
-  numberOfStickyPlatforms: 0
   timerForeground: {fileID: 1416117984}
   UpdateTimerBarSpeed: 0.2
   jumpableGround:
@@ -4493,6 +4491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+--- !u!1 &1608977361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+  m_PrefabInstance: {fileID: 1608977360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609898925
 GameObject:
   m_ObjectHideFlags: 0
