@@ -13,7 +13,7 @@ public class GameRestart : MonoBehaviour
         scoreTextFinal.text = "Score: " + ItemCollectable.totalScore;
         if (SceneManager.GetActiveScene().name == "End Screen Tutorial")
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Level 1");
         }
         else
         {

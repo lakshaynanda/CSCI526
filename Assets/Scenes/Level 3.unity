@@ -5726,7 +5726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187279246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.99, y: 84.35, z: 0}
+  m_LocalPosition: {x: 52.13, y: 83.78, z: 0}
   m_LocalScale: {x: 0.3742, y: 0.3542, z: 0.6642}
   m_Children:
   - {fileID: 1835400846}
@@ -5762,7 +5762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1043222696}
   healthText: {fileID: 1584819700}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
+  StartColor: {r: 1, g: 1, b: 1, a: 1}
   platformSprite: {fileID: 0}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 40935305}

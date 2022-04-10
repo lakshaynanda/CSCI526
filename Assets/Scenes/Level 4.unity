@@ -8706,7 +8706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1141509003}
   healthText: {fileID: 1141509005}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
+  StartColor: {r: 0.9647059, g: 0.9019608, b: 0.5137255, a: 1}
   platformSprite: {fileID: 0}
   rb: {fileID: 2036075201}
   gameOverCanvas: {fileID: 130140193}
