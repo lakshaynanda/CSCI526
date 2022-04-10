@@ -2521,6 +2521,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd68da73075243a194a1826b5e86803, type: 3}
+--- !u!1 &749308795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+  m_PrefabInstance: {fileID: 1320127696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &754773256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3629,7 +3634,7 @@ MonoBehaviour:
   platformSprite: {fileID: 0}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 201778393}
-  levelCompletedCanvas: {fileID: 0}
+  levelCompletedCanvas: {fileID: 749308795}
   startTime: 10
   endTime: 0
   timerForeground: {fileID: 1022469223}
