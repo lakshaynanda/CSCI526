@@ -8978,6 +8978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompleteCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6010621377027691455, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

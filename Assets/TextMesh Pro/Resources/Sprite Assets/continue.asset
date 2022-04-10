@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
-  m_Name: reload
+  m_Name: continue
   m_EditorClassIdentifier: 
-  hashCode: 211666481
-  material: {fileID: 7418472206976953082}
+  hashCode: -1365954463
+  material: {fileID: 1036030661622400351}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -37,14 +37,14 @@ MonoBehaviour:
     m_StrikethroughOffset: 0
     m_StrikethroughThickness: 0
     m_TabWidth: 0
-  spriteSheet: {fileID: 2800000, guid: ea711c7e262582644a4b9d5099ade4b9, type: 3}
+  spriteSheet: {fileID: 2800000, guid: c8137c9856b245d498820fadae495a97, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: reload_0
-    m_HashCode: -1423438338
+    m_Name: continue_0
+    m_HashCode: -1465722706
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -54,16 +54,16 @@ MonoBehaviour:
       m_HorizontalBearingY: 150
       m_HorizontalAdvance: 250
     m_GlyphRect:
-      m_X: 7
+      m_X: 6
       m_Y: 4
       m_Width: 250
       m_Height: 250
     m_Scale: 4
     m_AtlasIndex: 0
-    sprite: {fileID: -2424453428984153791, guid: ea711c7e262582644a4b9d5099ade4b9, type: 3}
+    sprite: {fileID: -7176300867611961145, guid: c8137c9856b245d498820fadae495a97, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
---- !u!21 &7418472206976953082
+--- !u!21 &1036030661622400351
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -83,7 +83,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ea711c7e262582644a4b9d5099ade4b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: c8137c9856b245d498820fadae495a97, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
