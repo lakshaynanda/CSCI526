@@ -75,6 +75,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
+        if (dirX > 0f)
+        {
+            mySprite.flipX = false;
+        }
+        else if (dirX < 0f)
+        {
+            mySprite.flipX = true;
+        }
         if (stickyLimiter)
         {
             rb.velocity = new Vector2(dirX * 1f, rb.velocity.y);
