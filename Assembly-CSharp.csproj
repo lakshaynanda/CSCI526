@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/MainMenu.cs" />
+    <Compile Include="Assets/Scripts/RotateCoins.cs" />
     <Compile Include="Assets/Kalkatos/DottedArrow/Scripts/Arrow.cs" />
     <Compile Include="Assets/Scripts/PlayerLives.cs" />
     <Compile Include="Assets/Scripts/Rotate.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Assets/Scripts/StickyPlatform.cs" />
     <Compile Include="Assets/Scripts/ShrinkingPlatform.cs" />
     <Compile Include="Assets/Kalkatos/DottedArrow/Example/Scripts/CombatManager.cs" />
+    <Compile Include="Assets/Simple 2D Platformer BE2/ReadMe/Scripts/ReadmeBE2.cs" />
     <Compile Include="Assets/Scripts/UIButtonLevelLoad.cs" />
     <Compile Include="Assets/Scripts/GameCompleted.cs" />
     <Compile Include="Assets/Scripts/Finish.cs" />
@@ -82,7 +84,8 @@
     <Compile Include="Assets/Scripts/MovePlayerWithPlatform.cs" />
     <Compile Include="Assets/Scripts/Weapon.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
-    <Compile Include="Assets/Scripts/RotateCoins.cs" />
+    <Compile Include="Assets/Scripts/DiamondGlowScript.cs" />
+    <Compile Include="Assets/Scripts/MulticolourEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

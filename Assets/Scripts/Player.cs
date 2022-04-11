@@ -160,10 +160,11 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Diamond"))
         {
+            GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
             ItemCollectable.totalScore += 10;
             ItemCollectable.currentLevelScore += 10;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
-            Destroy(collidedObject.gameObject);
+            Destroy(parent);
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
         {
