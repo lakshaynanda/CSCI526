@@ -276,7 +276,7 @@ public class Player : MonoBehaviour
         {
             getHighScore(probableHighScore);
             Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
-            TimerCountdown.secondsLeft = 60;
+            //TimerCountdown.secondsLeft = 60;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
