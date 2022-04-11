@@ -5364,7 +5364,7 @@ PrefabInstance:
     - target: {fileID: 4243736130545181960, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_spriteAsset
       value: 
-      objectReference: {fileID: 11400000, guid: f35800cbf33c0414bb0ee0d4a80ae7ff, type: 2}
+      objectReference: {fileID: 11400000, guid: 63e002c4b8599ad478179f9a090b9fea, type: 2}
     - target: {fileID: 4243736131371010049, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8781,7 +8781,7 @@ MonoBehaviour:
   deathSound: {fileID: 1315854150}
   jumpSound: {fileID: 1315854151}
   healthText: {fileID: 1141509005}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
+  StartColor: {r: 0.9647059, g: 0.9019608, b: 0.5137255, a: 1}
   platformSprite: {fileID: 0}
   rb: {fileID: 2036075201}
   gameOverCanvas: {fileID: 130140193}
@@ -8900,7 +8900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036075196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52, y: 84.6, z: 0}
+  m_LocalPosition: {x: 297.58, y: 94.36, z: 0}
   m_LocalScale: {x: 0.3797053, y: 0.3577391, z: 0.6642}
   m_Children:
   - {fileID: 1918627609}

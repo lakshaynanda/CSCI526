@@ -18,7 +18,7 @@ public class Finish : MonoBehaviour
     private void CompleteLevel() 
     {
         PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
-        if(SceneManager.GetActiveScene().name == "Tutorial"){
+        if(SceneManager.GetActiveScene().name == "Level 1"){
         
         }else{
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
