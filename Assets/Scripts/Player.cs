@@ -255,6 +255,11 @@ public class Player : MonoBehaviour
                 freeze = false;
             }
         }
+        else if (collidedObject.gameObject.CompareTag("Enemy"))
+        {
+            triggerPlayerDeathEvent(collidedObject.gameObject.name);
+            Die();
+        }
     }
     private void triggerPlayerDeathEvent(String spriteName)
     {
