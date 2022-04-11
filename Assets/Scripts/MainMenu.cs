@@ -28,6 +28,10 @@ public class MainMenu : MonoBehaviour
     {
          SceneManager.LoadScene("Level 5");
     }
+     public void PlayLevel6()
+    {
+         SceneManager.LoadScene("Level 6");
+    }
     // public void PlayLevel6()
     // {
     //     SceneManager.LoadScene("Level 6");
