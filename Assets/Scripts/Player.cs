@@ -58,7 +58,10 @@ public class Player : MonoBehaviour
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
         gameOverCanvas.SetActive(false);
-        levelCompletedCanvas.SetActive(false);
+        if(levelCompletedCanvas)
+        {
+            levelCompletedCanvas.SetActive(false);
+        }
         healthText.text = "<sprite=0> " + health;
         freeze = true;
         sendLevelStartedAnalytics();
@@ -141,7 +144,10 @@ public class Player : MonoBehaviour
         {
             sendLevelCompletedAnalytics();
             isLevelComplete = true;
-            levelCompletedCanvas.SetActive(true);
+            if(levelCompletedCanvas)
+            {
+                levelCompletedCanvas.SetActive(true);
+            }
             rb.bodyType = RigidbodyType2D.Static;
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
