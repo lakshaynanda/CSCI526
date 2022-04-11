@@ -1424,7 +1424,7 @@ PrefabInstance:
     - target: {fileID: 4243736130545181960, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_spriteAsset
       value: 
-      objectReference: {fileID: 11400000, guid: da68711bddc04744ea59cfe26ea99bae, type: 2}
+      objectReference: {fileID: 11400000, guid: c842d82bae67eb74aab35941bfa12f4a, type: 2}
     - target: {fileID: 4243736131371010049, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_Pivot.x
       value: 0
