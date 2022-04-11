@@ -2206,6 +2206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7661853781460648637, guid: f930f529277e924479345fdbab394f4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7661853781602412213, guid: f930f529277e924479345fdbab394f4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4445,6 +4449,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2058884428}
+  coinSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  jumpSound: {fileID: 0}
   healthText: {fileID: 578077722}
   StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
