@@ -27,6 +27,8 @@ public class PauseMenu : MonoBehaviour
     public void Reload()
     {
         Scene scene = SceneManager.GetActiveScene();
+        PlayerLives.hasTaken = false;
+        Player.isLevelComplete = false;
         TimerCountdown.secondsLeft = 120;
         ItemCollectable.totalScore -= ItemCollectable.currentLevelScore;
         ItemCollectable.currentLevelScore = 0;
@@ -58,6 +60,9 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         Time.timeScale = 1f;
+        PlayerLives.hasTaken = false;
+        Player.isLevelComplete = false; 
+        TimerCountdown.secondsLeft = 120;
         ItemCollectable.currentLevelScore = 0;
         ItemCollectable.totalScore = 0;
         SceneManager.LoadScene(0);
