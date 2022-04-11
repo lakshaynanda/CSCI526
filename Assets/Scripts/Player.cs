@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     string highScoreKey = "HighScore";
     [SerializeField] private TextMeshProUGUI scoreText;
 
+    public AudioSource coinSound;
+    public AudioSource deathSound;
+    public AudioSource jumpSound;
+
     //[SerializeField] private Text healthText;
     [SerializeField] private TextMeshProUGUI healthText;
     public Color StartColor;
@@ -95,6 +99,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded() && !stickyLimiter)
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
+            jumpSound.Play();
         }
         if ((startMulticolourTimer || startStickyTimer) && stickyTimer >= 0f)
         {
@@ -156,6 +161,7 @@ public class Player : MonoBehaviour
             ItemCollectable.totalScore += 5;
             ItemCollectable.currentLevelScore += 5;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
+            coinSound.Play();
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Diamond"))
@@ -163,6 +169,7 @@ public class Player : MonoBehaviour
             ItemCollectable.totalScore += 10;
             ItemCollectable.currentLevelScore += 10;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
+            coinSound.Play();
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("StickyLimiter"))
@@ -258,6 +265,7 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
+        deathSound.Play();
         PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
         int probableHighScore = ItemCollectable.totalScore;
         // ItemCollectable.totalScore = countballs;
