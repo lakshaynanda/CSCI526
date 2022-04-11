@@ -3348,6 +3348,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 903442053}
     - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Name
       value: LevelCompleteCanvas
@@ -6075,7 +6079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187279246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.13, y: 83.78, z: 0}
+  m_LocalPosition: {x: 52.17, y: 83.78, z: 0}
   m_LocalScale: {x: 0.3742, y: 0.3542, z: 0.6642}
   m_Children:
   - {fileID: 1835400846}
@@ -6579,6 +6583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 508655022}
+  - {fileID: 122892589}
   - {fileID: 1538916540}
   - {fileID: 1325298269}
   m_Father: {fileID: 2074991562}
@@ -6932,7 +6937,7 @@ Transform:
   m_Children:
   - {fileID: 764767097}
   m_Father: {fileID: 1280308392}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1325298270
 MonoBehaviour:
@@ -8067,7 +8072,7 @@ Transform:
   m_Children:
   - {fileID: 326076783}
   m_Father: {fileID: 1280308392}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1538916541
 MonoBehaviour:
@@ -10417,6 +10422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 903442053}
+  levelCompletedCanvas: {fileID: 285373452}
   lowVolumeElement: {fileID: 903442052}
   highVolumeElement: {fileID: 903442051}
   muteElement: {fileID: 903442050}
@@ -10477,6 +10483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &1987639622
 MonoBehaviour:
   m_ObjectHideFlags: 0

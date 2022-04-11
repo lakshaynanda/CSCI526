@@ -7,15 +7,51 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject levelCompletedCanvas;
     [SerializeField] GameObject lowVolumeElement;
     [SerializeField] GameObject highVolumeElement;
     [SerializeField] GameObject muteElement;
 
+    void Update()
+    {
+        if(!levelCompletedCanvas || (levelCompletedCanvas && !levelCompletedCanvas.activeSelf)) {
+            if (!pauseMenu.activeSelf)
+            {
+                Debug.Log("Hello");
+                if (Input.GetKey("p"))
+                {
+                    Debug.Log("Hello2");
+                    Pause();
+                }
+            }
+            else
+            {
+                if (Input.GetKey("r"))
+                {
+                    Reload();
+                }
+
+                else if (Input.GetKey("p"))
+                {
+                    Resume();
+                }
+                else if (Input.GetKey("q"))
+                {
+                    Quit();
+                }
+                else if (Input.GetKey("v"))
+                {
+                    Mute();
+                }
+            }
+        }
+    }
     public void Pause()
     {
         pauseMenu.SetActive(true);
         IncreaseVolume();
         Time.timeScale = 0f;
+
     }
 
     public void Resume()
@@ -61,7 +97,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         PlayerLives.hasTaken = false;
-        Player.isLevelComplete = false; 
+        Player.isLevelComplete = false;
         TimerCountdown.secondsLeft = 120;
         ItemCollectable.currentLevelScore = 0;
         ItemCollectable.totalScore = 0;
