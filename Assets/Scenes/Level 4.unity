@@ -160,14 +160,14 @@ Transform:
   - {fileID: 463279893}
   - {fileID: 1626137375}
   - {fileID: 248579953}
-  - {fileID: 975697058}
-  - {fileID: 1038743040}
   - {fileID: 277422980}
+  - {fileID: 975697058}
   - {fileID: 822461645}
+  - {fileID: 1038743040}
+  - {fileID: 1242540250}
   - {fileID: 480564547}
   - {fileID: 517292244}
   - {fileID: 402962729}
-  - {fileID: 1242540250}
   m_Father: {fileID: 2074991562}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1603,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1647,7 +1647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359934, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_Name
-      value: Fire (2)
+      value: Fire_1_L4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
@@ -1905,11 +1905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
-      value: Spikes
+      value: Spikes_4_L4
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2339,11 +2339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
-      value: Spikes2 (1)
+      value: Spikes_2_L4
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2520,11 +2520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
-      value: Spikes2 (2)
+      value: Spikes_3_L4
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3482,7 +3482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381550, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_Name
-      value: Spikes2
+      value: Spikes_1_L4
       objectReference: {fileID: 0}
     - target: {fileID: 4001453421101381551, guid: ecd68da73075243a194a1826b5e86803, type: 3}
       propertyPath: m_RootOrder
@@ -3969,7 +3969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4013,7 +4013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359934, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_Name
-      value: Fire (3)
+      value: Fire_3_L4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
@@ -4869,7 +4869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4913,7 +4913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359934, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_Name
-      value: Fire
+      value: Fire_2_L4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
@@ -4932,7 +4932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000707626}
   m_Layer: 0
-  m_Name: Saw 1
+  m_Name: Saw_1_L4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5130,7 +5130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5174,7 +5174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359934, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_Name
-      value: Fire (1)
+      value: Fire_4_L4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
@@ -6122,7 +6122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359933, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6166,7 +6166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389518041731359934, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
       propertyPath: m_Name
-      value: Fire (4)
+      value: Fire_5_L4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0674726c78eb34ccf842d6812a99c509, type: 3}
