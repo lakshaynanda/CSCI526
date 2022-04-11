@@ -5,20 +5,30 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 16f;
+    public float moveSpeed = 75f;
     private Rigidbody2D rb;
     private bool followPlayer = false;
     private Vector2 movement;
+    private SpriteRenderer enemySprite;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        enemySprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         Vector3 direction = player.position - transform.position;
         var dist = Vector3.Distance(player.position, transform.position);
+        if ((transform.position.x - player.position.x) > 0f)
+        {
+            enemySprite.flipX = true;
+        }
+        else if ((transform.position.x - player.position.x) < 0f)
+        {
+            enemySprite.flipX = false;
+        }
         // Debug.Log("Value of followPlayer:" + followPlayer);
         // Debug.Log(dist);
         direction.Normalize();
