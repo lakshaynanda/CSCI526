@@ -8,11 +8,11 @@ public class UIButtonLevelLoad : MonoBehaviour
     {
         if (!pauseMenu.activeSelf)
         {
-            if (Input.GetKey("n"))
+            if (Input.GetKeyDown("n"))
             {
                 nextLevel();
             }
-            if (Input.GetKey("r"))
+            if (Input.GetKeyDown("r"))
             {
                 restartLevel();
             }

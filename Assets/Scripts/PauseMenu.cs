@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
             if (!pauseMenu.activeSelf)
             {
                 Debug.Log("Hello");
-                if (Input.GetKey("p"))
+                if (Input.GetKeyDown(KeyCode.P))
                 {
                     Debug.Log("Hello2");
                     Pause();
@@ -26,22 +26,30 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                if (Input.GetKey("r"))
+                if (Input.GetKeyDown(KeyCode.R))
                 {
                     Reload();
                 }
 
-                else if (Input.GetKey("p"))
+                else if (Input.GetKeyDown(KeyCode.P))
                 {
                     Resume();
                 }
-                else if (Input.GetKey("q"))
+                else if (Input.GetKeyDown(KeyCode.H))
                 {
                     Quit();
                 }
-                else if (Input.GetKey("v"))
+                else if (Input.GetKeyDown(KeyCode.V))
                 {
-                    Mute();
+                    if(muteElement.activeSelf){
+                        ReduceVolume();
+                    }
+                    else if(lowVolumeElement.activeSelf){
+                        IncreaseVolume();
+                    }
+                    else if(highVolumeElement.activeSelf){
+                        Mute();
+                    }
                 }
             }
         }

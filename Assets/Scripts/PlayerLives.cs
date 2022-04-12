@@ -15,7 +15,7 @@ public class PlayerLives : MonoBehaviour
     void Update() {
         if (Player.health < 3 && ItemCollectable.totalScore >= 5 && hasTaken == false) {
             enableButton();
-            if(Input.GetKey("h"))
+            if(Input.GetKeyDown(KeyCode.L))
                 incrHealth();
         }
 

@@ -7,20 +7,20 @@ public class MainMenu : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKey("1"))
+        if (Input.GetKeyDown("1"))
         {
             PlayTutorialGame();
         }
-        else if(Input.GetKey("2")){
+        else if(Input.GetKeyDown("2")){
             PlayLevel2();
         }
-        else if(Input.GetKey("3")){
+        else if(Input.GetKeyDown("3")){
             PlayLevel3();
         }
-        else if(Input.GetKey("4")){
+        else if(Input.GetKeyDown("4")){
             PlayLevel4();
         }
-        else if(Input.GetKey("5")){
+        else if(Input.GetKeyDown("5")){
             PlayLevel5();
         }
     }
