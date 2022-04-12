@@ -17,10 +17,8 @@ public class PauseMenu : MonoBehaviour
         if(!levelCompletedCanvas || (levelCompletedCanvas && !levelCompletedCanvas.activeSelf)) {
             if (!pauseMenu.activeSelf)
             {
-                Debug.Log("Hello");
                 if (Input.GetKeyDown(KeyCode.P))
                 {
-                    Debug.Log("Hello2");
                     Pause();
                 }
             }
