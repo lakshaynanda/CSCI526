@@ -332,7 +332,7 @@ public class Player : MonoBehaviour
     {
         AnalyticsEvent.Custom("scoreEvent", new Dictionary<string, object>
         {
-            { "score", ItemCollectable.totalScore },
+            { "score", ItemCollectable.currentLevelScore },
             { "level", SceneManager.GetActiveScene().name}
         });
         AnalyticsEvent.Custom("powerUpEvent", new Dictionary<string, object>
@@ -340,18 +340,18 @@ public class Player : MonoBehaviour
             { "powerUpCollected", powerUpCollected },
             { "level", SceneManager.GetActiveScene().name}
         });
-        AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
-        {
-           { "timeLeft", TimerCountdown.secondsLeft},
-            { "level", SceneManager.GetActiveScene().name}
-        });
+        // AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
+        // {
+        //    { "timeLeft", TimerCountdown.secondsLeft},
+        //     { "level", SceneManager.GetActiveScene().name}
+        // });
         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
-           { "timeTaken", 120-(TimerCountdown.secondsLeft)},
+           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex]-(TimerCountdown.secondsLeft)},
             { "level", SceneManager.GetActiveScene().name}
         });
 
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 5")
         {
             AnalyticsEvent.Custom("gameEndedEvent");
         };
