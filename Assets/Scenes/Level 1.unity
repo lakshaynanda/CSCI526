@@ -1371,6 +1371,10 @@ PrefabInstance:
       propertyPath: m_spriteAsset
       value: 
       objectReference: {fileID: 11400000, guid: c842d82bae67eb74aab35941bfa12f4a, type: 2}
+    - target: {fileID: 4243736131289368463, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
+      propertyPath: m_text
+      value: <sprite=0> 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4243736131371010049, guid: 075f3ef0561c26c4c8af855975f6e952, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3283,7 +3287,6 @@ GameObject:
   - component: {fileID: 1187279251}
   - component: {fileID: 1187279253}
   - component: {fileID: 1187279254}
-  - component: {fileID: 1187279248}
   - component: {fileID: 1187279255}
   m_Layer: 0
   m_Name: Player
@@ -3313,22 +3316,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &1187279248
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187279246}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.33077186, y: -0.1675067}
-  m_Size: {x: 1.748474, y: 1.9515494}
-  m_Direction: 0
 --- !u!212 &1187279249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3388,7 +3375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187279246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.13, y: -7.8, z: 0}
+  m_LocalPosition: {x: -7.46, y: -5.54, z: 0}
   m_LocalScale: {x: 0.3791322, y: 0.3520953, z: 0.6642}
   m_Children:
   - {fileID: 1835400846}
@@ -6597,7 +6584,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0043621063, y: -0.0392313}
+  m_Offset: {x: -0.014241159, y: -0.0392313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6608,7 +6595,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.538784, y: 0.36538887}
+  m_Size: {x: 3.5759907, y: 0.36538887}
   m_EdgeRadius: 0
 --- !u!4 &2142532645 stripped
 Transform:
