@@ -3438,6 +3438,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 903442053}
     - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Name
       value: LevelCompleteCanvas
@@ -10819,6 +10823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 903442053}
+  levelCompletedCanvas: {fileID: 285373452}
   lowVolumeElement: {fileID: 903442052}
   highVolumeElement: {fileID: 903442051}
   muteElement: {fileID: 903442050}
@@ -10879,6 +10884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &1987639622
 MonoBehaviour:
   m_ObjectHideFlags: 0

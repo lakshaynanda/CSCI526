@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 6010621375934475440}
   - component: {fileID: 6010621375934475441}
   - component: {fileID: 6010621375934475454}
-  - component: {fileID: 6010621375934475455}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -390,7 +389,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6010621375934475455}
+      - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
         m_MethodName: nextLevel
         m_Mode: 1
@@ -402,18 +401,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6010621375934475455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010621375934475453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6010621376285386777
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +413,6 @@ GameObject:
   - component: {fileID: 6010621376285386780}
   - component: {fileID: 6010621376285386781}
   - component: {fileID: 6010621376285386778}
-  - component: {fileID: 6010621376285386779}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -536,7 +522,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6010621376285386779}
+      - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
         m_MethodName: goHome
         m_Mode: 1
@@ -548,18 +534,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6010621376285386779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010621376285386777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6010621376338019425
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +759,6 @@ GameObject:
   - component: {fileID: 6010621376644491795}
   - component: {fileID: 6010621376644491792}
   - component: {fileID: 6010621376644491793}
-  - component: {fileID: 6010621376644491806}
   m_Layer: 5
   m_Name: ReplayButton
   m_TagString: Untagged
@@ -895,7 +868,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6010621376644491806}
+      - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
         m_MethodName: restartLevel
         m_Mode: 1
@@ -907,18 +880,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6010621376644491806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010621376644491804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6010621377027691451
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +892,7 @@ GameObject:
   - component: {fileID: 6010621377027691452}
   - component: {fileID: 6010621377027691453}
   - component: {fileID: 6010621377027691450}
+  - component: {fileID: 4513192124841840931}
   m_Layer: 5
   m_Name: LevelCompleteCanvas
   m_TagString: Untagged
@@ -1019,6 +981,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4513192124841840931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010621377027691451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &8022920562928468475
 GameObject:
   m_ObjectHideFlags: 0

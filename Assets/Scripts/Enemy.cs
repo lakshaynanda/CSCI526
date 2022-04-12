@@ -29,8 +29,6 @@ public class Enemy : MonoBehaviour
         {
             enemySprite.flipX = false;
         }
-        // Debug.Log("Value of followPlayer:" + followPlayer);
-        // Debug.Log(dist);
         direction.Normalize();
         movement = direction;
         if(dist < 51){

@@ -2662,6 +2662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &861325231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,6 +3369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &1196129528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5853,6 +5855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 608906424}
+  levelCompletedCanvas: {fileID: 0}
   lowVolumeElement: {fileID: 608906423}
   highVolumeElement: {fileID: 608906422}
   muteElement: {fileID: 608906421}
@@ -5970,6 +5973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &2025689580
 MonoBehaviour:
   m_ObjectHideFlags: 0

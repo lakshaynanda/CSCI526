@@ -3,6 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonLevelLoad : MonoBehaviour
 {
+    [SerializeField] GameObject pauseMenu;
+    public void Update()
+    {
+        if (!pauseMenu.activeSelf)
+        {
+            if (Input.GetKeyDown("n"))
+            {
+                nextLevel();
+            }
+            if (Input.GetKeyDown("r"))
+            {
+                restartLevel();
+            }
+        }
+    }
+
     public void restartLevel()
     {
         //Load the level from LevelToLoad
@@ -16,7 +32,7 @@ public class UIButtonLevelLoad : MonoBehaviour
         // }
         // else
         // {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // }
     }
 

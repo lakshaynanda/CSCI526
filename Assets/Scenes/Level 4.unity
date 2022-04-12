@@ -4238,6 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &892173813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6053,6 +6054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1919394957}
+  levelCompletedCanvas: {fileID: 2098839851}
   lowVolumeElement: {fileID: 1560325134}
   highVolumeElement: {fileID: 1560325133}
   muteElement: {fileID: 1560325132}
@@ -10185,6 +10187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1919394957}
     - target: {fileID: 6010621377027691451, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: m_Name
       value: LevelCompleteCanvas
