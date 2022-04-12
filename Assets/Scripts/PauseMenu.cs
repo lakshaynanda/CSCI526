@@ -69,9 +69,11 @@ public class PauseMenu : MonoBehaviour
     public void Reload()
     {
         Scene scene = SceneManager.GetActiveScene();
+        RespawnCheckpoint.isRespawn = false;
+        Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = 120;
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
         ItemCollectable.totalScore -= ItemCollectable.currentLevelScore;
         ItemCollectable.currentLevelScore = 0;
         Time.timeScale = 1f;
@@ -101,10 +103,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        RespawnCheckpoint.isRespawn = false;
         Time.timeScale = 1f;
+        Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = 120;
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
         ItemCollectable.currentLevelScore = 0;
         ItemCollectable.totalScore = 0;
         SceneManager.LoadScene(0);

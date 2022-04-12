@@ -69,7 +69,6 @@ public class Player : MonoBehaviour
         if (RespawnCheckpoint.isRespawn)
         {
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint;
-            RespawnCheckpoint.isRespawn = false;
         }
         RespawnCheckpoint.Checkpoint = temp;
         if (Portal.portalHit)
@@ -288,13 +287,11 @@ public class Player : MonoBehaviour
         {
             getHighScore(probableHighScore);
             Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
-            //TimerCountdown.secondsLeft = 60;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
         {
             RespawnCheckpoint.isRespawn = false;
-            TimerCountdown.secondsLeft = 120;
             // if (SceneManager.GetActiveScene().name == "Tutorial")
             // {
             //     SceneManager.LoadScene("End Screen Tutorial");
