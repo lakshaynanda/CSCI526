@@ -1695,8 +1695,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -56.68068, y: 0}
-  - {x: 56.68068, y: 0}
+  - {x: -31.837807, y: -6.867345}
+  - {x: 31.725706, y: -6.835704}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1746,7 +1746,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 113.36134, y: 69.22642}
+  m_Size: {x: 63.932365, y: 21.627903}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1760,7 +1760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591952812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.34, y: -14.4, z: 49.12278}
+  m_LocalPosition: {x: 32.0433, y: -0.5048, z: 49.12278}
   m_LocalScale: {x: 2.15, y: 2.5392, z: 2.5392}
   m_Children: []
   m_Father: {fileID: 2074991562}
@@ -3408,13 +3408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a6cb0e2f7d65459acf69e85877583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 504464456}
   coinSound: {fileID: 408815991}
   deathSound: {fileID: 1163069416}
   jumpSound: {fileID: 573250785}
+  scoreText: {fileID: 504464456}
   healthText: {fileID: 504464458}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
+  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 201778393}
   levelCompletedCanvas: {fileID: 1608977361}
