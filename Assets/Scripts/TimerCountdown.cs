@@ -7,7 +7,8 @@ using TMPro;
 public class TimerCountdown : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerElement;
-    public static int secondsLeft;
+    public static float secondsLeft;
+    public const float dangerTimeThreshold = 30f;
     [SerializeField] bool takingAway = false;
     public Rigidbody2D rb;
     private Animator anim;
@@ -46,8 +47,21 @@ public class TimerCountdown : MonoBehaviour
     public IEnumerator TimerTake()
     {
         takingAway = true;
-        yield return new WaitForSeconds(1);
-        secondsLeft -= 1;
+        
+        yield return new WaitForSeconds(0.5f);
+        secondsLeft -= 0.5f;
+        if(secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
+        {
+            timerElement.enabled = false;
+        }
+        
+        yield return new WaitForSeconds(0.5f);
+        secondsLeft -= 0.5f;
+        if (secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
+        {
+            timerElement.enabled = true;
+        }
+        
         if (secondsLeft <= 0)
         {
             RespawnCheckpoint.isRespawn = false;
@@ -55,6 +69,7 @@ public class TimerCountdown : MonoBehaviour
             ItemCollectable.currentLevelScore = 0;
             StopCoroutine(TimerTake());
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex];
+            timerElement.enabled = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         timerElement.text = "<sprite=0> " + secondsLeft;

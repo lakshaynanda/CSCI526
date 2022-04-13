@@ -447,7 +447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_4_L3
+      value: Orange_Platform_4_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -779,6 +779,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51.915245
       objectReference: {fileID: 0}
@@ -817,6 +821,18 @@ PrefabInstance:
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.7416309
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.024731182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0055770874
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
@@ -1529,7 +1545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_2_L3
+      value: Orange_Platform_2_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -2363,6 +2379,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.99979
       objectReference: {fileID: 0}
@@ -2401,6 +2421,18 @@ PrefabInstance:
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.7416302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.029723963
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0094059305
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
@@ -2798,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_3_L3
+      value: Yellow_Platform_3_L2
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -2867,7 +2899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_2_L3
+      value: Yellow_Platform_2_L2
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -2884,7 +2916,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_1_L3
+      value: Orange_Platform_1_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -3478,16 +3510,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800289516876325490, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Radius
-      value: 0.852335
+      value: 0.72323656
       objectReference: {fileID: 0}
     - target: {fileID: 3800289516876325490, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Offset.x
-      value: 0.019739151
+      value: 0.019739132
       objectReference: {fileID: 0}
     - target: {fileID: 3800289516876325490, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Offset.y
-      value: 0.0016684532
+      value: -0.22673681
       objectReference: {fileID: 0}
+    - target: {fileID: 3800289516876325491, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c28226690380b4baf939a059458a5587, type: 3}
     - target: {fileID: 3800289516876325492, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3518,11 +3554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 16.52
+      value: 15.87
       objectReference: {fileID: 0}
     - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.9
+      value: -13.85
       objectReference: {fileID: 0}
     - target: {fileID: 5365787196399648534, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Name
@@ -3597,18 +3633,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.29785132, y: -0.26620308}
+  m_Offset: {x: -0.011410385, y: -0.14203334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.45, y: 2.31}
+    oldSize: {x: 1.81, y: 1.75}
     newSize: {x: 2.45, y: 2.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7466195, y: 1.8958285}
+  m_Size: {x: 1.4373574, y: 1.423985}
   m_EdgeRadius: 0
 --- !u!212 &1187279249
 SpriteRenderer:
@@ -3650,7 +3686,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b14cce0ed189499f9994daee4d86482, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85c9ee465bc88460e8817f535839acc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3670,7 +3706,7 @@ Transform:
   m_GameObject: {fileID: 1187279246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.15, y: 3.83, z: 0}
-  m_LocalScale: {x: 0.3749485, y: 0.35076404, z: 0.6642}
+  m_LocalScale: {x: 0.5749485, y: 0.550764, z: 0.6642}
   m_Children:
   - {fileID: 1835400846}
   - {fileID: 1381091754}
@@ -3702,13 +3738,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a6cb0e2f7d65459acf69e85877583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 238885906}
   coinSound: {fileID: 384174841}
   deathSound: {fileID: 384174839}
   jumpSound: {fileID: 384174840}
+  CheckpointSound: {fileID: 0}
+  scoreText: {fileID: 238885906}
   healthText: {fileID: 238885908}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
+  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 201778393}
   levelCompletedCanvas: {fileID: 749308795}
@@ -4309,6 +4346,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 63.33896
       objectReference: {fileID: 0}
@@ -4347,6 +4388,18 @@ PrefabInstance:
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.7416322
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.019739078
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.009404411
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
@@ -4830,7 +4883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_5_L3
+      value: Orange_Platform_5_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -5059,6 +5112,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.464348
       objectReference: {fileID: 0}
@@ -5097,6 +5154,18 @@ PrefabInstance:
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.7466365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.02971518
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00440979
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
@@ -6369,7 +6438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_4_L3
+      value: Yellow_Platform_4_L2
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -6545,7 +6614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_2_L3
+      value: Green_Platform_2_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -6614,7 +6683,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_3_L3
+      value: Orange_Platform_3_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -7043,6 +7112,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.720055
       objectReference: {fileID: 0}
@@ -7081,6 +7154,18 @@ PrefabInstance:
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.7516185
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.024731858
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.004412492
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
@@ -7302,7 +7387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_1_L3
+      value: Yellow_Platform_1_L2
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -7454,6 +7539,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046488, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.2
       objectReference: {fileID: 0}
@@ -7493,6 +7582,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Radius
+      value: 1.73164
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.02972869
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060149802308046489, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.009407112
+      objectReference: {fileID: 0}
     - target: {fileID: 6060149802308046490, guid: f8c844a7cc2cf47c9b3f175918167cd7, type: 3}
       propertyPath: m_Name
       value: Coins
@@ -7508,7 +7609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_1_L3
+      value: Green_Platform_1_L2
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer

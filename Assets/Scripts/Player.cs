@@ -10,25 +10,24 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 7f;
-    private float jumpForce = 14f;
-    public static int health = 3;
+     public static int health = 3;
     public static bool isLevelComplete = false;
     public static int highScore = 0;
     string highScoreKey = "HighScore";
-    [SerializeField] private TextMeshProUGUI scoreText;
 
     public AudioSource coinSound;
     public AudioSource deathSound;
     public AudioSource jumpSound;
+    public AudioSource CheckpointSound;
 
-    //[SerializeField] private Text healthText;
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] public SpriteRenderer platformSprite;
+    
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
     private TextMeshProUGUI multiColourText;
-    [SerializeField] public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -201,6 +200,10 @@ public class Player : MonoBehaviour
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Die();
         }
+        else if (collidedObject.gameObject.CompareTag("CheckPoint"))
+        {
+            CheckpointSound.Play();
+        }
     }
 
     private void stopStickyEffect()
@@ -214,17 +217,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
-        //checkTrapCollision(collidedObject);
     }
-
-    //private void checkTrapCollision(Collision2D collidedObject)
-    //{
-    //    if (collidedObject.gameObject.CompareTag("Trap"))
-    //    {
-    //        triggerPlayerDeathEvent(collidedObject.gameObject.name);
-    //        Die();
-    //    }
-    //}
 
     private void OnCollisionStay2D(Collision2D collidedObject)
     {
