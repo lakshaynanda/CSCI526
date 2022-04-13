@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1001 &76382450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,6 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 525281870}
+  levelCompletedCanvas: {fileID: 0}
   lowVolumeElement: {fileID: 525281869}
   highVolumeElement: {fileID: 525281868}
   muteElement: {fileID: 525281867}
@@ -2870,13 +2872,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a6cb0e2f7d65459acf69e85877583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1925838545}
   coinSound: {fileID: 888956612}
   deathSound: {fileID: 888956610}
   jumpSound: {fileID: 888956611}
+  CheckpointSound: {fileID: 0}
+  scoreText: {fileID: 1925838545}
   healthText: {fileID: 273336624}
-  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
+  StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   rb: {fileID: 1187279247}
   gameOverCanvas: {fileID: 40935305}
   levelCompletedCanvas: {fileID: 1523853938}
@@ -4278,6 +4281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0721d2b15f768643bba8fcea970fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!114 &1987639622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4397,7 +4401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 68.01
+      value: 68.17
       objectReference: {fileID: 0}
     - target: {fileID: 1605406940707774025, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_Name
