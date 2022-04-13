@@ -23,6 +23,6 @@ public class Finish : MonoBehaviour
         }else{
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        TimerCountdown.secondsLeft = 120;
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
     }
 }

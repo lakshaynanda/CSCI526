@@ -7,14 +7,24 @@ using TMPro;
 public class TimerCountdown : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerElement;
-    public static int secondsLeft = 120;
+    public static float secondsLeft;
+    public const float dangerTimeThreshold = 30f;
     [SerializeField] bool takingAway = false;
     public Rigidbody2D rb;
     private Animator anim;
     public int countballs;
 
+    public static int[] levelTime = {100,100,120,120,120};
+
     void Start()
     {
+        if(RespawnCheckpoint.isRespawn)
+            {
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex-2]/2;
+            RespawnCheckpoint.isRespawn = false;
+            }
+        else
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex-2];
         countballs = ItemCollectable.totalScore;
         timerElement.text = "<sprite=0> " + secondsLeft;
     }
@@ -37,14 +47,29 @@ public class TimerCountdown : MonoBehaviour
     public IEnumerator TimerTake()
     {
         takingAway = true;
-        yield return new WaitForSeconds(1);
-        secondsLeft -= 1;
+        
+        yield return new WaitForSeconds(0.5f);
+        secondsLeft -= 0.5f;
+        if(secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
+        {
+            timerElement.enabled = false;
+        }
+        
+        yield return new WaitForSeconds(0.5f);
+        secondsLeft -= 0.5f;
+        if (secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
+        {
+            timerElement.enabled = true;
+        }
+        
         if (secondsLeft <= 0)
         {
+            RespawnCheckpoint.isRespawn = false;
             ItemCollectable.totalScore = 0;
             ItemCollectable.currentLevelScore = 0;
             StopCoroutine(TimerTake());
-            secondsLeft = 120;
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex];
+            timerElement.enabled = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         timerElement.text = "<sprite=0> " + secondsLeft;

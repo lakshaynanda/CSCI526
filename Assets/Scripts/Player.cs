@@ -10,25 +10,24 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 7f;
-    private float jumpForce = 14f;
-    public static int health = 3;
+     public static int health = 3;
     public static bool isLevelComplete = false;
     public static int highScore = 0;
     string highScoreKey = "HighScore";
-    [SerializeField] private TextMeshProUGUI scoreText;
 
     public AudioSource coinSound;
     public AudioSource deathSound;
     public AudioSource jumpSound;
+    public AudioSource CheckpointSound;
 
-    //[SerializeField] private Text healthText;
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] public SpriteRenderer platformSprite;
+    
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
     private TextMeshProUGUI multiColourText;
-    [SerializeField] public SpriteRenderer platformSprite;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -69,7 +68,6 @@ public class Player : MonoBehaviour
         if (RespawnCheckpoint.isRespawn)
         {
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint;
-            RespawnCheckpoint.isRespawn = false;
         }
         RespawnCheckpoint.Checkpoint = temp;
         if (Portal.portalHit)
@@ -201,6 +199,10 @@ public class Player : MonoBehaviour
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Die();
         }
+        else if (collidedObject.gameObject.CompareTag("CheckPoint"))
+        {
+            CheckpointSound.Play();
+        }
     }
 
     private void stopStickyEffect()
@@ -214,17 +216,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         checkColorMatch(collidedObject);
-        //checkTrapCollision(collidedObject);
     }
-
-    //private void checkTrapCollision(Collision2D collidedObject)
-    //{
-    //    if (collidedObject.gameObject.CompareTag("Trap"))
-    //    {
-    //        triggerPlayerDeathEvent(collidedObject.gameObject.name);
-    //        Die();
-    //    }
-    //}
 
     private void OnCollisionStay2D(Collision2D collidedObject)
     {
@@ -288,13 +280,11 @@ public class Player : MonoBehaviour
         {
             getHighScore(probableHighScore);
             Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
-            //TimerCountdown.secondsLeft = 60;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
         {
             RespawnCheckpoint.isRespawn = false;
-            TimerCountdown.secondsLeft = 120;
             // if (SceneManager.GetActiveScene().name == "Tutorial")
             // {
             //     SceneManager.LoadScene("End Screen Tutorial");
@@ -335,7 +325,7 @@ public class Player : MonoBehaviour
     {
         AnalyticsEvent.Custom("scoreEvent", new Dictionary<string, object>
         {
-            { "score", ItemCollectable.totalScore },
+            { "score", ItemCollectable.currentLevelScore },
             { "level", SceneManager.GetActiveScene().name}
         });
         AnalyticsEvent.Custom("powerUpEvent", new Dictionary<string, object>
@@ -343,18 +333,18 @@ public class Player : MonoBehaviour
             { "powerUpCollected", powerUpCollected },
             { "level", SceneManager.GetActiveScene().name}
         });
-        AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
-        {
-           { "timeLeft", TimerCountdown.secondsLeft},
-            { "level", SceneManager.GetActiveScene().name}
-        });
+        // AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
+        // {
+        //    { "timeLeft", TimerCountdown.secondsLeft},
+        //     { "level", SceneManager.GetActiveScene().name}
+        // });
         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
-           { "timeTaken", 120-(TimerCountdown.secondsLeft)},
+           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex]-(TimerCountdown.secondsLeft)},
             { "level", SceneManager.GetActiveScene().name}
         });
 
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 5")
         {
             AnalyticsEvent.Custom("gameEndedEvent");
         };

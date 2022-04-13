@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_1_L6
+      value: Green_Platform_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -201,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_4_L6
+      value: Orange_Platform_4_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -566,7 +566,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Pink_Platform_2_L6
+      value: Pink_Platform_2_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -1576,7 +1576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_3_L6
+      value: Yellow_Platform_3_L5
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -1598,7 +1598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_3_L6
+      value: Green_Platform_3_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -1724,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_3_L6
+      value: Yellow_Platform_3_L5
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -1812,7 +1812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_2_L6
+      value: Orange_Platform_2_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 580411352}
   - component: {fileID: 580411353}
   m_Layer: 6
-  m_Name: Yellow_Platform_2_L6
+  m_Name: Yellow_Platform_2_L5
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2527,7 +2527,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_1_L6
+      value: Orange_Platform_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -2722,7 +2722,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 564027769662097188, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_Name
-      value: MovingEnemy
+      value: Moving_Enemy_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 564027769662097188, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_TagString
@@ -3239,7 +3239,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_4_L6
+      value: Green_Platform_4_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -3452,7 +3452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5740747575147906800, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_Name
-      value: Purple_Background_L6
+      value: Purple_Background_L5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
@@ -4498,7 +4498,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_5_L6
+      value: Green_Platform_5_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -4768,7 +4768,7 @@ GameObject:
   - component: {fileID: 1668815502}
   - component: {fileID: 1668815503}
   m_Layer: 0
-  m_Name: Collapsing_Platform_L6
+  m_Name: Collapsing_Platform_L5
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4915,6 +4915,7 @@ MonoBehaviour:
   coinSound: {fileID: 876404216}
   deathSound: {fileID: 420916174}
   jumpSound: {fileID: 671904187}
+  CheckpointSound: {fileID: 0}
   healthText: {fileID: 578077722}
   StartColor: {r: 0.9811321, g: 0.6742424, b: 0, a: 1}
   platformSprite: {fileID: 0}
@@ -5048,7 +5049,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_3_L6
+      value: Orange_Platform_3_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -5382,7 +5383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Pink_Platform_1_L6
+      value: Pink_Platform_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -6714,7 +6715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1212662844028665242, guid: bae1d6fa245934fcd8e56dcc6ce9d4cf, type: 3}
       propertyPath: m_Name
-      value: expanding_trap
+      value: expanding_trap_2_L5
       objectReference: {fileID: 0}
     - target: {fileID: 1212662844028665445, guid: bae1d6fa245934fcd8e56dcc6ce9d4cf, type: 3}
       propertyPath: m_RootOrder
@@ -7072,7 +7073,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 234571872925457969, guid: 5522d4c1143fe488da4cf2cc66b2d968, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_1_L6
+      value: Yellow_Platform_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 7770407536250189095, guid: 5522d4c1143fe488da4cf2cc66b2d968, type: 3}
       propertyPath: m_RootOrder
@@ -7150,7 +7151,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1212662844028665242, guid: bae1d6fa245934fcd8e56dcc6ce9d4cf, type: 3}
       propertyPath: m_Name
-      value: expanding_trap
+      value: expanding_trap_1_L5
       objectReference: {fileID: 0}
     - target: {fileID: 1212662844028665445, guid: bae1d6fa245934fcd8e56dcc6ce9d4cf, type: 3}
       propertyPath: m_RootOrder
@@ -7265,7 +7266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5740747575147906800, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_Name
-      value: Purple_Platform_1_L6
+      value: Purple_Platform_1_L5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
