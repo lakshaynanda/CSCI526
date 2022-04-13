@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public AudioSource coinSound;
     public AudioSource deathSound;
     public AudioSource jumpSound;
+    public AudioSource CheckpointSound;
 
     //[SerializeField] private Text healthText;
     [SerializeField] private TextMeshProUGUI healthText;
@@ -199,6 +200,10 @@ public class Player : MonoBehaviour
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Die();
+        }
+        else if (collidedObject.gameObject.CompareTag("CheckPoint"))
+        {
+            CheckpointSound.Play();
         }
     }
 
