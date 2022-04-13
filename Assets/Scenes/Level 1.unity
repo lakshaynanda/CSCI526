@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_5_L2
+      value: Green_Platform_5_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -503,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_4_L2
+      value: Yellow_Platform_4_L1
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -525,7 +525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_3_L2
+      value: Orange_Platform_3_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -864,7 +864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_3_L2
+      value: Green_Platform_3_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -1000,7 +1000,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_2_L2
+      value: Orange_Platform_2_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -1648,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Pendulum_Platform_L2
+      value: Pendulum_Platform_L1
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -2347,7 +2347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_3_L2
+      value: Yellow_Platform_3_L1
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -2374,7 +2374,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_4_L2
+      value: Green_Platform_4_L1
       objectReference: {fileID: 0}
     - target: {fileID: 5296459405476875031, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_RootOrder
@@ -3411,6 +3411,7 @@ MonoBehaviour:
   coinSound: {fileID: 408815991}
   deathSound: {fileID: 1163069416}
   jumpSound: {fileID: 573250785}
+  CheckpointSound: {fileID: 0}
   scoreText: {fileID: 504464456}
   healthText: {fileID: 504464458}
   platformSprite: {fileID: 0}
@@ -3491,7 +3492,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_2_L2
+      value: Green_Platform_2_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -4144,7 +4145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486227656}
   m_Layer: 0
-  m_Name: Moving Platform 1
+  m_Name: Moving_Platform_1_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4863,7 +4864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_4_L2
+      value: Orange_Platform_4_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -5285,7 +5286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_1_L2
+      value: Yellow_Platform_1_L1
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -5302,7 +5303,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Name
-      value: Green_Platform_1_L2
+      value: Green_Platform_1_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2384542032523239425, guid: 956c5224a20e43544b68f8c30dced330, type: 3}
       propertyPath: m_Layer
@@ -6028,7 +6029,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Name
-      value: Orange_Platform_1_L2
+      value: Orange_Platform_1_L1
       objectReference: {fileID: 0}
     - target: {fileID: 2935850507033048157, guid: 16a04e79baf4bf547822545066148adb, type: 3}
       propertyPath: m_Layer
@@ -6418,7 +6419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_2_L2
+      value: Yellow_Platform_2_L1
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -6748,7 +6749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247082047376793629, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_Name
-      value: Pendulum
+      value: Pendulum_1_L1
       objectReference: {fileID: 0}
     - target: {fileID: 3247082048126175119, guid: 0deaabd17405b417ba378abe637fffb9, type: 3}
       propertyPath: m_TagString
