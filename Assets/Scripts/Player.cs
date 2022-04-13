@@ -107,7 +107,8 @@ public class Player : MonoBehaviour
         {
             stickyTimer -= Time.deltaTime;
             seconds = Mathf.FloorToInt(stickyTimer % 60);
-            StartCoroutine(ChangeTimerBar(((seconds) * 10) / 100));
+            timerForeground.fillAmount = ((seconds+1) * 10) / 100;
+            //StartCoroutine(ChangeTimerBar(((seconds) * 10) / 100));
         }
 
         healthText.text = "<sprite=0> " + health;
@@ -152,13 +153,13 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
             GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
-            ItemCollectable.totalScore -= 5;
-            ItemCollectable.currentLevelScore -= 5;
+            ItemCollectable.totalScore -= 10;
+            ItemCollectable.currentLevelScore -= 10;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             mySprite.color = otherSprite.color;
             startMulticolourTimer = true;
             Destroy(parent);
-            Invoke(nameof(ResetEffect), 9);
+            Invoke(nameof(ResetEffect), 10);
             powerUpCollected = true;
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
@@ -184,7 +185,7 @@ public class Player : MonoBehaviour
             Destroy(parent);
             stickyLimiter = true;
             startStickyTimer = true;
-            Invoke(nameof(stopStickyEffect), 9);
+            Invoke(nameof(stopStickyEffect), 10);
         }
         else if (collidedObject.gameObject.CompareTag("Portal Left"))
         {
@@ -321,11 +322,11 @@ public class Player : MonoBehaviour
 
     public void incrHealth()
     {
-        if (health < 3 && ItemCollectable.totalScore > 5)
+        if (health < 3 && ItemCollectable.totalScore > 15)
         {
             health++;
-            ItemCollectable.totalScore -= 5;
-            ItemCollectable.currentLevelScore -= 5;
+            ItemCollectable.totalScore -= 15;
+            ItemCollectable.currentLevelScore -= 15;
         }
     }
     public void sendLevelCompletedAnalytics()
