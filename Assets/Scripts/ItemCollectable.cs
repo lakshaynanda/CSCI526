@@ -11,11 +11,12 @@ public class ItemCollectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Switch") || collision.gameObject.CompareTag("MultiColor"))
+        if (collision.gameObject.CompareTag("Switch"))
         {
             totalScore++;
             currentLevelScore++;
-            scoreText.text = "<sprite=0> " + totalScore;
+        } else if (collision.gameObject.CompareTag("MultiColor")) {
         }
+        scoreText.text = "<sprite=0> " + totalScore;
     }
 }
