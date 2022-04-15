@@ -6,6 +6,7 @@ public class MulticolourEffect : MonoBehaviour
 {
     private bool scaled = false;
     private float count = 2f;
+    [SerializeField] private GameObject floatingPoints; 
 
     void Update()
     {

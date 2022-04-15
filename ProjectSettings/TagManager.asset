@@ -29,6 +29,10 @@ TagManager:
   - Respawn Checkpoint
   - Portal Left
   - Portal Right
+  - CheckPoint
+  - Foreground
+  - Enemy
+  - ColorChangingPlatform
   layers:
   - Default
   - TransparentFX

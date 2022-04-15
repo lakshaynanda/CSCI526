@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     private float seconds;
     private bool freeze;
 
+    [SerializeField] private GameObject floatingPoints;
     [SerializeField] public Image timerForeground;
     [SerializeField] public float UpdateTimerBarSpeed;
     [SerializeField] private LayerMask jumpableGround;
@@ -157,6 +158,9 @@ public class Player : MonoBehaviour
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
             mySprite.color = otherSprite.color;
             startMulticolourTimer = true;
+            GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
+            FloatingText.displayText(floatingText, "-10");
+            Destroy(floatingText,1f);
             Destroy(parent);
             Invoke(nameof(ResetEffect), 10);
             powerUpCollected = true;
