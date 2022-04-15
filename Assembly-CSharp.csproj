@@ -73,12 +73,12 @@
     <Compile Include="Assets/Kalkatos/DottedArrow/Scripts/ActivateOnMousePress.cs" />
     <Compile Include="Assets/Scripts/DoorAnimated.cs" />
     <Compile Include="Assets/Scripts/KeyDoor.cs" />
-    <Compile Include="Assets/PowerupScript.cs" />
     <Compile Include="Assets/Scripts/PendulumMovement.cs" />
     <Compile Include="Assets/Beautiful Progress Bar Free - CYKO/Scripts/SliderScripts.cs" />
     <Compile Include="Assets/Scripts/TimerCountdown.cs" />
     <Compile Include="Assets/Scripts/MulticolourEffect.cs" />
     <Compile Include="Assets/Scripts/BgSoundScript.cs" />
+    <Compile Include="Assets/Scripts/FloatingText.cs" />
     <Compile Include="Assets/Scripts/ItemCollectable.cs" />
     <Compile Include="Assets/Scripts/Waypoint.cs" />
     <Compile Include="Assets/Scripts/RespawnCheckpoint.cs" />
@@ -95,7 +95,7 @@
     <Compile Include="Assets/Scripts/Weapon.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/DiamondGlowScript.cs" />
-    <Compile Include="Assets/Scripts/FloatingText.cs" />
+    <Compile Include="Assets/Scripts/InstructionScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

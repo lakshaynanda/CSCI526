@@ -128,6 +128,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 388737487551318320, guid: c25d5b11c07fa7c4a9d6d27cafb7e8b4, type: 3}
   m_PrefabInstance: {fileID: 1958299910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &21773860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900466859168466362, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538530560487448904, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+      propertyPath: m_Name
+      value: FloatingPointsTextParent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+--- !u!1 &21773861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4538530560487448904, guid: fde366296bd0f4f029a2f435be8f8154, type: 3}
+  m_PrefabInstance: {fileID: 21773860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &37549835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,6 +3221,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 4.23
       objectReference: {fileID: 0}
+    - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -13.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.91
+      objectReference: {fileID: 0}
     - target: {fileID: 5365787196399648534, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Name
       value: Multicolour Power-up (1)
@@ -4042,6 +4112,14 @@ PrefabInstance:
     - target: {fileID: 4668590328083703014, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 4.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -13.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668590328792895053, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: 5365787196399648534, guid: 9baaad05251ae404798a1949845d61c9, type: 3}
       propertyPath: m_Name
@@ -10516,6 +10594,7 @@ MonoBehaviour:
   levelCompletedCanvas: {fileID: 2098839851}
   startTime: 10
   endTime: 0
+  floatingPoints: {fileID: 21773861}
   timerForeground: {fileID: 2110393207}
   UpdateTimerBarSpeed: 0.2
   jumpableGround:

@@ -152,18 +152,27 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
-            GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
-            ItemCollectable.totalScore -= 10;
-            ItemCollectable.currentLevelScore -= 10;
-            scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
-            mySprite.color = otherSprite.color;
-            startMulticolourTimer = true;
-            GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
-            FloatingText.displayText(floatingText, "-10");
-            Destroy(floatingText,1f);
-            Destroy(parent);
-            Invoke(nameof(ResetEffect), 10);
-            powerUpCollected = true;
+                GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
+            if (ItemCollectable.totalScore > 10)
+            {
+                GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
+                Destroy(parent);
+                ItemCollectable.totalScore -= 10;
+                ItemCollectable.currentLevelScore -= 10;
+                scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
+                mySprite.color = otherSprite.color;
+                startMulticolourTimer = true;
+                FloatingText.displayText(floatingText, "-10");
+                Destroy(floatingText, 1f);
+                Invoke(nameof(ResetEffect), 10);
+                powerUpCollected = true;
+            }
+            else
+            {
+                FloatingText.displayText(floatingText, "Not enough Points!");
+                Destroy(floatingText, 1f);
+            }
+            
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
         {

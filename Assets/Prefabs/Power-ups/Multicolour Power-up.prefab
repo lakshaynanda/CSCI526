@@ -39,15 +39,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2212103831445573725}
     m_Modifications:
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 22.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605406940707774024, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1605406940707774025, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_TagString
       value: Multicolour Messages
       objectReference: {fileID: 0}
     - target: {fileID: 1605406940707774031, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_text
-      value: 'Collect this ball to obtain colour immunity for 10 secs
-
-'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1605406941064197347, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
       propertyPath: m_Pivot.x
@@ -137,13 +159,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Multicolour Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1605406940707774031, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
 --- !u!224 &4668590328083703014 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1605406941064197347, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
   m_PrefabInstance: {fileID: 6236824885211107333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4668590328792895052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1605406940707774025, guid: 07a247f58a16043159ac71b59f769f59, type: 3}
+  m_PrefabInstance: {fileID: 6236824885211107333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1283770416818118135
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668590328792895052}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e2eeb5c3539be5f43949d74f16d7c09c, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!102 &9209091903348381712
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668590328792895052}
+  m_Text: 'Collect this ball to obtain colour immunity for 10 secs
+
+'
+  m_OffsetZ: 0
+  m_CharacterSize: 0.1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 12
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: e2eeb5c3539be5f43949d74f16d7c09c, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!95 &5245990823281620836
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668590328792895052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e282f5ff2eeda447684723327f10dbb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8437017411507201302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,16 +268,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 176.65
+      value: 50.47
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 82.65
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -173,15 +293,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731903923535857506, guid: 77261da5617b8495db729ac9954b47c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -235,3 +355,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847a63ebca71546e0bab5e5babac8738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingPoints: {fileID: 0}

@@ -33,6 +33,7 @@ TagManager:
   - Foreground
   - Enemy
   - ColorChangingPlatform
+  - Instructions
   layers:
   - Default
   - TransparentFX
