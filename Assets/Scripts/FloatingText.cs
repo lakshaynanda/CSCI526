@@ -6,8 +6,6 @@ public class FloatingText : MonoBehaviour
 {
     public static void displayText(GameObject gameObject, string text)
     {
-        //GameObject gameObject = Instantiate(floatingPoints, transform.position, Quaternion.identity);
         gameObject.GetComponentInChildren<TextMesh>().text = text;
-        Destroy(gameObject, 1f);
     }
 }
