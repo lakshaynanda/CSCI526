@@ -55,7 +55,19 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        IncreaseVolume();
+        // IncreaseVolume();
+        if(AudioListener.volume == 0)
+        {
+            Mute();
+        }
+        else if(AudioListener.volume == 0.5f)
+        {
+            ReduceVolume();
+        }
+        else
+        {
+            IncreaseVolume();
+        }
         Time.timeScale = 0f;
 
     }
@@ -85,6 +97,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(false);
         highVolumeElement.SetActive(false);
         muteElement.SetActive(true);
+        AudioListener.volume=0;
     }
 
     public void ReduceVolume()
@@ -92,6 +105,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(true);
         highVolumeElement.SetActive(false);
         muteElement.SetActive(false);
+        AudioListener.volume=0.5f;
     }
 
     public void IncreaseVolume()
@@ -99,6 +113,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(false);
         highVolumeElement.SetActive(true);
         muteElement.SetActive(false);
+        AudioListener.volume=1;
     }
 
     public void Quit()
