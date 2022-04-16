@@ -283,11 +283,19 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        deathSound.Play();
-        PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
-        int probableHighScore = ItemCollectable.totalScore;
+        Time.timeScale = 0.01f;
+        StartCoroutine(freezeDeath());
         // ItemCollectable.totalScore = countballs;
         // ItemCollectable.currentLevelScore = countballs;
+    }
+
+    private IEnumerator freezeDeath()
+    {
+        deathSound.Play();
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1.0f;
+        PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
+        int probableHighScore = ItemCollectable.totalScore;
         health--;
         // rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)

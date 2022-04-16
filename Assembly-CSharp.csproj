@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/ChangePlatformColor.cs" />
     <Compile Include="Assets/Scripts/Rotate.cs" />
     <Compile Include="Assets/Scripts/KeyHolder.cs" />
+    <Compile Include="Assets/HelpResume.cs" />
     <Compile Include="Assets/Scripts/Key.cs" />
     <Compile Include="Assets/Kalkatos/DottedArrow/Example/Scripts/King.cs" />
     <Compile Include="Assets/Scripts/StickyPlatform.cs" />
@@ -93,9 +94,9 @@
     <Compile Include="Assets/Scripts/Enemy.cs" />
     <Compile Include="Assets/Scripts/MovePlayerWithPlatform.cs" />
     <Compile Include="Assets/Scripts/Weapon.cs" />
+    <Compile Include="Assets/Scripts/InstructionScript.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/DiamondGlowScript.cs" />
-    <Compile Include="Assets/Scripts/InstructionScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
