@@ -21,7 +21,6 @@ public class TimerCountdown : MonoBehaviour
         if (RespawnCheckpoint.isRespawn)
         {
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2] / 2;
-            RespawnCheckpoint.isRespawn = false;
         }
         else
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2];
