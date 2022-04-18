@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/anmolsajnani/Desktop/SemII/AMDGC/GGWP/After Midterm/CSCI526/WebGL Builds;/Users/shamikakumar/Projects/game-dev/webgl_builds/Blend In;/Users/shamikakumar/Projects/game-dev/webgl_builds/GGWP_analytics;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Volumes/Poorvi's Hard Disk/Unity/GGWP Midterm/CSCI526-Level1/WebGL Builds/latest;/Volumes/Poorvi's Hard Disk/Unity/GGWP Midterm/CSCI526-Level1/WebGL Builds;/Users/anmolsajnani/Desktop/SemII/AMDGC/GGWP/After Midterm/CSCI526/WebGL Builds;/Users/shamikakumar/Projects/game-dev/webgl_builds/Blend In;/Users/shamikakumar/Projects/game-dev/webgl_builds/GGWP_analytics;;;;;\"}"
             }
         ]
     }
