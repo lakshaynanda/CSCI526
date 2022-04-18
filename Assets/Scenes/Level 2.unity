@@ -1997,8 +1997,24 @@ PrefabInstance:
       value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0027456
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1037126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05503714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.030863047
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587043, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3209,7 +3225,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913379559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3901,7 +3917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187279246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.15, y: 3.83, z: 0}
+  m_LocalPosition: {x: -9.93, y: 3.68, z: 0}
   m_LocalScale: {x: 0.5749485, y: 0.550764, z: 0.6642}
   m_Children:
   - {fileID: 1835400846}
@@ -4075,8 +4091,24 @@ PrefabInstance:
       value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.x
+      value: 2.1046405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9623404
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.040667295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.020802528
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587043, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6046,10 +6078,10 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741700848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6933,7 +6965,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994454252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -7040,8 +7072,24 @@ PrefabInstance:
       value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0027587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1037145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.055038333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693782655347587040, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01207304
       objectReference: {fileID: 0}
     - target: {fileID: 4693782655347587043, guid: ab204bfe6109745c0a06bc87e934eb48, type: 3}
       propertyPath: m_LocalPosition.x

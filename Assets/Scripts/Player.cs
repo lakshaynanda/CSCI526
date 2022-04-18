@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
+    private CircleCollider2D saw;
     public GameObject gameOverCanvas;
     public GameObject levelCompletedCanvas;
     public int startTime = 10;
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
+        saw = GetComponent<CircleCollider2D>();
         gameOverCanvas.SetActive(false);
         if(levelCompletedCanvas)
         {
