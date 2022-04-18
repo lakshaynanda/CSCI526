@@ -164,6 +164,7 @@ public class Player : MonoBehaviour
                 levelCompletedCanvas.SetActive(true);
             }
             rb.bodyType = RigidbodyType2D.Static;
+            RespawnCheckpoint.isRespawn = false;
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
@@ -384,7 +385,7 @@ public class Player : MonoBehaviour
         // });
         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
-           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex]-(TimerCountdown.secondsLeft)},
+           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 2]-(TimerCountdown.secondsLeft)},
             { "level", SceneManager.GetActiveScene().name}
         });
 
