@@ -10,7 +10,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-     public static int health = 3;
+    public static int health = 3;
     public static bool isLevelComplete = false;
     public static int highScore = 0;
     string highScoreKey = "HighScore";
@@ -19,15 +19,17 @@ public class Player : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource jumpSound;
     public AudioSource CheckpointSound;
+    public AudioSource finishSound;
 
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] public SpriteRenderer platformSprite;
-    
+
     public Color StartColor;
     private SpriteRenderer mySprite;
     private SpriteRenderer otherSprite;
     private TextMeshProUGUI multiColourText;
+    private Boolean changeColorToNextPlatform = false;
     public static int countballs;
     public Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -60,7 +62,7 @@ public class Player : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         saw = GetComponent<CircleCollider2D>();
         gameOverCanvas.SetActive(false);
-        if(levelCompletedCanvas)
+        if (levelCompletedCanvas)
         {
             levelCompletedCanvas.SetActive(false);
         }
@@ -109,11 +111,17 @@ public class Player : MonoBehaviour
         {
             stickyTimer -= Time.deltaTime;
             seconds = Mathf.FloorToInt(stickyTimer % 60);
-            timerForeground.fillAmount = ((seconds+1) * 10) / 100;
+            timerForeground.fillAmount = ((seconds + 1) * 10) / 100;
             //StartCoroutine(ChangeTimerBar(((seconds) * 10) / 100));
         }
 
         healthText.text = "<sprite=0> " + health;
+        Debug.Log(mySprite.color);
+        // if (isGrounded() && mySprite.color == Color.white && !startMulticolourTimer)
+        // {
+        //     Debug.Log(startMulticolourTimer);
+        //     mySprite.color = Color.red;
+        // }
     }
 
     private IEnumerator ChangeTimerBar(float time)
@@ -134,6 +142,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
+        if (changeColorToNextPlatform && isGrounded()) {
+            changeColorToNextPlatform = false;
+            mySprite.color = otherSprite.color;
+        }
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
             if (mySprite.color != Color.white)
@@ -144,9 +156,10 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
+            finishSound.Play();
             sendLevelCompletedAnalytics();
             isLevelComplete = true;
-            if(levelCompletedCanvas)
+            if (levelCompletedCanvas)
             {
                 levelCompletedCanvas.SetActive(true);
             }
@@ -154,7 +167,7 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
-                GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
+            GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
             if (ItemCollectable.totalScore > 10)
             {
                 GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
@@ -174,7 +187,7 @@ public class Player : MonoBehaviour
                 FloatingText.displayText(floatingText, "Not enough Points!");
                 Destroy(floatingText, 1f);
             }
-            
+
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
         {
@@ -279,7 +292,14 @@ public class Player : MonoBehaviour
     }
     public void ResetEffect()
     {
-        mySprite.color = otherSprite.color;
+        if (isGrounded())
+        {
+            mySprite.color = otherSprite.color;
+        }
+        else
+        {
+            changeColorToNextPlatform = true;
+        }
         startMulticolourTimer = false;
         stickyTimer = 10f;
     }
