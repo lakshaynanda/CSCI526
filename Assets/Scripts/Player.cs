@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource jumpSound;
     public AudioSource CheckpointSound;
+    public AudioSource finishSound;
 
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI healthText;
@@ -155,6 +156,7 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
+            finishSound.Play();
             sendLevelCompletedAnalytics();
             isLevelComplete = true;
             if (levelCompletedCanvas)
