@@ -138,7 +138,8 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
-        if (changeColorToNextPlatform && isGrounded()) {
+        if (mySprite.color == Color.white && changeColorToNextPlatform && isGrounded())
+        {
             changeColorToNextPlatform = false;
             mySprite.color = otherSprite.color;
         }
@@ -295,7 +296,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            changeColorToNextPlatform = true;
+            // changeColorToNextPlatform = true;
+            // Invoke(nameof(ResetEffect), 10);
+            mySprite.color = otherSprite.color;
         }
         startMulticolourTimer = false;
         stickyTimer = 10f;
@@ -435,6 +438,6 @@ public class Player : MonoBehaviour
             playerMovementState = MovementState.jumping;
         }
 
-        anim.SetInteger("state", (int) playerMovementState);
+        anim.SetInteger("state", (int)playerMovementState);
     }
 }
