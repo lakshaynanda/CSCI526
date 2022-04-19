@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-5655615665924399138
+--- !u!21 &-696153823244037310
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -25,7 +25,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ColorMask: 15
-    - _CullMode: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -49,7 +48,7 @@ MonoBehaviour:
   m_Name: volume_high
   m_EditorClassIdentifier: 
   hashCode: -1525817575
-  material: {fileID: -5655615665924399138}
+  material: {fileID: -696153823244037310}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -84,17 +83,17 @@ MonoBehaviour:
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 117
-      m_Height: 117
-      m_HorizontalBearingX: 2
-      m_HorizontalBearingY: 70
-      m_HorizontalAdvance: 117
+      m_Width: 250
+      m_Height: 250
+      m_HorizontalBearingX: -125
+      m_HorizontalBearingY: 125
+      m_HorizontalAdvance: 250
     m_GlyphRect:
-      m_X: 4
-      m_Y: 4
-      m_Width: 117
-      m_Height: 117
-    m_Scale: 4
+      m_X: 7
+      m_Y: 5
+      m_Width: 250
+      m_Height: 250
+    m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: 4712215940412638036, guid: 3461d090728ccb944b2377c7413cc60e, type: 3}
   spriteInfoList: []

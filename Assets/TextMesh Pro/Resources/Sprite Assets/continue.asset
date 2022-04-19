@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: continue
   m_EditorClassIdentifier: 
   hashCode: -1365954463
-  material: {fileID: 1036030661622400351}
+  material: {fileID: 3589932523114140978}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -50,20 +50,20 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 250
       m_Height: 250
-      m_HorizontalBearingX: 1
-      m_HorizontalBearingY: 150
+      m_HorizontalBearingX: -125
+      m_HorizontalBearingY: 125
       m_HorizontalAdvance: 250
     m_GlyphRect:
-      m_X: 6
+      m_X: 8
       m_Y: 4
       m_Width: 250
       m_Height: 250
-    m_Scale: 4
+    m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: -7176300867611961145, guid: c8137c9856b245d498820fadae495a97, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
---- !u!21 &1036030661622400351
+--- !u!21 &3589932523114140978
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -88,7 +88,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ColorMask: 15
-    - _CullMode: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0

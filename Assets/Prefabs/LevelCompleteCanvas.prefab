@@ -84,7 +84,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 8936eaa7855d9a9458712208ae0ab06a, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 4e5a5c5e9fdf11448922df4b7fb620d0, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -218,7 +218,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 2314050f8e780c74c9278405c39f4096, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 00532fd5b0c53b64f8ba4b8826ef0792, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -296,7 +296,7 @@ RectTransform:
   m_GameObject: {fileID: 6010621375934475453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6010621375758020867}
   m_Father: {fileID: 2965997791756021714}
@@ -429,7 +429,7 @@ RectTransform:
   m_GameObject: {fileID: 6010621376285386777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6010621376497865674}
   m_Father: {fileID: 2965997791756021714}
@@ -697,7 +697,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 7359e868cbda4e64ea398640e3e558bf, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 4d32ed3dee7cad04bafd67e11f626380, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -775,7 +775,7 @@ RectTransform:
   m_GameObject: {fileID: 6010621376644491804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6010621375892474270}
   m_Father: {fileID: 2965997791756021714}
@@ -994,6 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  helpMenu: {fileID: 0}
 --- !u!1 &8022920562928468475
 GameObject:
   m_ObjectHideFlags: 0

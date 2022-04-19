@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: play
   m_EditorClassIdentifier: 
   hashCode: 3936740
-  material: {fileID: 8527870504611077721}
+  material: {fileID: 1179888465721048940}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -48,22 +48,22 @@ MonoBehaviour:
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 117
-      m_Height: 117
-      m_HorizontalBearingX: 2
-      m_HorizontalBearingY: 70
-      m_HorizontalAdvance: 117
+      m_Width: 250
+      m_Height: 250
+      m_HorizontalBearingX: -125
+      m_HorizontalBearingY: 125
+      m_HorizontalAdvance: 250
     m_GlyphRect:
-      m_X: 4
+      m_X: 8
       m_Y: 4
-      m_Width: 117
-      m_Height: 117
-    m_Scale: 4
+      m_Width: 250
+      m_Height: 250
+    m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: 3794550611322748858, guid: 9db05b1182ff42642a0c887421284876, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
---- !u!21 &8527870504611077721
+--- !u!21 &1179888465721048940
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -88,7 +88,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ColorMask: 15
-    - _CullMode: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
