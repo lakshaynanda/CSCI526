@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     [SerializeField] public float UpdateTimerBarSpeed;
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
+    private Animator anim;
+    private enum MovementState { idle, running, jumping };
 
     void Start()
     {
@@ -63,6 +65,7 @@ public class Player : MonoBehaviour
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
         saw = GetComponent<CircleCollider2D>();
+        anim = GetComponent<Animator>();
         gameOverCanvas.SetActive(false);
         if (levelCompletedCanvas)
         {
@@ -83,18 +86,11 @@ public class Player : MonoBehaviour
             Portal.portalHit = false;
         }
     }
-
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
-        if (dirX > 0f)
-        {
-            mySprite.flipX = false;
-        }
-        else if (dirX < 0f)
-        {
-            mySprite.flipX = true;
-        }
+        UpdateAnimationState(dirX);
+
         if (stickyLimiter)
         {
             rb.velocity = new Vector2(dirX * 1f, rb.velocity.y);
@@ -144,10 +140,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
-        if (changeColorToNextPlatform && isGrounded()) {
-            changeColorToNextPlatform = false;
-            mySprite.color = otherSprite.color;
-        }
+        // if (mySprite.color == Color.white && changeColorToNextPlatform && isGrounded())
+        // {
+        //     changeColorToNextPlatform = false;
+        //     mySprite.color = otherSprite.color;
+        // }
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
             if (mySprite.color != Color.white)
@@ -171,7 +168,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
             GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
-            if (ItemCollectable.totalScore > 10)
+            if (ItemCollectable.totalScore >= 10)
             {
                 GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
                 Destroy(parent);
@@ -309,7 +306,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            changeColorToNextPlatform = true;
+            // changeColorToNextPlatform = true;
+            // Invoke(nameof(ResetEffect), 10);
+            mySprite.color = otherSprite.color;
         }
         startMulticolourTimer = false;
         stickyTimer = 10f;
@@ -428,5 +427,32 @@ public class Player : MonoBehaviour
             { "level", SceneManager.GetActiveScene().name},
             { "location", "start"}
         });
+    }
+
+    private void UpdateAnimationState(float dirX)
+    {
+        MovementState playerMovementState;
+
+        if (dirX > 0f)
+        {
+            mySprite.flipX = false;
+            playerMovementState = MovementState.running;
+        }
+        else if (dirX < 0f)
+        {
+            mySprite.flipX = true;
+            playerMovementState = MovementState.running;
+        }
+        else
+        {
+            playerMovementState = MovementState.idle;
+        }
+
+        if (rb.velocity.y > .1f)
+        {
+            playerMovementState = MovementState.jumping;
+        }
+
+        anim.SetInteger("state", (int)playerMovementState);
     }
 }
