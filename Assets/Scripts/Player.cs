@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] public SpriteRenderer platformSprite;
+    [SerializeField] public TextMeshProUGUI playerText;
 
     public Color StartColor;
     private SpriteRenderer mySprite;
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
 
     private float seconds;
     private bool freeze;
+    private string deathMessage="";
 
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] public Image timerForeground;
@@ -192,18 +194,24 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.gameObject.CompareTag("Coin"))
         {
+            GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
             ItemCollectable.totalScore += 5;
             ItemCollectable.currentLevelScore += 5;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
+            FloatingText.displayText(floatingText, "+5");
+            Destroy(floatingText, 1f);
             coinSound.Play();
             Destroy(collidedObject.gameObject);
         }
         else if (collidedObject.gameObject.CompareTag("Diamond"))
         {
+            GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
             GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
             ItemCollectable.totalScore += 10;
             ItemCollectable.currentLevelScore += 10;
             scoreText.text = "<sprite=0> " + ItemCollectable.totalScore;
+            FloatingText.displayText(floatingText, "+10");
+            Destroy(floatingText, 1f);
             coinSound.Play();
             Destroy(parent);
         }
@@ -222,6 +230,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("Trap"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
+            deathMessage = "Killed by an obstacle!";
             Die();
         }
         else if (collidedObject.gameObject.CompareTag("Foreground"))
@@ -269,6 +278,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Correct" + mySprite.color);
                 triggerPlayerDeathEvent(collidedObject.gameObject.name);
                 Debug.Log("Game Over");
+                deathMessage = "Color Mismatch!";
                 Die();
             }
             if (freeze == true)
@@ -315,11 +325,16 @@ public class Player : MonoBehaviour
     private IEnumerator freezeDeath()
     {
         deathSound.Play();
+        GameObject camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
+        Camera cam = camera.GetComponent<Camera>();
+        cam.orthographicSize = 2;
+        playerText.SetText(deathMessage);
         yield return new WaitForSecondsRealtime(1);
         Time.timeScale = 1.0f;
         PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
         int probableHighScore = ItemCollectable.totalScore;
         health--;
+        playerText.SetText("");
         // rb.bodyType = RigidbodyType2D.Static;
         if (health > 0)
         {

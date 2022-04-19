@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject lowVolumeElement;
     [SerializeField] GameObject highVolumeElement;
     [SerializeField] GameObject muteElement;
+    [SerializeField] GameObject helpMenu;
 
     void Update()
     {
@@ -18,6 +19,13 @@ public class PauseMenu : MonoBehaviour
             if (!pauseMenu.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.P))
+                {
+                    Pause();
+                }
+            }
+            if (!helpMenu.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.I))
                 {
                     Pause();
                 }
@@ -72,9 +80,16 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    public void Help()
+    {
+        helpMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        helpMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
