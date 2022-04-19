@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: help
   m_EditorClassIdentifier: 
   hashCode: 3638929
-  material: {fileID: 8479534881712787814}
+  material: {fileID: 4004338365321055152}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -43,48 +43,27 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: help
-    m_HashCode: 3638929
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 1
-    m_Scale: 1
-    m_Name: help
-    m_HashCode: 3638929
+    m_Name: help_0
+    m_HashCode: -332171618
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 262
-      m_Height: 297
-      m_HorizontalBearingX: -131
-      m_HorizontalBearingY: 148.5
-      m_HorizontalAdvance: 262
+      m_Width: 250
+      m_Height: 250
+      m_HorizontalBearingX: 10
+      m_HorizontalBearingY: 120
+      m_HorizontalAdvance: 250
     m_GlyphRect:
-      m_X: 0
-      m_Y: 0
-      m_Width: 262
-      m_Height: 297
-    m_Scale: 1
+      m_X: 7
+      m_Y: 39
+      m_Width: 250
+      m_Height: 250
+    m_Scale: 2.5
     m_AtlasIndex: 0
-    sprite: {fileID: 21300000, guid: 6d75daf15e991402daabc19fa7cacba5, type: 3}
-  - m_Index: 1
-    m_Metrics:
-      m_Width: 262
-      m_Height: 297
-      m_HorizontalBearingX: -131
-      m_HorizontalBearingY: 148.5
-      m_HorizontalAdvance: 262
-    m_GlyphRect:
-      m_X: 0
-      m_Y: 0
-      m_Width: 262
-      m_Height: 297
-    m_Scale: 1
-    m_AtlasIndex: 0
-    sprite: {fileID: 21300000, guid: 6d75daf15e991402daabc19fa7cacba5, type: 3}
+    sprite: {fileID: 3059929991795831455, guid: 191f93c7203a24c1fb21aed88131040e, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
---- !u!21 &8479534881712787814
+--- !u!21 &4004338365321055152
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
