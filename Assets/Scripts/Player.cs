@@ -138,11 +138,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
         otherSprite = collidedObject.gameObject.GetComponent<SpriteRenderer>();
-        if (mySprite.color == Color.white && changeColorToNextPlatform && isGrounded())
-        {
-            changeColorToNextPlatform = false;
-            mySprite.color = otherSprite.color;
-        }
+        // if (mySprite.color == Color.white && changeColorToNextPlatform && isGrounded())
+        // {
+        //     changeColorToNextPlatform = false;
+        //     mySprite.color = otherSprite.color;
+        // }
         if (collidedObject.gameObject.CompareTag("Switch"))
         {
             if (mySprite.color != Color.white)
