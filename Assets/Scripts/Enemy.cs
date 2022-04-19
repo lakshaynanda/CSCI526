@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         }
         direction.Normalize();
         movement = direction;
-        if(dist < 51){
+        if(dist < 50){
             followPlayer = true;
         } else {
             followPlayer = false;
@@ -48,6 +48,6 @@ public class Enemy : MonoBehaviour
 
     private void MoveEnemy(Vector2 direction)
     {
-        rb.MovePosition((Vector2) transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2) transform.position + (direction * 3 * moveSpeed * Time.deltaTime));
     }
 }

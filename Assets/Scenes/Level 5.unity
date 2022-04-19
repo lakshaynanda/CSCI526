@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1669,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_3_L5
+      value: Yellow_Platform_5_L5
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -3113,15 +3113,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 564027769662097191, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_Radius
-      value: 2.005242
+      value: 1.7238147
       objectReference: {fileID: 0}
     - target: {fileID: 564027769662097191, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_Offset.x
-      value: -0.048556566
+      value: -0.08373523
       objectReference: {fileID: 0}
     - target: {fileID: 564027769662097191, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_Offset.y
-      value: -0.09711075
+      value: -0.3433597
       objectReference: {fileID: 0}
     - target: {fileID: 564027769662097191, guid: eb4652ed34cb5c449a31f91e9abc4074, type: 3}
       propertyPath: m_IsTrigger
@@ -3613,7 +3613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_2_L6
+      value: Yellow_Platform_4_L5
       objectReference: {fileID: 0}
     - target: {fileID: 8810458632556582472, guid: b7f219befbeb65b4aae2ad959c2e18b9, type: 3}
       propertyPath: m_Layer
@@ -3890,7 +3890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2827255736106528230, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.240305
+      value: 15.494246
       objectReference: {fileID: 0}
     - target: {fileID: 2827255736106528230, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3898,7 +3898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2827255736106528230, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.1
+      value: -9.4729
       objectReference: {fileID: 0}
     - target: {fileID: 2827255736106528230, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3946,7 +3946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5740747575147906800, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
       propertyPath: m_Name
-      value: Yellow_Platform_0_L5
+      value: Yellow_Platform_6_L5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c292e2e287c6b4cfc86f64e97c0a4d06, type: 3}
@@ -5211,7 +5211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4130523bd686a48179e57bf476ca4521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyList: 
 --- !u!95 &1676186288
 Animator:
   serializedVersion: 3
