@@ -14,17 +14,16 @@ public class TimerCountdown : MonoBehaviour
     private Animator anim;
     public int countballs;
 
-    public static int[] levelTime = {100,100,120,120,120};
+    public static int[] levelTime = { 100, 100, 120, 120, 120 };
 
     void Start()
     {
-        if(RespawnCheckpoint.isRespawn)
-            {
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex-2]/2;
-            RespawnCheckpoint.isRespawn = false;
-            }
+        if (RespawnCheckpoint.isRespawn)
+        {
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2] / 2;
+        }
         else
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex-2];
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2];
         countballs = ItemCollectable.totalScore;
         timerElement.text = "<sprite=0> " + secondsLeft;
     }
@@ -47,21 +46,21 @@ public class TimerCountdown : MonoBehaviour
     public IEnumerator TimerTake()
     {
         takingAway = true;
-        
+
         yield return new WaitForSeconds(0.5f);
         secondsLeft -= 0.5f;
-        if(secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
+        if (secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
         {
             timerElement.enabled = false;
         }
-        
+
         yield return new WaitForSeconds(0.5f);
         secondsLeft -= 0.5f;
         if (secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
         {
             timerElement.enabled = true;
         }
-        
+
         if (secondsLeft <= 0)
         {
             RespawnCheckpoint.isRespawn = false;
@@ -71,6 +70,7 @@ public class TimerCountdown : MonoBehaviour
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex];
             timerElement.enabled = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+            Player.health--;
         }
         timerElement.text = "<sprite=0> " + secondsLeft;
         takingAway = false;

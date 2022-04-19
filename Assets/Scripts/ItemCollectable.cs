@@ -13,8 +13,8 @@ public class ItemCollectable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Switch"))
         {
-            totalScore++;
-            currentLevelScore++;
+            // totalScore++;
+            // currentLevelScore++;
         } else if (collision.gameObject.CompareTag("MultiColor")) {
         }
         scoreText.text = "<sprite=0> " + totalScore;
