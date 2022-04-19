@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1749,6 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  helpMenu: {fileID: 0}
 --- !u!114 &861325231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2014,6 +2015,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: helpMenu
+      value: 
+      objectReference: {fileID: 1559973896}
     - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -3955,7 +3960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 608906424}
-  levelCompletedCanvas: {fileID: 0}
+  levelCompletedCanvas: {fileID: 1072440354}
   lowVolumeElement: {fileID: 608906423}
   highVolumeElement: {fileID: 608906422}
   muteElement: {fileID: 608906421}

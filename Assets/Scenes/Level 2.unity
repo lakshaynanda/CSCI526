@@ -4583,6 +4583,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: helpMenu
+      value: 
+      objectReference: {fileID: 800621875}
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1436172754}
@@ -6200,6 +6204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  helpMenu: {fileID: 0}
 --- !u!4 &1637458294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5791626287013375820, guid: ffcc6a06c929f2c458b237584047b2a8, type: 3}

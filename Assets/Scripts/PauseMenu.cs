@@ -15,28 +15,25 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if(!levelCompletedCanvas || (levelCompletedCanvas && !levelCompletedCanvas.activeSelf)) {
-            if (!pauseMenu.activeSelf)
+        if (!levelCompletedCanvas || (levelCompletedCanvas && !levelCompletedCanvas.activeSelf))
+        {
+            if (!pauseMenu.activeSelf && !helpMenu.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.P))
                 {
                     Pause();
                 }
-            }
-            if (!helpMenu.activeSelf)
-            {
                 if (Input.GetKeyDown(KeyCode.I))
                 {
                     Help();
                 }
             }
-            else
+            else if (pauseMenu.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     Reload();
                 }
-
                 else if (Input.GetKeyDown(KeyCode.P))
                 {
                     Resume();
@@ -47,15 +44,25 @@ public class PauseMenu : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.V))
                 {
-                    if(muteElement.activeSelf){
+                    if (muteElement.activeSelf)
+                    {
                         ReduceVolume();
                     }
-                    else if(lowVolumeElement.activeSelf){
+                    else if (lowVolumeElement.activeSelf)
+                    {
                         IncreaseVolume();
                     }
-                    else if(highVolumeElement.activeSelf){
+                    else if (highVolumeElement.activeSelf)
+                    {
                         Mute();
                     }
+                }
+            }
+            else if (helpMenu.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.I))
+                {
+                    Resume();
                 }
             }
         }
@@ -64,11 +71,11 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         // IncreaseVolume();
-        if(AudioListener.volume == 0)
+        if (AudioListener.volume == 0)
         {
             Mute();
         }
-        else if(AudioListener.volume == 0.5f)
+        else if (AudioListener.volume == 0.5f)
         {
             ReduceVolume();
         }
@@ -100,7 +107,7 @@ public class PauseMenu : MonoBehaviour
         Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 1];
         ItemCollectable.totalScore -= ItemCollectable.currentLevelScore;
         ItemCollectable.currentLevelScore = 0;
         Time.timeScale = 1f;
@@ -112,7 +119,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(false);
         highVolumeElement.SetActive(false);
         muteElement.SetActive(true);
-        AudioListener.volume=0;
+        AudioListener.volume = 0;
     }
 
     public void ReduceVolume()
@@ -120,7 +127,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(true);
         highVolumeElement.SetActive(false);
         muteElement.SetActive(false);
-        AudioListener.volume=0.5f;
+        AudioListener.volume = 0.5f;
     }
 
     public void IncreaseVolume()
@@ -128,7 +135,7 @@ public class PauseMenu : MonoBehaviour
         lowVolumeElement.SetActive(false);
         highVolumeElement.SetActive(true);
         muteElement.SetActive(false);
-        AudioListener.volume=1;
+        AudioListener.volume = 1;
     }
 
     public void Quit()
@@ -138,7 +145,7 @@ public class PauseMenu : MonoBehaviour
         Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 1];
         ItemCollectable.currentLevelScore = 0;
         ItemCollectable.totalScore = 0;
         SceneManager.LoadScene(0);

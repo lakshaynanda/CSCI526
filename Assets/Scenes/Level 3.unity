@@ -3467,6 +3467,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
+      propertyPath: helpMenu
+      value: 
+      objectReference: {fileID: 648353496}
+    - target: {fileID: 4513192124841840931, guid: 29f26a4552558de40a094056173bdd4e, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 903442053}
@@ -11486,6 +11490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  helpMenu: {fileID: 0}
 --- !u!114 &1987639622
 MonoBehaviour:
   m_ObjectHideFlags: 0

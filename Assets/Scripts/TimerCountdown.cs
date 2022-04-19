@@ -64,7 +64,7 @@ public class TimerCountdown : MonoBehaviour
         if (secondsLeft <= 0)
         {
             RespawnCheckpoint.isRespawn = false;
-            ItemCollectable.totalScore = 0;
+            //ItemCollectable.totalScore = 0;
             ItemCollectable.currentLevelScore = 0;
             StopCoroutine(TimerTake());
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex];

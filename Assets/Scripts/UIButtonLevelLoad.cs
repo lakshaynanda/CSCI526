@@ -4,44 +4,44 @@ using UnityEngine.SceneManagement;
 public class UIButtonLevelLoad : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject helpMenu;
     public void Update()
     {
-        if (!pauseMenu.activeSelf)
+        if (!pauseMenu.activeSelf && !helpMenu.activeSelf)
         {
-            if (Input.GetKeyDown("n"))
+            if (Input.GetKeyDown(KeyCode.N))
             {
-                nextLevel();
+                NextLevel();
             }
-            if (Input.GetKeyDown("r"))
+            else if (Input.GetKeyDown(KeyCode.R))
             {
-                restartLevel();
+                RestartLevel();
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
+            {
+                Home();
             }
         }
     }
 
-    public void restartLevel()
+    public void RestartLevel()
     {
-        //Load the level from LevelToLoad
         resetValues();
         Player.health = 3;
-        ItemCollectable.totalScore = 0;
         ItemCollectable.currentLevelScore = 0;
-        // if (SceneManager.GetActiveScene().name == "Tutorial")
-        // {
-        //     SceneManager.LoadScene("Home");
-        // }
-        // else
-        // {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // }
     }
 
-    public void goHome()
+    public void Home()
     {
+        resetValues();
+        Player.health = 3;
+        ItemCollectable.currentLevelScore = 0;
+        ItemCollectable.totalScore = 0;
         SceneManager.LoadScene("Home");
 
     }
-    public void nextLevel()
+    public void NextLevel()
     {
         //Load the level from LevelToLoad
         resetValues();
@@ -53,7 +53,7 @@ public class UIButtonLevelLoad : MonoBehaviour
         RespawnCheckpoint.isRespawn = false;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 1];
 
     }
 }

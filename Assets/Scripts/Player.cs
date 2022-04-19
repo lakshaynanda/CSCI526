@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         countballs = ItemCollectable.totalScore;
+        ItemCollectable.currentLevelScore = 0;
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = StartColor;
@@ -114,10 +115,8 @@ public class Player : MonoBehaviour
         }
 
         healthText.text = "<sprite=0> " + health;
-        Debug.Log(mySprite.color);
         // if (isGrounded() && mySprite.color == Color.white && !startMulticolourTimer)
         // {
-        //     Debug.Log(startMulticolourTimer);
         //     mySprite.color = Color.red;
         // }
     }
@@ -265,7 +264,6 @@ public class Player : MonoBehaviour
         if (collidedObject.gameObject.CompareTag("Border"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
-            Debug.Log("Game Over");
             deathMessage = "Into the abyss";
             Die();
         }
@@ -273,9 +271,7 @@ public class Player : MonoBehaviour
         {
             if (mySprite.color != otherSprite.color && mySprite.color != Color.white)
             {
-                Debug.Log("Correct" + mySprite.color);
                 triggerPlayerDeathEvent(collidedObject.gameObject.name);
-                Debug.Log("Game Over");
                 deathMessage = "Color Mismatch!";
                 Die();
             }
@@ -340,7 +336,6 @@ public class Player : MonoBehaviour
         if (health > 0)
         {
             getHighScore(probableHighScore);
-            Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
         else
@@ -353,7 +348,6 @@ public class Player : MonoBehaviour
             // else
             // {
             getHighScore(probableHighScore);
-            Debug.Log(PlayerPrefs.GetInt(highScoreKey, 0));
             SceneManager.LoadScene("End Screen");
             // }
         }

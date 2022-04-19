@@ -391,7 +391,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
-        m_MethodName: nextLevel
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -524,7 +524,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
-        m_MethodName: goHome
+        m_MethodName: Home
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -870,7 +870,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4513192124841840931}
         m_TargetAssemblyTypeName: UIButtonLevelLoad, Assembly-CSharp
-        m_MethodName: restartLevel
+        m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

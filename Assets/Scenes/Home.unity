@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -416,7 +416,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2142437006}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayTutorialGame
+        m_MethodName: PlayLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -891,7 +891,7 @@ RectTransform:
   m_Children:
   - {fileID: 1111981485}
   m_Father: {fileID: 2142437005}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1931,7 +1931,7 @@ RectTransform:
   m_Children:
   - {fileID: 1118870433}
   m_Father: {fileID: 2142437005}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2063,8 +2063,8 @@ RectTransform:
   - {fileID: 1706010034}
   - {fileID: 42989534}
   - {fileID: 257853733}
-  - {fileID: 928574415}
   - {fileID: 2015204388}
+  - {fileID: 928574415}
   - {fileID: 1667268691}
   - {fileID: 1608923434}
   m_Father: {fileID: 1899070808}

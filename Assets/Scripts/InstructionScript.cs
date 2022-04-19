@@ -9,7 +9,6 @@ public class InstructionScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Entered Trigger");
             Destroy(prevInstruction);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
