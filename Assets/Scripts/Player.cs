@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
     private Animator anim;
+    private enum MovementState { idle, running, jumping };
 
     void Start()
     {
@@ -83,24 +84,11 @@ public class Player : MonoBehaviour
             Portal.portalHit = false;
         }
     }
-
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
-        if (dirX > 0f)
-        {
-            mySprite.flipX = false;
-            anim.SetBool("running", true);
-        }
-        else if (dirX < 0f)
-        {
-            mySprite.flipX = true;
-            anim.SetBool("running", true);
-        }
-        else
-        {
-            anim.SetBool("running", false);
-        }
+        UpdateAnimationState(dirX);
+
         if (stickyLimiter)
         {
             rb.velocity = new Vector2(dirX * 1f, rb.velocity.y);
@@ -421,5 +409,32 @@ public class Player : MonoBehaviour
             { "level", SceneManager.GetActiveScene().name},
             { "location", "start"}
         });
+    }
+
+    private void UpdateAnimationState(float dirX)
+    {
+        MovementState playerMovementState;
+
+        if (dirX > 0f)
+        {
+            mySprite.flipX = false;
+            playerMovementState = MovementState.running;
+        }
+        else if (dirX < 0f)
+        {
+            mySprite.flipX = true;
+            playerMovementState = MovementState.running;
+        }
+        else
+        {
+            playerMovementState = MovementState.idle;
+        }
+
+        if (rb.velocity.y > .1f)
+        {
+            playerMovementState = MovementState.jumping;
+        }
+
+        anim.SetInteger("state", (int) playerMovementState);
     }
 }
