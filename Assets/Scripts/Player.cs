@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("MultiColor"))
         {
             GameObject floatingText = Instantiate(floatingPoints, transform.position, Quaternion.identity);
-            if (ItemCollectable.totalScore > 10)
+            if (ItemCollectable.totalScore >= 10)
             {
                 GameObject parent = collidedObject.gameObject.transform.parent.gameObject;
                 Destroy(parent);
