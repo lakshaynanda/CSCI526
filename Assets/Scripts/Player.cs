@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float UpdateTimerBarSpeed;
     [SerializeField] private LayerMask jumpableGround;
     public bool powerUpCollected = false;
+    private Animator anim;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         mySprite.color = StartColor;
         coll = GetComponent<BoxCollider2D>();
         saw = GetComponent<CircleCollider2D>();
+        anim = GetComponent<Animator>();
         gameOverCanvas.SetActive(false);
         if (levelCompletedCanvas)
         {
@@ -88,10 +90,16 @@ public class Player : MonoBehaviour
         if (dirX > 0f)
         {
             mySprite.flipX = false;
+            anim.SetBool("running", true);
         }
         else if (dirX < 0f)
         {
             mySprite.flipX = true;
+            anim.SetBool("running", true);
+        }
+        else
+        {
+            anim.SetBool("running", false);
         }
         if (stickyLimiter)
         {
