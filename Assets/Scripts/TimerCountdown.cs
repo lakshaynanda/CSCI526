@@ -14,17 +14,16 @@ public class TimerCountdown : MonoBehaviour
     private Animator anim;
     public int countballs;
 
-    public static int[] levelTime = { 40,60, 100, 120, 120, 120 };
-
+    public static int[] levelTime = { 40, 60, 100, 120, 120, 120 };
 
     void Start()
     {
         if (RespawnCheckpoint.isRespawn)
         {
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 1] / 2;
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2] / 2;
         }
         else
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 1];
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2];
         countballs = ItemCollectable.totalScore;
         timerElement.text = "<sprite=0> " + secondsLeft;
     }

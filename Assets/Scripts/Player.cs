@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("Finish"))
         {
             finishSound.Play();
-            sendLevelCompletedAnalytics();
+            //sendLevelCompletedAnalytics();
             isLevelComplete = true;
             if (levelCompletedCanvas)
             {
