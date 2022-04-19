@@ -20,10 +20,10 @@ public class TimerCountdown : MonoBehaviour
     {
         if (RespawnCheckpoint.isRespawn)
         {
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2] / 2;
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 1] / 2;
         }
         else
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 2];
+            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 1];
         countballs = ItemCollectable.totalScore;
         timerElement.text = "<sprite=0> " + secondsLeft;
     }

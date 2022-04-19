@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.I))
                 {
-                    Pause();
+                    Help();
                 }
             }
             else
@@ -100,7 +100,7 @@ public class PauseMenu : MonoBehaviour
         Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
         ItemCollectable.totalScore -= ItemCollectable.currentLevelScore;
         ItemCollectable.currentLevelScore = 0;
         Time.timeScale = 1f;
@@ -138,7 +138,7 @@ public class PauseMenu : MonoBehaviour
         Player.health = 3;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
         ItemCollectable.currentLevelScore = 0;
         ItemCollectable.totalScore = 0;
         SceneManager.LoadScene(0);

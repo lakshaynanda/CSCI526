@@ -53,7 +53,7 @@ public class UIButtonLevelLoad : MonoBehaviour
         RespawnCheckpoint.isRespawn = false;
         PlayerLives.hasTaken = false;
         Player.isLevelComplete = false;
-        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-2];
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
 
     }
 }

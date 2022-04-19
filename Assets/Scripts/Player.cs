@@ -266,6 +266,7 @@ public class Player : MonoBehaviour
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
             Debug.Log("Game Over");
+            deathMessage = "Into the abyss";
             Die();
         }
         else if (collidedObject.gameObject.CompareTag("Platform"))
@@ -287,6 +288,7 @@ public class Player : MonoBehaviour
         else if (collidedObject.gameObject.CompareTag("Enemy"))
         {
             triggerPlayerDeathEvent(collidedObject.gameObject.name);
+            deathMessage = "Killed by enemy";
             Die();
         }
     }
@@ -399,7 +401,7 @@ public class Player : MonoBehaviour
         // });
         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
-           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 2]-(TimerCountdown.secondsLeft)},
+           { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 1]-(TimerCountdown.secondsLeft)},
             { "level", SceneManager.GetActiveScene().name}
         });
 

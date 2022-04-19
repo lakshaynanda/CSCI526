@@ -10,7 +10,8 @@ public class RespawnCheckpoint : MonoBehaviour
         
         if(other.gameObject.CompareTag("Player"))
         {
-            Checkpoint = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
+            Checkpoint.x = GameObject.FindGameObjectsWithTag("Player")[0].transform.position.x;
+            Checkpoint.y = GameObject.FindGameObjectsWithTag("Player")[0].transform.position.y+15;
             isRespawn = true;
         }
         
