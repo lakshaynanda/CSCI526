@@ -14,7 +14,7 @@ public class TimerCountdown : MonoBehaviour
     private Animator anim;
     public int countballs;
 
-    public static int[] levelTime = { 100, 100, 120, 120, 120 };
+    public static int[] levelTime = { 40,60, 100, 120, 120, 120 };
 
     void Start()
     {

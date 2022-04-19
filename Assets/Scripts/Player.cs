@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = GameObject.FindGameObjectsWithTag("Portal Right")[0].transform.position;
             Portal.portalHit = false;
         }
+        Debug.Log(levelCompletedCanvas.transform.name);
     }
     void Update()
     {
