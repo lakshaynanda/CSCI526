@@ -215,7 +215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237, y: 160}
+  m_AnchoredPosition: {x: -245, y: 220}
   m_SizeDelta: {x: 461.8546, y: 61.6899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520945694090989
@@ -351,7 +351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235, y: -185}
+  m_AnchoredPosition: {x: -240, y: -218}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520946076906475
@@ -483,7 +483,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100.1, y: -5}
-  m_SizeDelta: {x: 779.8, y: 386.05}
+  m_SizeDelta: {x: 779.8, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520946168811943
 CanvasRenderer:
@@ -514,10 +514,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Match the color of the player with the color of the platform to move forward
-    in the game undetected.\n\nWatch out for traps and obstacles to reach the finish
-    line and complete levels.\n\nUse     / 'A'  to move the player left and     
-    / 'D'  to move the player right.\n \nPress                  / 'W' to jump.\n\nCollect
-    coins and diamonds along the way to gain points and collect rewards."
+    in the game undetected.\n\nUse     / 'A'  to move the player left and      /
+    'D'  to move the player right.\n \nPress                   / 'W' to jump.\n\nWatch
+    out for traps, limiters and obstacles to reach the finish line and the complete
+    levels.\n\nCollect coins and diamonds along the way to gain points to collect
+    rewards.\n\nKeys:       'L' -> Buy Life\n            'P' -> Play/Pause\n           
+    'I' -> Information\n            'H' -> Home\n            'R' -> Reload Level\n           
+    'V' -> Volume Increase/ Decrease/ Mute\n            'N' -> Next Level\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ece54b74bf4f74433aa311b2acd54801, type: 2}
   m_sharedMaterial: {fileID: 2256481118624293684, guid: ece54b74bf4f74433aa311b2acd54801, type: 2}
@@ -544,8 +547,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -620,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 4}
+  m_AnchoredPosition: {x: -128, y: 118}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520946240816294
@@ -695,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -464, y: 3.244812}
+  m_AnchoredPosition: {x: -476, y: 121}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520946457908291
@@ -770,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: -68}
+  m_AnchoredPosition: {x: -402, y: 66}
   m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6398520946594283820
