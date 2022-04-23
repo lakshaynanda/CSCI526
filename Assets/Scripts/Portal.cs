@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
     public static bool portalHit = false;
 
     [SerializeField] private float speed;
-
+    public static float timeLeft;
     [SerializeField] private AudioSource portalSound;
 
     void Update()

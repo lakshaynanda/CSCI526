@@ -13,12 +13,20 @@ public class TimerCountdown : MonoBehaviour
     public Rigidbody2D rb;
     private Animator anim;
     public int countballs;
+    private string deathMessage = "";
+    [SerializeField] public TextMeshProUGUI playerText;
+    public AudioSource deathSound;
 
     public static int[] levelTime = { 40, 60, 100, 120, 120, 120 };
 
     void Start()
     {
-        if (RespawnCheckpoint.isRespawn)
+        if (Portal.portalHit)
+        {
+            secondsLeft = Portal.timeLeft;
+            Portal.portalHit = false;
+        }
+        else if (RespawnCheckpoint.isRespawn)
         {
             secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex - 1] / 2;
         }
@@ -46,7 +54,6 @@ public class TimerCountdown : MonoBehaviour
     public IEnumerator TimerTake()
     {
         takingAway = true;
-
         yield return new WaitForSeconds(0.5f);
         secondsLeft -= 0.5f;
         if (secondsLeft > 0 && secondsLeft <= dangerTimeThreshold)
@@ -63,17 +70,40 @@ public class TimerCountdown : MonoBehaviour
 
         if (secondsLeft <= 0)
         {
+            deathMessage = "Time's up!";
             RespawnCheckpoint.isRespawn = false;
             //ItemCollectable.totalScore = 0;
             ItemCollectable.currentLevelScore = 0;
-            StopCoroutine(TimerTake());
-            secondsLeft = levelTime[SceneManager.GetActiveScene().buildIndex];
+            Time.timeScale = 0.01f;
+            StartCoroutine(freezeDeath());
             timerElement.enabled = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-            Player.health--;
+            StopCoroutine(TimerTake());
         }
+        Portal.timeLeft = secondsLeft;
         timerElement.text = "<sprite=0> " + secondsLeft;
         takingAway = false;
 
+    }
+
+    private IEnumerator freezeDeath()
+    {
+        deathSound.Play();
+        GameObject camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
+        Camera cam = camera.GetComponent<Camera>();
+        cam.orthographicSize = 2;
+        playerText.SetText(deathMessage);
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1.0f;
+        Player.health--;
+        playerText.SetText("");
+        if (Player.health > 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
+        else
+        {
+            RespawnCheckpoint.isRespawn = false;
+            SceneManager.LoadScene("End Screen");
+        }
     }
 }

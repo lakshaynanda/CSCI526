@@ -83,7 +83,6 @@ public class Player : MonoBehaviour
         if (Portal.portalHit)
         {
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = GameObject.FindGameObjectsWithTag("Portal Right")[0].transform.position;
-            Portal.portalHit = false;
         }
         else
         {

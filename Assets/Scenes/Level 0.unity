@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1684,6 +1684,8 @@ MonoBehaviour:
   takingAway: 0
   rb: {fileID: 736775953}
   countballs: 0
+  playerText: {fileID: 1817087842}
+  deathSound: {fileID: 378845554}
 --- !u!114 &736775951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3583,7 +3585,7 @@ GameObject:
   - component: {fileID: 1817087844}
   - component: {fileID: 1817087842}
   - component: {fileID: 1817087843}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3722,8 +3724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.38, y: 0.33}
-  m_SizeDelta: {x: 2.53, y: 3.36}
+  m_AnchoredPosition: {x: -1.58, y: 0.48}
+  m_SizeDelta: {x: 2.53, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1836737791
 PrefabInstance:

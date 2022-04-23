@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5886,6 +5886,8 @@ MonoBehaviour:
   takingAway: 0
   rb: {fileID: 1676186284}
   countballs: 0
+  playerText: {fileID: 1294931396}
+  deathSound: {fileID: 638005282}
 --- !u!114 &1676186282
 MonoBehaviour:
   m_ObjectHideFlags: 0

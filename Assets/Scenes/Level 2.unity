@@ -4438,6 +4438,8 @@ MonoBehaviour:
   takingAway: 0
   rb: {fileID: 1187279247}
   countballs: 0
+  playerText: {fileID: 1461628241}
+  deathSound: {fileID: 1137508793}
 --- !u!114 &1187279254
 MonoBehaviour:
   m_ObjectHideFlags: 0
