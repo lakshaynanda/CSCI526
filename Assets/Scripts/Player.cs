@@ -80,11 +80,14 @@ public class Player : MonoBehaviour
         {
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = RespawnCheckpoint.Checkpoint;
         }
-        RespawnCheckpoint.Checkpoint = temp;
         if (Portal.portalHit)
         {
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = GameObject.FindGameObjectsWithTag("Portal Right")[0].transform.position;
             Portal.portalHit = false;
+        }
+        else
+        {
+            RespawnCheckpoint.Checkpoint = temp;
         }
     }
     void Update()
@@ -388,11 +391,6 @@ public class Player : MonoBehaviour
             { "powerUpCollected", powerUpCollected },
             { "level", SceneManager.GetActiveScene().name}
         });
-        // AnalyticsEvent.Custom("timeLeftEvent", new Dictionary<string, object>
-        // {
-        //    { "timeLeft", TimerCountdown.secondsLeft},
-        //     { "level", SceneManager.GetActiveScene().name}
-        // });
         AnalyticsEvent.Custom("timeTakenEvent", new Dictionary<string, object>
         {
            { "timeTaken", TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex - 1]-(TimerCountdown.secondsLeft)},
