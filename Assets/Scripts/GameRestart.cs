@@ -24,4 +24,12 @@ public class GameRestart : MonoBehaviour
         ItemCollectable.totalScore = 0;
         ItemCollectable.currentLevelScore = 0;
     }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            StartGame();
+        }
+    }
 }
