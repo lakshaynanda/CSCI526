@@ -6,17 +6,30 @@ using UnityEngine.SceneManagement;
 public class GameRestart : MonoBehaviour
 {
     [SerializeField] private Text scoreTextFinal;
-    public void StartGame() 
+    public void StartGame()
     {
         Player.health = 3;
+        RespawnCheckpoint.isRespawn = false;
+        Player.isLevelComplete = false;
         PlayerLives.hasTaken = false;
-        scoreTextFinal.text = "Score: " + ItemCollectable.balls;
-       if (SceneManager.GetActiveScene().name == "End Screen Tutorial")
+        scoreTextFinal.text = "Score: " + ItemCollectable.totalScore;
+        if (SceneManager.GetActiveScene().name == "End Screen Tutorial")
         {
-         SceneManager.LoadScene("Tutorial");
-        }else{
-        SceneManager.LoadScene("Home");
+            SceneManager.LoadScene("Level 1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Home");
+        }
+        ItemCollectable.totalScore = 0;
+        ItemCollectable.currentLevelScore = 0;
     }
-   ItemCollectable.balls = 0;
-}
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            StartGame();
+        }
+    }
 }

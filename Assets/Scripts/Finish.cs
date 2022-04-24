@@ -17,12 +17,12 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel() 
     {
-        PlayerPrefs.SetInt("Score", ItemCollectable.balls);
-        if(SceneManager.GetActiveScene().name == "Tutorial"){
+        PlayerPrefs.SetInt("Score", ItemCollectable.totalScore);
+        if(SceneManager.GetActiveScene().name == "Level 1"){
         
         }else{
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        TimerCountdown.secondsLeft = 120;
+        TimerCountdown.secondsLeft = TimerCountdown.levelTime[SceneManager.GetActiveScene().buildIndex-1];
     }
 }

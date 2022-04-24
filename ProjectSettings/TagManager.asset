@@ -16,6 +16,24 @@ TagManager:
   - Switch
   - Platform
   - Trap
+  - Ladder
+  - TextMesages
+  - Multicolour Messages
+  - Coin
+  - MultiColor
+  - MovingPlatform
+  - Diamond
+  - StickyLimiter
+  - Sticky Messages
+  - PauseMenu
+  - Respawn Checkpoint
+  - Portal Left
+  - Portal Right
+  - CheckPoint
+  - Foreground
+  - Enemy
+  - ColorChangingPlatform
+  - Instructions
   layers:
   - Default
   - TransparentFX
@@ -52,6 +70,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2062658443
+    locked: 0
+  - name: Screen
+    uniqueID: 2796671361
     locked: 0
   - name: Default
     uniqueID: 0
